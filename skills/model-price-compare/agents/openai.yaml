@@ -1,0 +1,4 @@
+interface:
+  display_name: "Model Price Compare"
+  short_description: "Compare current LLM token prices from official provider pages."
+  default_prompt: "Compare token prices for these models using official pricing pages, include cached input, uncached input, output, multipliers, and source URLs."
