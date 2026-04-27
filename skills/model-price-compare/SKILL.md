@@ -17,8 +17,8 @@ Produce a normalized price table for a user-supplied model list, using official 
 4. Capture at least these columns:
    - model
    - provider
-   - input cache hit, also called cached input or cache read
    - input cache miss, also called standard/base input
+   - input cache hit, also called cached input or cache read
    - output
    - multiplier for each price category
    - source URL
@@ -43,7 +43,7 @@ Produce a normalized price table for a user-supplied model list, using official 
 
 ## Output Style
 
-Keep the main table compact. Put detailed caveats under `Important Notes`, and source URLs under `Price URLs Visited`.
+Keep the main table compact. Put input cache miss before input cache hit in reports and CSV output. Put detailed caveats under `Important Notes`, and source URLs under `Price URLs Visited`.
 
 ## Open Source Hygiene
 
