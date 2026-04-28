@@ -12,8 +12,8 @@
 | DeepSeek V4 Pro | DeepSeek | ¥3.02 | 3.11x | ¥0.25 | 1.29x | ¥6.05 | 3.11x | 当前限时折扣价 |
 | Kimi K2.6 | Moonshot AI / Kimi | ¥6.60 | 6.79x | ¥1.11 | 5.71x | ¥27.80 | 14.29x | 标准 API |
 | Xiaomi MiMo-V2.5-Pro | Xiaomi MiMo | ¥6.95 | 7.14x | ¥1.39 | 7.14x | ¥20.85 | 10.71x | 海外 API，<=256K tokens 档 |
-| Gemini 3.1 Pro Preview | Google | ¥13.90 | 14.29x | ¥1.39 | 7.14x | ¥83.40 | 42.86x | 付费 Standard，<=200K prompts 档 |
 | GLM-5.1 | Z.AI | ¥9.73 | 10.00x | ¥1.81 | 9.29x | ¥30.58 | 15.71x | 标准 API |
+| Gemini 3.1 Pro Preview | Google | ¥13.90 | 14.29x | ¥1.39 | 7.14x | ¥83.40 | 42.86x | 付费 Standard，<=200K prompts 档 |
 | GPT-5.4 | OpenAI | ¥17.38 | 17.86x | ¥1.74 | 8.93x | ¥104.25 | 53.57x | 标准短上下文 API |
 | Claude Opus 4.6 | Anthropic | ¥34.75 | 35.71x | ¥3.48 | 17.86x | ¥173.75 | 89.29x | Claude API 全球路由 |
 | Claude Opus 4.7 | Anthropic | ¥34.75 | 35.71x | ¥3.48 | 17.86x | ¥173.75 | 89.29x | Claude API 全球路由 |

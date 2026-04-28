@@ -1,10 +1,10 @@
-deepseek v4 pro
-deepseek v4 flash
-gpt 5.4
-gpt 5.5
-claude opus 4.6
-claude opus 4.7
-glm 5.1
-小米 mimo 2.5 pro
-kimi 2.6
-gemini 3.1 pro
+DeepSeek V4 Pro
+DeepSeek V4 Flash
+GPT-5.4
+GPT-5.5
+Claude Opus 4.6
+Claude Opus 4.7
+GLM-5.1
+Xiaomi MiMo-V2.5-Pro
+Kimi K2.6
+Gemini 3.1 Pro Preview

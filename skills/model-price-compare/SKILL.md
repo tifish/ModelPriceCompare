@@ -11,10 +11,11 @@ Produce a normalized price table for a user-supplied model list, using official 
 
 ## Workflow
 
-1. Read the model list from the user prompt or a plain text file such as `models.txt`, one model per line.
-2. Browse or fetch current official provider pricing. Use `references/official-sources.md` for preferred URLs and provider-specific caveats.
-3. Normalize all token prices to USD per 1M tokens.
-4. Capture at least these columns:
+1. Read the model list from the user prompt or a plain text file such as `models.txt`, one model per line. Treat entries as user-provided aliases that may be incomplete, localized, or slightly inaccurate.
+2. Browse or fetch current official provider pricing and model docs. Use `references/official-sources.md` for preferred URLs and provider-specific caveats.
+3. Resolve each requested alias to the official model display name and model ID before pricing it. Use the corrected official name in the main `model` column and update `models.txt` to canonical names when writing reusable artifacts. If a correction is non-obvious, mention the original alias in notes; if multiple official models match, ask for clarification instead of guessing.
+4. Normalize all token prices to USD per 1M tokens.
+5. Capture at least these columns:
    - model
    - provider
    - input cache miss, also called standard/base input
@@ -23,9 +24,9 @@ Produce a normalized price table for a user-supplied model list, using official 
    - multiplier for each price category
    - source URL
    - notes
-5. Compute multipliers per category: divide each price by the cheapest nonzero price in the same column. Do not use one global baseline unless the user explicitly asks for it.
-6. Explain exclusions such as Batch, Flex, Priority, regional processing, data residency, cache writes, cache storage, session runtime, tool charges, limited-time discounts, or enterprise pricing.
-7. Write reusable artifacts when working in a repo:
+6. Compute multipliers per category: divide each price by the cheapest nonzero price in the same column. Do not use one global baseline unless the user explicitly asks for it.
+7. Explain exclusions such as Batch, Flex, Priority, regional processing, data residency, cache writes, cache storage, session runtime, tool charges, limited-time discounts, or enterprise pricing.
+8. Write reusable artifacts when working in a repo:
    - `models.txt` for the editable input list
    - `README.md` as the default English report when the comparison should be published as the project readme
    - `README.zh-CN.md` as the Simplified Chinese readme when the user wants a bilingual readme; put language-switch links near the top of both readmes
@@ -43,7 +44,7 @@ Produce a normalized price table for a user-supplied model list, using official 
 
 ## Output Style
 
-Keep the main table compact. Put input cache miss before input cache hit in reports and CSV output. Put detailed caveats under `Important Notes`, and source URLs under `Price URLs Visited`.
+Keep the main table compact. Put input cache miss before input cache hit in reports and CSV output, and sort rows by input cache miss price ascending. Put detailed caveats under `Important Notes`, and source URLs under `Price URLs Visited`.
 
 ## Open Source Hygiene
 
