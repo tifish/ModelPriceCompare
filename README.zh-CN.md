@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-生成日期：2026-04-26
+生成日期：2026-04-28
 
 所有价格统一为人民币约价 / 1M tokens。除提供方直接列出人民币价格的情况外，美元价格按 `1 USD = 6.95 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`；在本次模型列表中，DeepSeek V4 Flash 在缓存未命中输入、缓存命中输入、输出三个类别中都是基准。
 
@@ -15,6 +15,7 @@
 | GLM-5.1 | Z.AI | ¥9.73 | 10.00x | ¥1.81 | 9.29x | ¥30.58 | 15.71x | 标准 API |
 | Gemini 3.1 Pro Preview | Google | ¥13.90 | 14.29x | ¥1.39 | 7.14x | ¥83.40 | 42.86x | 付费 Standard，<=200K prompts 档 |
 | GPT-5.4 | OpenAI | ¥17.38 | 17.86x | ¥1.74 | 8.93x | ¥104.25 | 53.57x | 标准短上下文 API |
+| Claude Sonnet 4.6 | Anthropic | ¥20.85 | 21.43x | ¥2.09 | 10.71x | ¥104.25 | 53.57x | Claude API 全球路由 |
 | Claude Opus 4.6 | Anthropic | ¥34.75 | 35.71x | ¥3.48 | 17.86x | ¥173.75 | 89.29x | Claude API 全球路由 |
 | Claude Opus 4.7 | Anthropic | ¥34.75 | 35.71x | ¥3.48 | 17.86x | ¥173.75 | 89.29x | Claude API 全球路由 |
 | GPT-5.5 | OpenAI | ¥34.75 | 35.71x | ¥3.48 | 17.86x | ¥208.50 | 107.14x | 标准短上下文 API |
@@ -27,7 +28,7 @@
 - Kimi K2.6 使用官方 `kimi-k2.6` 价格并换算为人民币约价：缓存命中约 `¥1.11`、缓存未命中约 `¥6.60`、输出约 `¥27.80`；上下文长度为 `256K`，支持自动上下文缓存。
 - Gemini 3.1 Pro 使用官方 `gemini-3.1-pro-preview` 付费 Standard 档，且 prompt 不超过 `200K` tokens，换算为人民币约价：缓存命中约 `¥1.39`、输入约 `¥13.90`、输出约 `¥83.40`。超过 `200K` tokens 时，Google 列出的价格约为缓存命中 `¥2.78`、输入 `¥27.80`、输出 `¥125.10`；上下文缓存存储费约为 `¥31.28 / 1M tokens / 小时`。
 - OpenAI GPT-5.4 和 GPT-5.5 使用 Standard 短上下文价格。对超过 `272K` 输入 tokens 的请求，OpenAI 会对完整 session 按 `2x` 输入和 `1.5x` 输出计价；区域处理另加 `10%`。
-- Anthropic Claude 使用标准 Claude API 全球路由价格。缓存命中为基础输入价格的 `0.1x`；5 分钟缓存写入约 `¥43.44 / 1M tokens`，1 小时缓存写入约 `¥69.50 / 1M tokens`。US-only inference 另加 `1.1x`。Opus 4.7 使用新 tokenizer，同样固定文本可能多消耗最多 `35%` tokens。
+- Anthropic Claude 使用标准 Claude API 全球路由价格。缓存命中为基础输入价格的 `0.1x`；5 分钟缓存写入为基础输入价格的 `1.25x`，1 小时缓存写入为 `2x`。US-only inference 另加 `1.1x`。Sonnet 4.6 的官方模型 ID 为 `claude-sonnet-4-6`，完整 `1M` token 上下文窗口按标准价格计费。Opus 4.7 使用新 tokenizer，同样固定文本可能多消耗最多 `35%` tokens。
 - Z.AI 将 GLM-5.1 的 cached input storage 标为限时免费；本比较只纳入 cached input read 价格。
 - 除非特别说明，本比较不包含 Batch、Flex、Priority、fast mode、数据驻留、联网/工具调用费用、session runtime、企业折扣等变体。
 - 本次曾按请求尝试使用 `browser-use`，但本地 in-app browser runtime 因 app-server 路径缺失未能启动。价格核验仍通过官方网页检索完成，来源列在下方。
@@ -38,6 +39,7 @@
 - OpenAI GPT-5.4 model page: https://developers.openai.com/api/docs/models/gpt-5.4
 - OpenAI GPT-5.5 model page: https://developers.openai.com/api/docs/models/gpt-5.5
 - Anthropic pricing: https://platform.claude.com/docs/en/about-claude/pricing?939688b5_page=1&e45d281a_page=2
+- Anthropic models overview: https://platform.claude.com/docs/en/about-claude/models/overview
 - Anthropic Opus 4.7 update: https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-6
 - DeepSeek pricing: https://api-docs.deepseek.com/quick_start/pricing
 - DeepSeek V4 release note: https://api-docs.deepseek.com/news/news260424
