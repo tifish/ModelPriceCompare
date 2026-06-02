@@ -1,6 +1,6 @@
 # 模型 Token 价格比较（人民币）
 
-[English](README.md) | [中文](README.zh-CN.md)
+[English](model_price_comparison.md) | [中文](model_price_comparison.zh-CN.md)
 
 生成日期：2026-06-02
 

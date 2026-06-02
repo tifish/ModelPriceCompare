@@ -1,6 +1,6 @@
 # Model Token Price Comparison
 
-[English](README.md) | [中文](README.zh-CN.md)
+[English](model_price_comparison.md) | [中文](model_price_comparison.zh-CN.md)
 
 Generated: 2026-06-02
 
