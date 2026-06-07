@@ -2,7 +2,7 @@
 
 [English](model_price_comparison.md) | [中文](model_price_comparison.zh-CN.md)
 
-生成日期：2026-06-07
+生成日期：2026-06-08
 
 所有价格统一为人民币约价 / 1M tokens。除提供方直接列出人民币价格的情况外，美元价格按 `1 USD = 6.7764 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`；在本次模型列表中，DeepSeek V4 Flash 在缓存未命中输入、缓存命中输入、输出三个类别中都是基准。
 
@@ -24,7 +24,7 @@
 
 ## 重要说明
 
-- 汇率采用近似值 `1 USD = 6.7764 CNY`。该汇率取自 Exchange-Rates.org 在 `2026-06-06 18:40 UTC` 给出的 USD/CNY 汇率；实际账单以服务商结算币种和付款时汇率为准。
+- 汇率采用近似值 `1 USD = 6.7764 CNY`。该汇率取自 Exchange-Rates.org 在 `2026-06-07 18:45 UTC` 给出的 USD/CNY 汇率；实际账单以服务商结算币种和付款时汇率为准。
 - DeepSeek V4 Flash 和 V4 Pro 使用当前官方 `deepseek-v4-flash`、`deepseek-v4-pro` 价格。DeepSeek 还标注 `deepseek-chat` 和 `deepseek-reasoner` 作为 `deepseek-v4-flash` 兼容别名，将在 `2026-07-24 15:59 UTC` 后废弃。
 - Xiaomi MiMo-V2.5-Pro 使用官方海外 API 在北京时间 `2026-05-27 00:00` 生效的 V2.5 降价后价格：缓存命中 `$0.0036`、缓存未命中 `$0.435`、输出 `$0.87`。国内价格为缓存命中 `¥0.025`、缓存未命中 `¥3.00`、输出 `¥6.00`。缓存写入当前限时免费。
 - Kimi K2.6 使用官方 `kimi-k2.6` 价格：缓存命中 `$0.16`、缓存未命中 `$0.95`、输出 `$4.00`；上下文窗口为 `262,144` tokens，支持自动上下文缓存。
