@@ -2,7 +2,7 @@
 
 [English](model_price_comparison.md) | [中文](model_price_comparison.zh-CN.md)
 
-Generated: 2026-06-09
+Generated: 2026-06-10
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`; in this model set, DeepSeek V4 Flash is the baseline for cache-miss input, cache-hit input, and output.
 
