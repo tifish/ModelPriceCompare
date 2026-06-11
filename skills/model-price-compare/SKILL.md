@@ -1,6 +1,6 @@
 ---
 name: model-price-compare
-description: Compare current LLM API token prices across providers using official pricing pages. Use when asked to compare model costs, input/cache-hit/cache-miss/output token prices, price multipliers, model price source URLs, or to update a reusable model list/report for OpenAI, Anthropic/Claude, DeepSeek, Z.AI/GLM, Google Gemini, Moonshot AI/Kimi, Xiaomi MiMo, or similar providers.
+description: Compare current LLM API token prices across providers using official pricing pages. Use when asked to compare model costs, input/cache-hit/cache-miss/output token prices, price multipliers, model price source URLs, discover newly listed priced models, or update a reusable model list/report for OpenAI, Anthropic/Claude, DeepSeek, Z.AI/GLM, Google Gemini, Moonshot AI/Kimi, Xiaomi MiMo, or similar providers.
 ---
 
 # Model Price Compare
@@ -13,9 +13,10 @@ Produce a normalized price table for a user-supplied model list, using official 
 
 1. Read the model list from the user prompt or a plain text file such as `models.txt`, one model per line. Treat entries as user-provided aliases that may be incomplete, localized, or slightly inaccurate.
 2. Browse or fetch current official provider pricing and model docs. Use `references/official-sources.md` for preferred URLs and provider-specific caveats.
-3. Resolve each requested alias to the official model display name and model ID before pricing it. Use the corrected official name in the main `model` column and update `models.txt` to canonical names when writing reusable artifacts. If a correction is non-obvious, mention the original alias in notes; if multiple official models match, ask for clarification instead of guessing.
-4. Normalize all token prices to USD per 1M tokens.
-5. Capture at least these columns:
+3. When updating a reusable report, scan each visited official pricing page for newly listed models that are not in the input list. Automatically add a new model only when it is a generally available or preview API model from the same provider family, has explicit token prices for the main comparison columns, and can be mapped to an official model ID without ambiguity. Skip embeddings, moderation, image/audio/video-only models, deprecated models, marketplace-only SKUs, regional-only variants, enterprise/private models, and aliases unless the user explicitly asks for them. Note any skipped discoveries that look relevant but are excluded.
+4. Resolve each requested or newly discovered alias to the official model display name and model ID before pricing it. Use the corrected official name in the main `model` column and update `models.txt` to canonical names when writing reusable artifacts. If a correction is non-obvious, mention the original alias in notes; if multiple official models match, ask for clarification instead of guessing.
+5. Normalize all token prices to USD per 1M tokens.
+6. Capture at least these columns:
    - model
    - provider
    - input cache miss, also called standard/base input
@@ -24,9 +25,9 @@ Produce a normalized price table for a user-supplied model list, using official 
    - multiplier for each price category
    - source URL
    - notes
-6. Compute multipliers per category: divide each price by the cheapest nonzero price in the same column. Do not use one global baseline unless the user explicitly asks for it.
-7. Explain exclusions such as Batch, Flex, Priority, regional processing, data residency, cache writes, cache storage, session runtime, tool charges, limited-time discounts, or enterprise pricing.
-8. Write reusable artifacts when working in a repo:
+7. Compute multipliers per category: divide each price by the cheapest nonzero price in the same column. Do not use one global baseline unless the user explicitly asks for it.
+8. Explain exclusions such as Batch, Flex, Priority, regional processing, data residency, cache writes, cache storage, session runtime, tool charges, limited-time discounts, or enterprise pricing.
+9. Write reusable artifacts when working in a repo:
    - `models.txt` for the editable input list
    - `README.md` as the default English report when the comparison should be published as the project readme
    - `README.zh-CN.md` as the Simplified Chinese readme when the user wants a bilingual readme; put language-switch links near the top of both readmes
@@ -40,6 +41,7 @@ Produce a normalized price table for a user-supplied model list, using official 
 - Prices change often; always verify live/current pages instead of relying on previous runs.
 - For OpenAI model and pricing questions, use official OpenAI docs only.
 - If an official page lists a limited-time, regional, or context-length tiered price, use the current effective price for the main comparison and put regular/alternate prices in notes.
+- If an official page exposes a new eligible model during an update, add it to `models.txt`, the CSV, and the Markdown reports in the same run instead of waiting for the user to name it.
 - If a requested model cannot be found on an official page, mark it `unverified` instead of inventing a price.
 
 ## Output Style
