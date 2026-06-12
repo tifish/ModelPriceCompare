@@ -5,7 +5,7 @@
 | 厂商 | 官方价格 URL | 模型/规格 URL 示例 | 说明 |
 |---|---|---|---|
 | OpenAI | https://developers.openai.com/api/docs/pricing | https://developers.openai.com/api/docs/models/gpt-5.4, https://developers.openai.com/api/docs/models/gpt-5.5 | 除非用户要求 Batch、Flex 或 Priority，否则使用 Standard 价格。GPT-5.4/GPT-5.5 的长上下文提示超过 272K input tokens 时，说明完整 session 的长上下文加价。 |
-| Anthropic | https://platform.claude.com/docs/en/about-claude/pricing | https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-6 | 除非用户要求 data residency 或云市场价格，否则使用 Claude API global routing。Cache hit 对应 Cache Hits & Refreshes。 |
+| Anthropic | https://platform.claude.com/docs/en/about-claude/pricing | https://platform.claude.com/docs/en/about-claude/models/overview | 除非用户要求 data residency 或云市场价格，否则使用 Claude API global routing。Cache hit 对应 Cache Hits & Refreshes。新 Claude 家族只要官方 pricing 明确定价就纳入；limited availability 模型保留但必须在备注中说明。 |
 | DeepSeek | https://api-docs.deepseek.com/quick_start/pricing | https://api-docs.deepseek.com/news/news260424 | 检查是否存在有效的限时折扣；页面同时显示当前有效价和常规价时，两者都要报告。 |
 | Z.AI | https://docs.z.ai/guides/overview/pricing | https://docs.z.ai/guides/llm/glm-5.1 | 使用 USD / 1M tokens。Cached Input Storage 与 Cached Input 分开计费，应写入备注，不要合并进 token 单价。 |
 | Google Gemini | https://ai.google.dev/gemini-api/docs/pricing | https://ai.google.dev/gemini-api/docs/models | 除非用户要求 Batch、Flex 或 Priority，否则使用 Standard paid tier。提示长度分层和 cache storage 小时费用要单独说明。 |

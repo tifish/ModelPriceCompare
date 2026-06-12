@@ -3,8 +3,11 @@ DeepSeek V4 Flash
 GPT-5.4
 GPT-5.5
 Claude Opus 4.8
+Claude Fable 5
+Claude Mythos 5
 Claude Sonnet 4.6
 GLM-5.1
 Xiaomi MiMo-V2.5-Pro
+Kimi K2.6
 Kimi K2.7 Code
 Gemini 3.1 Pro Preview
