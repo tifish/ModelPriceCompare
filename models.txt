@@ -1,13 +1,33 @@
-DeepSeek V4 Pro
 DeepSeek V4 Flash
+DeepSeek V4 Pro
+Xiaomi MiMo-V2.5
+Xiaomi MiMo-V2.5-Pro
 GPT-5.4
+GPT-5.4 Mini
+GPT-5.4 Nano
 GPT-5.5
+Claude Haiku 4.5
+Claude Sonnet 4.5
+Claude Sonnet 4.6
+Claude Opus 4.5
+Claude Opus 4.6
+Claude Opus 4.7
 Claude Opus 4.8
 Claude Fable 5
 Claude Mythos 5
-Claude Sonnet 4.6
 GLM-5.1
-Xiaomi MiMo-V2.5-Pro
+GLM-5
+GLM-5-Turbo
+GLM-4.7
+GLM-4.7-FlashX
+GLM-4.6
+GLM-4.5
+GLM-4.5-X
+GLM-4.5-Air
+GLM-4.5-AirX
+Kimi K2.5
 Kimi K2.6
 Kimi K2.7 Code
+Gemini 3.5 Flash
+Gemini 3.1 Flash-Lite
 Gemini 3.1 Pro Preview
