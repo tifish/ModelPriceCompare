@@ -1,55 +1,55 @@
 ---
 name: model-price-compare
-description: Compare current LLM API token prices across providers using official pricing pages. Use when asked to compare model costs, input/cache-hit/cache-miss/output token prices, price multipliers, model price source URLs, discover newly listed priced models, or update a reusable model list/report for OpenAI, Anthropic/Claude, DeepSeek, Z.AI/GLM, Google Gemini, Moonshot AI/Kimi, Xiaomi MiMo, or similar providers.
+description: 使用官方价格页面比较当前 LLM API token 价格。适用于比较模型成本、输入/缓存未命中/缓存命中/输出 token 单价、价格倍率、模型价格来源 URL，发现官方价格页新增且已明确定价的模型，或维护 OpenAI、Anthropic/Claude、DeepSeek、Z.AI/GLM、Google Gemini、Moonshot AI/Kimi、小米 MiMo 等厂商的可复用模型列表和报告。
 ---
 
-# Model Price Compare
+# 模型价格比较
 
-## Overview
+## 概览
 
-Produce a normalized price table for a user-supplied model list, using official pricing pages and current public rates. Record source URLs, caveats, and model-list inputs so the comparison can be repeated and audited.
+为用户给定的模型列表生成标准化价格表，价格必须来自官方价格页面和当前公开费率。记录来源 URL、限制说明和模型列表输入，保证比较结果可以复查和重复生成。
 
-## Workflow
+## 工作流
 
-1. Read the model list from the user prompt or a plain text file such as `models.txt`, one model per line. Treat entries as user-provided aliases that may be incomplete, localized, or slightly inaccurate.
-2. Browse or fetch current official provider pricing and model docs. Use `references/official-sources.md` for preferred URLs and provider-specific caveats.
-3. When updating a reusable report, scan each visited official pricing page for newly listed models that are not in the input list. Automatically add a new model only when it is a generally available or preview API model from the same provider family, has explicit token prices for the main comparison columns, and can be mapped to an official model ID without ambiguity. Skip embeddings, moderation, image/audio/video-only models, deprecated models, marketplace-only SKUs, regional-only variants, enterprise/private models, and aliases unless the user explicitly asks for them. Note any skipped discoveries that look relevant but are excluded.
-4. Resolve each requested or newly discovered alias to the official model display name and model ID before pricing it. Use the corrected official name in the main `model` column and update `models.txt` to canonical names when writing reusable artifacts. If a correction is non-obvious, mention the original alias in notes; if multiple official models match, ask for clarification instead of guessing.
-5. Normalize all token prices to USD per 1M tokens.
-6. Capture at least these columns:
+1. 从用户提示或 `models.txt` 等纯文本文件读取模型列表，每行一个模型。把条目视为用户提供的别名；它们可能不完整、带本地化名称，或有轻微误写。
+2. 浏览或抓取当前官方厂商价格页和模型文档。优先使用 `references/official-sources.md` 中的 URL 和厂商注意事项。
+3. 更新可复用报告时，扫描每个已访问的官方价格页面，查找输入列表中尚未出现的新模型。只有同时满足以下条件时才自动加入：属于同一厂商系列的正式或预览 API 模型，主要比较列有明确 token 价格，并且能无歧义映射到官方模型 ID。跳过 embeddings、moderation、仅图像/音频/视频模型、已废弃模型、仅市场渠道 SKU、仅区域变体、企业/私有模型和别名，除非用户明确要求。对看起来相关但被排除的新发现做简短说明。
+4. 在定价前，把每个请求模型或新发现别名解析为官方显示名和模型 ID。主表 `model` 列使用修正后的官方名称；写入可复用产物时，把 `models.txt` 更新为规范名称。非显然的更正要在备注中说明原始别名；如果多个官方模型都可能匹配，先向用户澄清，不要猜。
+5. 将所有 token 价格标准化为 USD / 1M tokens。
+6. 至少记录以下字段；CSV 可继续使用英文列名，中文 Markdown 报告可以翻译表头，但含义必须一致：
    - model
    - provider
-   - input cache miss, also called standard/base input
-   - input cache hit, also called cached input or cache read
+   - input cache miss，也就是 standard/base input
+   - input cache hit，也就是 cached input 或 cache read
    - output
-   - multiplier for each price category
+   - 每个价格类别的 multiplier
    - source URL
    - notes
-7. Compute multipliers per category: divide each price by the cheapest nonzero price in the same column. Do not use one global baseline unless the user explicitly asks for it.
-8. Explain exclusions such as Batch, Flex, Priority, regional processing, data residency, cache writes, cache storage, session runtime, tool charges, limited-time discounts, or enterprise pricing.
-9. Write reusable artifacts when working in a repo:
-   - `models.txt` for the editable input list
-   - `README.md` as the default English report when the comparison should be published as the project readme
-   - `README.zh-CN.md` as the Simplified Chinese readme when the user wants a bilingual readme; put language-switch links near the top of both readmes
-   - `model_price_comparison.md` for the human-readable report
-   - `model_price_comparison.zh-CN.md` for the Simplified Chinese report when the user wants bilingual output; localize the currency when requested, state the exchange rate and source, and keep multipliers tied to the underlying normalized prices
-   - `model_price_comparison.csv` for spreadsheet-friendly data
+7. 分类别计算倍率：每个价格除以同一列中最便宜的非零价格。除非用户明确要求，不要使用全局统一基准。
+8. 说明排除项，例如 Batch、Flex、Priority、区域处理、数据驻留、cache writes、cache storage、session runtime、tool charges、限时折扣或企业价格。
+9. 在仓库中维护可复用产物时，按现有约定同步：
+   - `models.txt`：可编辑的输入模型列表
+   - `README.md`：需要以项目 readme 发布时的默认英文报告
+   - `README.zh-CN.md`：需要双语 readme 时的简体中文版本；在两个 readme 顶部附近放语言切换链接
+   - `model_price_comparison.md`：可读的英文报告
+   - `model_price_comparison.zh-CN.md`：需要双语输出时的简体中文报告；用户要求本地化货币时，注明汇率和来源，并让倍率仍基于标准化价格计算
+   - `model_price_comparison.csv`：便于电子表格使用的数据
 
-## Source Rules
+## 来源规则
 
-- Prefer official provider docs. Use third-party sources only to discover the official page, and do not cite them as the basis for prices.
-- Prices change often; always verify live/current pages instead of relying on previous runs.
-- For OpenAI model and pricing questions, use official OpenAI docs only.
-- If an official page lists a limited-time, regional, or context-length tiered price, use the current effective price for the main comparison and put regular/alternate prices in notes.
-- If an official page exposes a new eligible model during an update, add it to `models.txt`, the CSV, and the Markdown reports in the same run instead of waiting for the user to name it.
-- If a requested model cannot be found on an official page, mark it `unverified` instead of inventing a price.
+- 优先使用官方厂商文档。第三方来源只能用于发现官方页面，不要把第三方页面作为价格依据引用。
+- 价格变化频繁；每次都要实时验证当前页面，不要依赖以前的运行结果。
+- 对 OpenAI 模型和价格问题，只使用 OpenAI 官方文档。
+- 如果官方页面列出限时、区域或上下文长度分层价格，主比较使用当前有效价格，并在备注中写明常规/替代价格。
+- 如果更新过程中官方页面出现新的合格模型，要在同一次运行中加入 `models.txt`、CSV 和 Markdown 报告，不要等用户点名。
+- 如果在官方页面找不到请求模型，把它标记为 `unverified`，不要编造价格。
 
-## Output Style
+## 输出风格
 
-Keep the main table compact. Put input cache miss before input cache hit in reports and CSV output, and sort rows by input cache miss price ascending. Put detailed caveats under `Important Notes`, and source URLs under `Price URLs Visited`.
+默认使用简体中文与用户沟通，除非用户明确要求英文或双语。主表保持紧凑；报告和 CSV 中把 input cache miss 放在 input cache hit 前，并按 input cache miss 价格升序排序。详细限制写在 `Important Notes` 或中文报告的 `重要说明` 下，来源 URL 写在 `Price URLs Visited` 或中文报告的 `已访问价格 URL` 下。
 
-## Open Source Hygiene
+## 开源卫生
 
-- Do not include local absolute paths, private API keys, account IDs, cookies, browser history, or workspace-specific secrets in generated skill files.
-- Keep reusable provider source mappings in `references/official-sources.md`, not in the task report.
-- Treat generated comparison files as examples or outputs, not as canonical evergreen pricing data.
+- 不要在生成的 skill 文件中包含本地绝对路径、私有 API key、账号 ID、cookie、浏览器历史或工作区专属密钥。
+- 可复用厂商来源映射放在 `references/official-sources.md`，不要塞进单次任务报告。
+- 把生成的比较文件视为示例或输出，不要当作永久准确的价格数据。

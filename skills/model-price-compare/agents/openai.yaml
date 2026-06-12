@@ -1,4 +1,4 @@
 interface:
-  display_name: "Model Price Compare"
-  short_description: "Compare LLM token prices and add newly listed priced models."
-  default_prompt: "Compare token prices for these models using official pricing pages. Include cached input, uncached input, output, multipliers, source URLs, and add newly listed eligible models found on pricing pages."
+  display_name: "模型价格比较"
+  short_description: "比较 LLM token 价格，并加入官方价格页新增的已定价模型。"
+  default_prompt: "使用官方价格页面比较这些模型的 token 价格。请包含缓存输入、非缓存输入、输出、倍率、来源 URL，并把价格页中发现的新增合格模型加入结果。"
