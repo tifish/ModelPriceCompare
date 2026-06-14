@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-Generated: 2026-06-14
+Generated: 2026-06-15
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`; in this model set, GLM-4.7-FlashX is the cache-miss input baseline, while DeepSeek V4 Flash and Xiaomi MiMo-V2.5 share the cache-hit input and output baselines.
 
@@ -49,7 +49,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 
 ## Important Notes
 
-- Newly added eligible priced models in this run: GPT-5.3 Codex and Gemini 3 Flash Preview.
+- Newly added eligible priced models in this run: none.
 - Excluded discovered entries: OpenAI chat-latest alias, OpenAI pro/cyber rows without complete comparable cache prices, OpenAI image/audio/video/transcription/deep-research/tool rows, deprecated or retired Claude rows, Z.AI free/text rows without cached-input prices, Z.AI vision/image/audio/video/tool/agent rows, Gemini live/audio/TTS/image-generation models, Kimi Moonshot V1 rows without cache-hit prices, Kimi top-up voucher promotion, Xiaomi MiMo legacy aliases, and image/audio/video/tool-only pricing.
 - DeepSeek V4 Flash and V4 Pro use the current official `deepseek-v4-flash` and `deepseek-v4-pro` prices. DeepSeek also notes that `deepseek-chat` and `deepseek-reasoner` are compatibility aliases for `deepseek-v4-flash` until deprecation on `2026-07-24 15:59 UTC`.
 - Xiaomi MiMo-V2.5 and MiMo-V2.5-Pro use the official overseas API V2.5 prices effective `2026-05-27 00:00` Beijing time. Domestic pricing is noted in the CSV; cache writing is currently free for a limited time.
@@ -70,6 +70,6 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 - Kimi K2.6 pricing: https://platform.kimi.ai/docs/pricing/chat-k26
 - Kimi K2.7 Code pricing: https://platform.kimi.ai/docs/pricing/chat-k27-code
 - Kimi promotion: https://platform.kimi.ai/docs/pricing/promotion
-- Xiaomi MiMo pricing: https://platform.xiaomimimo.com/docs/en-US/price/pay-as-you-go
+- Xiaomi MiMo pricing: https://mimo.mi.com/docs/en-US/price/pay-as-you-go
 - Gemini API pricing: https://ai.google.dev/gemini-api/docs/pricing
 - Claude models overview: https://platform.claude.com/docs/en/about-claude/models/overview

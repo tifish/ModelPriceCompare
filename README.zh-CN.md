@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-生成日期：2026-06-14
+生成日期：2026-06-15
 
 所有价格统一为人民币约价 / 1M tokens。除提供方直接列出人民币价格的情况外，美元价格按 `1 USD = 6.7674 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`；在本次模型列表中，GLM-4.7-FlashX 是缓存未命中输入基准，DeepSeek V4 Flash 和 Xiaomi MiMo-V2.5 共同作为缓存命中输入与输出基准。
 
@@ -49,9 +49,9 @@
 
 ## 重要说明
 
-- 本次新增的合格明确定价模型：GPT-5.3 Codex、Gemini 3 Flash Preview。
+- 本次新增的合格明确定价模型：无。
 - 已排除的发现项：OpenAI chat-latest 别名、缺少完整可比缓存价格的 OpenAI pro/cyber 行、OpenAI 图像/音频/视频/转录/deep research/工具行、已废弃或退役 Claude 行、Z.AI 免费或缺少缓存命中价格的文本行、Z.AI 视觉/图像/音频/视频/工具/agent 行、Gemini live/audio/TTS/图像生成模型、缺少缓存命中价格的 Kimi Moonshot V1 行、Kimi 充值代金券活动、小米 MiMo 旧别名，以及仅图像/音频/视频/工具计费项。
-- 汇率采用近似值 `1 USD = 6.7674 CNY`。该汇率取自 Exchange-Rates.org 在 `2026-06-13 18:30 UTC` 给出的 USD/CNY 汇率；实际账单以服务商结算币种和付款时汇率为准。
+- 汇率采用近似值 `1 USD = 6.7674 CNY`。该汇率取自 Exchange-Rates.org 在 `2026-06-14 18:55 UTC` 给出的 USD/CNY 汇率；实际账单以服务商结算币种和付款时汇率为准。
 - DeepSeek V4 Flash 和 V4 Pro 使用当前官方 `deepseek-v4-flash`、`deepseek-v4-pro` 价格。DeepSeek 还标注 `deepseek-chat` 和 `deepseek-reasoner` 作为 `deepseek-v4-flash` 兼容别名，将在 `2026-07-24 15:59 UTC` 后废弃。
 - Xiaomi MiMo-V2.5 和 MiMo-V2.5-Pro 使用官方海外 API 在北京时间 `2026-05-27 00:00` 生效的 V2.5 降价后价格。国内价格已写入 CSV 备注；缓存写入当前限时免费。
 - Kimi K2.5、K2.6、K2.7 Code 使用各自官方模型价格页；上下文窗口均为 `262,144` tokens，并支持自动上下文缓存。当前 Kimi K2.7 Code 发布期充值代金券活动不折入 token 单价。
@@ -71,7 +71,7 @@
 - Kimi K2.6 pricing: https://platform.kimi.ai/docs/pricing/chat-k26
 - Kimi K2.7 Code pricing: https://platform.kimi.ai/docs/pricing/chat-k27-code
 - Kimi promotion: https://platform.kimi.ai/docs/pricing/promotion
-- Xiaomi MiMo pricing: https://platform.xiaomimimo.com/docs/en-US/price/pay-as-you-go
+- Xiaomi MiMo pricing: https://mimo.mi.com/docs/en-US/price/pay-as-you-go
 - Gemini API pricing: https://ai.google.dev/gemini-api/docs/pricing
 - Claude models overview: https://platform.claude.com/docs/en/about-claude/models/overview
 - USD/CNY reference: https://www.exchange-rates.org/converter/usd-cny
