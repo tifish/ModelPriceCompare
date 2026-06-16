@@ -16,6 +16,7 @@ Claude Opus 4.7
 Claude Opus 4.8
 Claude Fable 5
 Claude Mythos 5
+GLM-5.2
 GLM-5.1
 GLM-5
 GLM-5-Turbo
@@ -29,6 +30,7 @@ GLM-4.5-AirX
 Kimi K2.5
 Kimi K2.6
 Kimi K2.7 Code
+Kimi K2.7 Code HighSpeed
 Gemini 3 Flash Preview
 Gemini 3.5 Flash
 Gemini 3.1 Flash-Lite
