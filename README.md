@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-Generated: 2026-06-22
+Generated: 2026-06-23
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`; in this model set, GLM-4.7-FlashX is the cache-miss input baseline, while DeepSeek V4 Flash and Xiaomi MiMo-V2.5 share the cache-hit input and output baselines.
 
