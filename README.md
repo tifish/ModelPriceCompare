@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-Generated: 2026-07-05
+Generated: 2026-07-06
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`; in this model set, DeepSeek V4 Flash and Xiaomi MiMo-V2.5 share the cache-hit input, cache-miss input, and output baselines.
 
@@ -36,8 +36,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Claude Mythos 5 | Anthropic | $1.00 | 357.14x | $10.00 | 71.43x | $50.00 | 178.57x | Standard Claude API global routing limited availability |
 ## Important Notes
 
-- Newly added eligible priced models in this run: Claude Sonnet 5.
-- Updated price rows in this run: OpenAI GPT-5.4, GPT-5.4 Mini, GPT-5.4 Nano, and GPT-5.5 now use direct Standard prices instead of Batch/Flex-equivalent values.
+- No newly added eligible priced models or token price changes were found in this run.
 - User-requested version floors: exclude Z.AI/GLM models below 5, Claude models below 4.7, Google Gemini models below 3.1, OpenAI models below 5.4, and Kimi models below 2.6.
 - Excluded discovered entries: OpenAI chat-latest alias, OpenAI gpt-5.3-codex below the OpenAI version floor, OpenAI pro/cyber rows without complete comparable cache prices, OpenAI image/audio/video/transcription/deep-research/tool rows, deprecated or retired Claude rows, Claude Mythos Preview invitation-only row without a separate pricing-table entry, Z.AI free/text rows without cached-input prices, Z.AI vision/image/audio/video/tool/agent rows, Gemini live/audio/TTS/image-generation models, Kimi Moonshot V1 rows without cache-hit prices, Kimi promotions and vouchers, deprecated Xiaomi MiMo legacy names, and image/audio/video/tool-only pricing.
 - DeepSeek V4 Flash and V4 Pro use the current official `deepseek-v4-flash` and `deepseek-v4-pro` prices. DeepSeek also notes that `deepseek-chat` and `deepseek-reasoner` are compatibility aliases for `deepseek-v4-flash` until deprecation on `2026-07-24 15:59 UTC`.
