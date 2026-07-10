@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-生成日期：2026-07-10
+生成日期：2026-07-11
 
 所有价格统一为人民币约价 / 1M tokens。除提供方直接列出人民币价格的情况外，美元价格按 `1 USD = 6.7886 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`；在本次模型列表中，DeepSeek V4 Flash 和 Xiaomi MiMo-V2.5 共同作为缓存命中输入、缓存未命中输入与输出基准。
 
@@ -42,7 +42,7 @@
 | Claude Mythos 5 | Anthropic | ¥6.79 | 357.14x | ¥67.89 | 71.43x | ¥339.43 | 178.57x | Claude API 全球路由，limited availability |
 ## 重要说明
 
-- 本次新增的合格明确定价模型：GPT-5.6 Luna、GPT-5.6 Terra 和 GPT-5.6 Sol。
+- 本次没有新增的合格明确定价模型；GPT-5.6 Luna、GPT-5.6 Terra 和 GPT-5.6 Sol 继续保留在维护列表中。
 - 用户指定的版本下限：排除 5 以下的 Z.AI/GLM 模型、4.7 以下的 Claude 模型、3.1 以下的 Google Gemini 模型、5.4 以下的 OpenAI 模型，以及 2.6 以下的 Kimi 模型。
 - 已排除的发现项：OpenAI chat-latest 别名、低于 OpenAI 版本下限的 gpt-5.3-codex、缺少完整可比缓存价格的 OpenAI pro/cyber 行、OpenAI 图像/音频/视频/转录/deep research/工具行、已废弃或退役 Claude 行、没有单独价格表行的邀请制 Claude Mythos Preview、Z.AI 免费或缺少缓存命中价格的文本行、Z.AI 视觉/图像/音频/视频/工具/agent 行、Gemini live/audio/TTS/图像生成模型、缺少缓存命中价格的 Kimi Moonshot V1 行、Kimi 促销和代金券、已退役的小米 MiMo V2 旧模型名，以及仅图像/音频/视频/工具计费项。
 - 汇率采用近似值 `1 USD = 6.7886 CNY`。该汇率取自 Federal Reserve H.10 current release 中 `2026-07-02` 的 CHINA, P.R. YUAN 数据，发布时间为 `2026-07-06`；实际账单以服务商结算币种和付款时汇率为准。
