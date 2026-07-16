@@ -21,6 +21,7 @@ GLM-5-Turbo
 Kimi K2.6
 Kimi K2.7 Code
 Kimi K2.7 Code HighSpeed
+Kimi K3
 Gemini 3.5 Flash
 Gemini 3.1 Flash-Lite
 Gemini 3.1 Pro Preview
