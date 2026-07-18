@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-Generated: 2026-07-18
+Generated: 2026-07-19
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`; in this model set, DeepSeek V4 Flash and Xiaomi MiMo-V2.5 share the cache-hit input, cache-miss input, and output baselines.
 
