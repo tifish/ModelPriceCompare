@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-Generated: 2026-07-24
+Generated: 2026-07-25
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`; in this model set, DeepSeek V4 Flash and Xiaomi MiMo-V2.5 share the cache-hit input, cache-miss input, and output baselines.
 
@@ -38,6 +38,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | GPT-5.6 Sol (short context) | OpenAI | $0.50 | 178.57x | $5.00 | 35.71x | $30.00 | 107.14x | Standard API <=272K input tokens |
 | Claude Opus 4.7 | Anthropic | $0.50 | 178.57x | $5.00 | 35.71x | $25.00 | 89.29x | Standard Claude API global routing |
 | Claude Opus 4.8 | Anthropic | $0.50 | 178.57x | $5.00 | 35.71x | $25.00 | 89.29x | Standard Claude API global routing |
+| Claude Opus 5 | Anthropic | $0.50 | 178.57x | $5.00 | 35.71x | $25.00 | 89.29x | Standard Claude API global routing |
 | GPT-5.5 (short context) | OpenAI | $0.50 | 178.57x | $5.00 | 35.71x | $30.00 | 107.14x | Standard API <=272K input tokens |
 | GPT-5.5 (long context) | OpenAI | $1.00 | 357.14x | $10.00 | 71.43x | $45.00 | 160.71x | Standard API >272K input tokens |
 | GPT-5.6 Sol (long context) | OpenAI | $1.00 | 357.14x | $10.00 | 71.43x | $45.00 | 160.71x | Standard API >272K input tokens |
@@ -45,7 +46,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Claude Mythos 5 | Anthropic | $1.00 | 357.14x | $10.00 | 71.43x | $50.00 | 178.57x | Standard Claude API global routing limited availability |
 ## Important Notes
 
-- Added the newly eligible `gemini-3.6-flash` model from Google's official Standard paid pricing table; Gemini 3.5 Flash-Lite, GPT-5.6 Luna, GPT-5.6 Terra, GPT-5.6 Sol, and Kimi K3 remain in the maintained list.
+- Added the newly eligible `claude-opus-5` model from Anthropic's official current-model and pricing tables; other maintained model prices are unchanged.
 - User-requested version floors: exclude Z.AI/GLM models below 5, Claude models below 4.7, Google Gemini models below 3.1, OpenAI models below 5.4, and Kimi models below 2.6.
 - Excluded discovered entries: OpenAI chat-latest alias, OpenAI gpt-5.5-pro without cache prices, OpenAI pro/cyber rows without complete comparable cache prices, OpenAI image/audio/video/transcription/deep-research/tool rows, deprecated or retired Claude rows, Claude Mythos Preview invitation-only row without a separate pricing-table entry, Z.AI free/text rows without cached-input prices, Z.AI vision/image/audio/video/tool/agent rows, Gemini Omni Flash Preview without a comparable cache-hit text price, Gemini 3 Flash Preview below the Gemini version floor, Gemini live/audio/TTS/image-generation models, Kimi Moonshot V1 rows without cache-hit prices, Kimi promotions and vouchers, deprecated Xiaomi MiMo legacy names, and image/audio/video/tool-only pricing.
 - USD/CNY reference rate for the Chinese README is `1 USD = 6.7760 CNY`, from the Federal Reserve H.10 current release for `2026-07-17`, published `2026-07-20`.
@@ -54,7 +55,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 - Kimi K3, K2.6, K2.7 Code, and K2.7 Code HighSpeed use their official per-model pricing pages and support automatic context caching. Kimi K3 has a `1,048,576` token context window; the K2.x models have `262,144` tokens. Promotions and vouchers are excluded from token unit prices.
 - Gemini 3.1 Flash-Lite, Gemini 3.5 Flash-Lite, Gemini 3.5 Flash, and Gemini 3.6 Flash use official Standard paid prices. Gemini 3.1 Pro uses the official `gemini-3.1-pro-preview` paid Standard tier, split into separate rows for prompts up to `200K` tokens and prompts over `200K` tokens. Gemini cache storage, Batch, Flex, Priority, Google Search, Maps grounding, live, TTS, and image-generation charges are excluded.
 - OpenAI GPT-5.4, GPT-5.5, and GPT-5.6 use direct Standard pricing. GPT-5.4, GPT-5.5, GPT-5.6 Luna, GPT-5.6 Terra, and GPT-5.6 Sol base rows are split into short-context and long-context rows at the `272K` input-token threshold; GPT-5.4 Mini and Nano list only short-context Standard pricing. Batch, Flex, and Priority variants are excluded. Regional processing adds a `10%` uplift.
-- Anthropic Claude prices above use the standard Claude API with global routing. Claude Sonnet 5 uses introductory pricing through `2026-08-31`; standard pricing starts `2026-09-01`. Claude Fable 5 is generally available; Claude Mythos 5 is limited availability through Project Glasswing. Cache writes, US-only inference, cloud marketplace pricing, and fast mode premiums are not folded into the main table. Opus 4.7 and later Opus models, Claude Fable 5, Claude Mythos 5, and Claude Sonnet 5 use newer tokenizers.
+- Anthropic Claude prices above use the standard Claude API with global routing. Claude Opus 5 is generally available with the official API ID `claude-opus-5`, a `1M` token context window, and `128K` max output. Claude Sonnet 5 uses introductory pricing through `2026-08-31`; standard pricing starts `2026-09-01`. Claude Fable 5 is generally available; Claude Mythos 5 is limited availability through Project Glasswing. Cache writes, US-only inference, cloud marketplace pricing, and fast mode premiums are not folded into the main table. Opus 4.7 and later Opus models, Claude Fable 5, Claude Mythos 5, and Claude Sonnet 5 use newer tokenizers.
 - Z.AI lists cached input storage as limited-time free for the included GLM text models; only cached input read price is included in the comparison.
 - Unless noted, Batch, Flex, Priority, fast mode, data residency, web/tool charges, session runtime, cache storage, cache writes, free tiers, promotions, vouchers, and provider-specific enterprise discounts are excluded.
 

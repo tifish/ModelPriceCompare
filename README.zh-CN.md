@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-生成日期：2026-07-24
+生成日期：2026-07-25
 
 所有价格统一为人民币约价 / 1M tokens。除提供方直接列出人民币价格的情况外，美元价格按 `1 USD = 6.7760 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`；在本次模型列表中，DeepSeek V4 Flash 和 Xiaomi MiMo-V2.5 共同作为缓存命中输入、缓存未命中输入与输出基准。
 
@@ -38,6 +38,7 @@
 | GPT-5.6 Sol （短上下文） | OpenAI | ¥3.39 | 178.57x | ¥33.88 | 35.71x | ¥203.28 | 107.14x | 标准 API，输入 <=272K tokens |
 | Claude Opus 4.7 | Anthropic | ¥3.39 | 178.57x | ¥33.88 | 35.71x | ¥169.40 | 89.29x | Claude API 全球路由 |
 | Claude Opus 4.8 | Anthropic | ¥3.39 | 178.57x | ¥33.88 | 35.71x | ¥169.40 | 89.29x | Claude API 全球路由 |
+| Claude Opus 5 | Anthropic | ¥3.39 | 178.57x | ¥33.88 | 35.71x | ¥169.40 | 89.29x | Claude API 全球路由 |
 | GPT-5.5 （短上下文） | OpenAI | ¥3.39 | 178.57x | ¥33.88 | 35.71x | ¥203.28 | 107.14x | 标准 API，输入 <=272K tokens |
 | GPT-5.5 （长上下文） | OpenAI | ¥6.78 | 357.14x | ¥67.76 | 71.43x | ¥304.92 | 160.71x | 标准 API，输入 >272K tokens |
 | GPT-5.6 Sol （长上下文） | OpenAI | ¥6.78 | 357.14x | ¥67.76 | 71.43x | ¥304.92 | 160.71x | 标准 API，输入 >272K tokens |
@@ -45,7 +46,7 @@
 | Claude Mythos 5 | Anthropic | ¥6.78 | 357.14x | ¥67.76 | 71.43x | ¥338.80 | 178.57x | Claude API 全球路由，limited availability |
 ## 重要说明
 
-- 本次从 Google 官方 Standard 付费价格表新增符合条件的 `gemini-3.6-flash`；Gemini 3.5 Flash-Lite、GPT-5.6 Luna、GPT-5.6 Terra、GPT-5.6 Sol 和 Kimi K3 继续保留在维护列表中。
+- 本次从 Anthropic 官方当前模型和价格表新增符合条件的 `claude-opus-5`；其他已维护模型价格未变。
 - 用户指定的版本下限：排除 5 以下的 Z.AI/GLM 模型、4.7 以下的 Claude 模型、3.1 以下的 Google Gemini 模型、5.4 以下的 OpenAI 模型，以及 2.6 以下的 Kimi 模型。
 - 已排除的发现项：OpenAI chat-latest 别名、低于 OpenAI 版本下限的 gpt-5.3-codex、缺少完整可比缓存价格的 OpenAI pro/cyber 行、OpenAI 图像/音频/视频/转录/deep research/工具行、已废弃或退役 Claude 行、没有单独价格表行的邀请制 Claude Mythos Preview、Z.AI 免费或缺少缓存命中价格的文本行、Z.AI 视觉/图像/音频/视频/工具/agent 行、缺少可比缓存命中文本价格的 Gemini Omni Flash Preview、低于 Gemini 版本下限的 Gemini 3 Flash Preview、Gemini live/audio/TTS/图像生成模型、缺少缓存命中价格的 Kimi Moonshot V1 行、Kimi 促销和代金券、已退役的小米 MiMo V2 旧模型名，以及仅图像/音频/视频/工具计费项。
 - 汇率采用近似值 `1 USD = 6.7760 CNY`。该汇率取自 Federal Reserve H.10 current release 中 `2026-07-17` 的 CHINA, P.R. YUAN 数据，发布时间为 `2026-07-20`；实际账单以服务商结算币种和付款时汇率为准。
@@ -55,7 +56,7 @@
 - Kimi K3、K2.6、K2.7 Code 和 K2.7 Code HighSpeed 使用各自官方模型价格页，并支持自动上下文缓存。Kimi K3 的上下文窗口为 `1,048,576` tokens；K2.x 模型为 `262,144` tokens。促销和代金券不折入 token 单价。
 - Gemini 3.1 Flash-Lite、Gemini 3.5 Flash-Lite、Gemini 3.5 Flash 和 Gemini 3.6 Flash 使用官方付费 Standard 价格。Gemini 3.1 Pro 使用官方 `gemini-3.1-pro-preview` 付费 Standard 档，并按 `200K` prompt tokens 阈值拆成两行。Gemini 的缓存存储、Batch、Flex、Priority、Google Search、Maps grounding、live、TTS 与图像生成计费均未折入主表。
 - OpenAI GPT-5.4、GPT-5.5 和 GPT-5.6 使用直接 API Standard 价格。GPT-5.4、GPT-5.5、GPT-5.6 Luna、GPT-5.6 Terra 和 GPT-5.6 Sol 主模型按 `272K` 输入 tokens 阈值拆成短上下文和长上下文行；GPT-5.4 Mini 与 Nano 只列官方短上下文 Standard 价格。Batch、Flex、Priority 未纳入主表；区域处理另加 `10%`。
-- Anthropic Claude 使用标准 Claude API 全球路由价格。Claude Sonnet 5 使用截至 `2026-08-31` 的介绍价，标准价自 `2026-09-01` 起生效。Claude Fable 5 已公开可用；Claude Mythos 5 是 Project Glasswing limited availability。缓存写入、US-only inference、云市场价格和 fast mode premium 未折入主表。Opus 4.7 及更新 Opus、Claude Fable 5、Claude Mythos 5 和 Claude Sonnet 5 使用新版 tokenizer。
+- Anthropic Claude 使用标准 Claude API 全球路由价格。Claude Opus 5 已公开可用，官方 API ID 为 `claude-opus-5`，上下文窗口为 `1M` tokens，最大输出为 `128K` tokens。Claude Sonnet 5 使用截至 `2026-08-31` 的介绍价，标准价自 `2026-09-01` 起生效。Claude Fable 5 已公开可用；Claude Mythos 5 是 Project Glasswing limited availability。缓存写入、US-only inference、云市场价格和 fast mode premium 未折入主表。Opus 4.7 及更新 Opus、Claude Fable 5、Claude Mythos 5 和 Claude Sonnet 5 使用新版 tokenizer。
 - Z.AI 将已纳入的 GLM 文本模型 cached input storage 标为限时免费；本比较只纳入 cached input read 价格。
 - 除非特别说明，本比较不包含 Batch、Flex、Priority、fast mode、数据驻留、联网/工具调用费用、session runtime、缓存存储、缓存写入、免费档、促销、代金券和企业折扣等变体。
 
