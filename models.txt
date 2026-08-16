@@ -23,6 +23,7 @@ Kimi K2.6
 Kimi K2.7 Code
 Kimi K2.7 Code HighSpeed
 Kimi K3
+Gemini 3.7 Flash
 Gemini 3.5 Flash
 Gemini 3.6 Flash
 Gemini 3.5 Flash-Lite
