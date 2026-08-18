@@ -16,6 +16,7 @@ Claude Sonnet 5
 Claude Fable 5
 Claude Mythos 5
 GLM-5.2
+GLM-5.3
 GLM-5.1
 GLM-5
 GLM-5-Turbo
