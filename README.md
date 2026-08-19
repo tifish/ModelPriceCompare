@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-Generated: 2026-08-18
+Generated: 2026-08-19
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`; in this model set, Xiaomi MiMo-V2.5 is the cache-hit input, cache-miss input, and output baseline.
 
@@ -50,7 +50,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Claude Mythos 5 | Anthropic | $1.00 | 357.14x | $10.00 | 71.43x | $50.00 | 178.57x | Standard Claude API global routing limited availability |
 ## Important Notes
 
-- Rechecked the official pricing and current-model pages. Added the newly priced Z.AI GLM-5.3; no other eligible models or direct Standard/global token-price changes were found.
+- Rechecked the official pricing and current-model pages. No newly eligible models or direct Standard/global token-price changes were found; the recently added Z.AI GLM-5.3 remains current.
 - User-requested version floors: exclude Z.AI/GLM models below 5, Claude models below 4.7, Google Gemini models below 3.1, OpenAI models below 5.4, and Kimi models below 2.6.
 - Excluded discovered entries: OpenAI chat-latest and Daybreak aliases, OpenAI gpt-5.4-pro and gpt-5.5-pro without cache prices, the specialized OpenAI gpt-5.6-cyber model, OpenAI image/audio/video/transcription/deep-research/tool rows, deprecated or retired Claude rows, Claude Mythos Preview invitation-only row without a separate pricing-table entry, Z.AI free/text rows without cached-input prices, Z.AI vision/image/audio/video/tool/agent rows, Gemini Omni Flash Preview without a comparable cache-hit text price, Gemini 3 Flash Preview below the Gemini version floor, Gemini live/audio/TTS/image-generation models, Kimi Moonshot V1 rows without cache-hit prices, Kimi promotions and vouchers, deprecated Xiaomi MiMo legacy names, and image/audio/video/tool-only pricing.
 - USD/CNY reference rate for the Chinese README is `1 USD = 6.7412 CNY`, from the Federal Reserve H.10 current release for `2026-08-14`, published `2026-08-17`.

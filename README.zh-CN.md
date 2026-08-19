@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-生成日期：2026-08-18
+生成日期：2026-08-19
 
 所有价格统一为人民币约价 / 1M tokens。除提供方直接列出人民币价格的情况外，美元价格按 `1 USD = 6.7412 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`；在本次模型列表中，Xiaomi MiMo-V2.5 作为缓存命中输入、缓存未命中输入与输出基准。
 
@@ -50,7 +50,7 @@
 | Claude Mythos 5 | Anthropic | ¥6.74 | 357.14x | ¥67.41 | 71.43x | ¥337.06 | 178.57x | Claude API 全球路由，limited availability |
 ## 重要说明
 
-- 本次已复核各官方价格页和当前模型页；新增已明确定价的 Z.AI GLM-5.3；未发现其他合格模型或直接 Standard/全球路由 token 单价变化。
+- 本次已复核各官方价格页和当前模型页；未发现新的合格模型或直接 Standard/全球路由 token 单价变化，最近加入的 Z.AI GLM-5.3 价格仍然有效。
 - 用户指定的版本下限：排除 5 以下的 Z.AI/GLM 模型、4.7 以下的 Claude 模型、3.1 以下的 Google Gemini 模型、5.4 以下的 OpenAI 模型，以及 2.6 以下的 Kimi 模型。
 - 已排除的发现项：OpenAI chat-latest 与 Daybreak 别名、低于 OpenAI 版本下限的 gpt-5.3-codex、缺少缓存价格的 OpenAI gpt-5.4-pro 和 gpt-5.5-pro、专用网络安全模型 gpt-5.6-cyber、OpenAI 图像/音频/视频/转录/deep research/工具行、已废弃或退役 Claude 行、没有单独价格表行的邀请制 Claude Mythos Preview、Z.AI 免费或缺少缓存命中价格的文本行、Z.AI 视觉/图像/音频/视频/工具/agent 行、缺少可比缓存命中文本价格的 Gemini Omni Flash Preview、低于 Gemini 版本下限的 Gemini 3 Flash Preview、Gemini live/audio/TTS/图像生成模型、缺少缓存命中价格的 Kimi Moonshot V1 行、Kimi 促销和代金券、已退役的小米 MiMo V2 旧模型名，以及仅图像/音频/视频/工具计费项。
 - 汇率采用近似值 `1 USD = 6.7412 CNY`。该汇率取自 Federal Reserve H.10 current release 中 `2026-08-14` 的 CHINA, P.R. YUAN 数据，发布时间为 `2026-08-17`；实际账单以服务商结算币种和付款时汇率为准。
