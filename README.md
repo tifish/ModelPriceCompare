@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-Generated: 2026-08-25
+Generated: 2026-08-26
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`; in this model set, Xiaomi MiMo-V2.5 is the cache-hit input, cache-miss input, and output baseline.
 
@@ -53,7 +53,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 - Rechecked the official pricing and current-model pages. No newly eligible models were found. OpenAI GPT-5.6 Sol Standard pricing is now promotional at least through `2026-11-21`: short-context cache hit/input/output are USD `0.40/4.00/20.00`, and long-context prices are USD `0.80/8.00/30.00` per 1M tokens.
 - User-requested version floors: exclude Z.AI/GLM models below 5, Claude models below 4.7, Google Gemini models below 3.1, OpenAI models below 5.4, and Kimi models below 2.6.
 - Excluded discovered entries: OpenAI chat-latest and Daybreak aliases, gpt-5.3-codex below the OpenAI version floor, OpenAI gpt-5.4-pro and gpt-5.5-pro without cache prices, the specialized OpenAI gpt-5.6-cyber model, OpenAI image/audio/video/transcription/deep-research/tool rows, deprecated or retired Claude rows, Claude Mythos Preview invitation-only row without a separate pricing-table entry, DeepSeek V4 Flash Vision Exp, Z.AI free/text rows without cached-input prices, Z.AI vision/image/audio/video/tool/agent rows, Gemini Omni Flash Preview without a comparable cache-hit text price, Gemini 3 Flash Preview below the Gemini version floor, Gemini live/audio/TTS/image-generation models, Kimi Moonshot V1 rows without cache-hit prices, Kimi promotions and vouchers, deprecated Xiaomi MiMo legacy names, and image/audio/video/tool-only pricing.
-- USD/CNY reference rate for the Chinese README is `1 USD = 6.7412 CNY`, from the Federal Reserve H.10 current release for `2026-08-14`, published `2026-08-17`.
+- USD/CNY reference rate for the Chinese README is `1 USD = 6.7210 CNY`, from the Federal Reserve H.10 current release for `2026-08-21`, published `2026-08-24`.
 - DeepSeek V4 Flash and V4 Pro use the current official `deepseek-v4-flash` and `deepseek-v4-pro` prices. They currently route to DeepSeek-V4-Flash-0731 and DeepSeek-V4-Pro-0813, respectively. DeepSeek notes that the `deepseek-chat` and `deepseek-reasoner` compatibility aliases were deprecated on `2026-07-24 15:59 UTC`. Peak/off-peak billing took effect on `2026-08-16 16:00 UTC`: peak hours are `01:00-04:00` and `06:00-10:00 UTC`, with V4 Flash cache hit/input/output at USD `0.014/0.44/1.32` peak and `0.007/0.22/0.66` off-peak, and V4 Pro at USD `0.044/1.32/3.96` peak and `0.022/0.66/1.98` off-peak per 1M tokens. From `2026-08-23 00:00` Beijing time, off-peak pricing applies all day on Saturdays and Sundays (Beijing time). Both current price tiers are listed separately in the main table.
 - Xiaomi MiMo-V2.5 and MiMo-V2.5-Pro use the official overseas API V2.5 prices. Domestic pricing is noted in the CSV; cache writing is currently free for a limited time. Legacy V2 model names were auto-routed to V2.5 pricing on staggered dates and have been deprecated since `2026-06-30`. The Xiaomi pricing page shows update time `2026-08-06`.
 - Kimi K3, K2.6, K2.7 Code, and K2.7 Code HighSpeed use their official per-model pricing pages and support automatic context caching. Kimi K3 has a `1,048,576` token context window; the K2.x models have `262,144` tokens. Promotions and vouchers are excluded from token unit prices.
