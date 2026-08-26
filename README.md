@@ -2,55 +2,56 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-Generated: 2026-08-26
+Generated: 2026-08-27
 
-All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`; in this model set, Xiaomi MiMo-V2.5 is the cache-hit input, cache-miss input, and output baseline.
+All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`; in this model set, Xiaomi MiMo-V2.5 is the cache-hit input baseline, while GLM-5.3-Flash is the cache-miss input and output baseline.
 
 | Model | Provider | Input cache hit | Hit x | Input cache miss | Miss x | Output | Output x | Basis |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| Xiaomi MiMo-V2.5 | Xiaomi MiMo | $0.0028 | 1.00x | $0.14 | 1.00x | $0.28 | 1.00x | Overseas API V2.5 reduced price |
-| Xiaomi MiMo-V2.5-Pro | Xiaomi MiMo | $0.0036 | 1.29x | $0.435 | 3.11x | $0.87 | 3.11x | Overseas API V2.5 reduced price |
-| DeepSeek V4 Flash (off-peak) | DeepSeek | $0.007 | 2.50x | $0.22 | 1.57x | $0.66 | 2.36x | Standard API off-peak |
-| DeepSeek V4 Flash (peak) | DeepSeek | $0.014 | 5.00x | $0.44 | 3.14x | $1.32 | 4.71x | Standard API peak |
-| GPT-5.4 Nano | OpenAI | $0.02 | 7.14x | $0.20 | 1.43x | $1.25 | 4.46x | Standard API short context |
-| GPT-5.6 Luna (short context) | OpenAI | $0.02 | 7.14x | $0.20 | 1.43x | $1.20 | 4.29x | Standard API <=272K input tokens |
-| DeepSeek V4 Pro (off-peak) | DeepSeek | $0.022 | 7.86x | $0.66 | 4.71x | $1.98 | 7.07x | Standard API off-peak |
-| Gemini 3.1 Flash-Lite | Google | $0.025 | 8.93x | $0.25 | 1.79x | $1.50 | 5.36x | Standard paid tier text/image/video |
-| Gemini 3.5 Flash-Lite | Google | $0.03 | 10.71x | $0.30 | 2.14x | $2.50 | 8.93x | Standard paid tier text/image/video/audio |
-| GPT-5.6 Luna (long context) | OpenAI | $0.04 | 14.29x | $0.40 | 2.86x | $1.80 | 6.43x | Standard API >272K input tokens |
-| DeepSeek V4 Pro (peak) | DeepSeek | $0.044 | 15.71x | $1.32 | 9.43x | $3.96 | 14.14x | Standard API peak |
-| GPT-5.4 Mini | OpenAI | $0.075 | 26.79x | $0.75 | 5.36x | $4.50 | 16.07x | Standard API short context |
-| Gemini 3.6 Flash | Google | $0.075 | 26.79x | $0.75 | 5.36x | $3.75 | 13.39x | Standard paid tier promotional price through 2026-12-31 |
-| Gemini 3.7 Flash | Google | $0.075 | 26.79x | $0.75 | 5.36x | $3.75 | 13.39x | Standard paid tier promotional price through 2026-12-31 |
-| Gemini 3.5 Flash | Google | $0.15 | 53.57x | $1.50 | 10.71x | $9.00 | 32.14x | Standard paid tier |
-| Kimi K2.6 | Moonshot AI / Kimi | $0.16 | 57.14x | $0.95 | 6.79x | $4.00 | 14.29x | Standard API |
-| Kimi K2.7 Code | Moonshot AI / Kimi | $0.19 | 67.86x | $0.95 | 6.79x | $4.00 | 14.29x | Standard API |
-| GPT-5.6 Terra (short context) | OpenAI | $0.20 | 71.43x | $2.00 | 14.29x | $12.00 | 42.86x | Standard API <=272K input tokens |
-| GLM-5 | Z.AI | $0.20 | 71.43x | $1.00 | 7.14x | $3.20 | 11.43x | Standard API |
-| Claude Sonnet 5 | Anthropic | $0.20 | 71.43x | $2.00 | 14.29x | $10.00 | 35.71x | Standard Claude API global routing |
-| Gemini 3.1 Pro Preview (<=200K prompts) | Google | $0.20 | 71.43x | $2.00 | 14.29x | $12.00 | 42.86x | Standard paid tier <=200K prompts |
-| GLM-5-Turbo | Z.AI | $0.24 | 85.71x | $1.20 | 8.57x | $4.00 | 14.29x | Standard API |
-| GPT-5.4 (short context) | OpenAI | $0.25 | 89.29x | $2.50 | 17.86x | $15.00 | 53.57x | Standard API <=272K input tokens |
-| GLM-5.1 | Z.AI | $0.26 | 92.86x | $1.40 | 10.00x | $4.40 | 15.71x | Standard API |
-| GLM-5.2 | Z.AI | $0.26 | 92.86x | $1.40 | 10.00x | $4.40 | 15.71x | Standard API |
-| GLM-5.3 | Z.AI | $0.26 | 92.86x | $1.40 | 10.00x | $4.40 | 15.71x | Standard API |
-| Kimi K3 | Moonshot AI / Kimi | $0.30 | 107.14x | $3.00 | 21.43x | $15.00 | 53.57x | Standard API |
-| Kimi K2.7 Code HighSpeed | Moonshot AI / Kimi | $0.38 | 135.71x | $1.90 | 13.57x | $8.00 | 28.57x | HighSpeed API |
-| GPT-5.6 Terra (long context) | OpenAI | $0.40 | 142.86x | $4.00 | 28.57x | $18.00 | 64.29x | Standard API >272K input tokens |
-| Gemini 3.1 Pro Preview (>200K prompts) | Google | $0.40 | 142.86x | $4.00 | 28.57x | $18.00 | 64.29x | Standard paid tier >200K prompts |
-| GPT-5.6 Sol (short context) | OpenAI | $0.40 | 142.86x | $4.00 | 28.57x | $20.00 | 71.43x | Standard API promotional price <=272K input tokens |
-| GPT-5.4 (long context) | OpenAI | $0.50 | 178.57x | $5.00 | 35.71x | $22.50 | 80.36x | Standard API >272K input tokens |
-| Claude Opus 4.7 | Anthropic | $0.50 | 178.57x | $5.00 | 35.71x | $25.00 | 89.29x | Standard Claude API global routing |
-| Claude Opus 4.8 | Anthropic | $0.50 | 178.57x | $5.00 | 35.71x | $25.00 | 89.29x | Standard Claude API global routing |
-| Claude Opus 5 | Anthropic | $0.50 | 178.57x | $5.00 | 35.71x | $25.00 | 89.29x | Standard Claude API global routing |
-| GPT-5.5 (short context) | OpenAI | $0.50 | 178.57x | $5.00 | 35.71x | $30.00 | 107.14x | Standard API <=272K input tokens |
-| GPT-5.6 Sol (long context) | OpenAI | $0.80 | 285.71x | $8.00 | 57.14x | $30.00 | 107.14x | Standard API promotional price >272K input tokens |
-| GPT-5.5 (long context) | OpenAI | $1.00 | 357.14x | $10.00 | 71.43x | $45.00 | 160.71x | Standard API >272K input tokens |
-| Claude Fable 5 | Anthropic | $1.00 | 357.14x | $10.00 | 71.43x | $50.00 | 178.57x | Standard Claude API global routing |
-| Claude Mythos 5 | Anthropic | $1.00 | 357.14x | $10.00 | 71.43x | $50.00 | 178.57x | Standard Claude API global routing limited availability |
+| Xiaomi MiMo-V2.5 | Xiaomi MiMo | $0.0028 | 1.00x | $0.14 | 1.87x | $0.28 | 1.12x | Overseas API V2.5 reduced price |
+| Xiaomi MiMo-V2.5-Pro | Xiaomi MiMo | $0.0036 | 1.29x | $0.435 | 5.80x | $0.87 | 3.48x | Overseas API V2.5 reduced price |
+| DeepSeek V4 Flash (off-peak) | DeepSeek | $0.007 | 2.50x | $0.22 | 2.93x | $0.66 | 2.64x | Standard API off-peak |
+| DeepSeek V4 Flash (peak) | DeepSeek | $0.014 | 5.00x | $0.44 | 5.87x | $1.32 | 5.28x | Standard API peak |
+| GLM-5.3-Flash | Z.AI | $0.015 | 5.36x | $0.075 | 1.00x | $0.25 | 1.00x | Standard API promotional price through 2026-09-09 |
+| GPT-5.4 Nano | OpenAI | $0.02 | 7.14x | $0.20 | 2.67x | $1.25 | 5.00x | Standard API short context |
+| GPT-5.6 Luna (short context) | OpenAI | $0.02 | 7.14x | $0.20 | 2.67x | $1.20 | 4.80x | Standard API <=272K input tokens |
+| DeepSeek V4 Pro (off-peak) | DeepSeek | $0.022 | 7.86x | $0.66 | 8.80x | $1.98 | 7.92x | Standard API off-peak |
+| Gemini 3.1 Flash-Lite | Google | $0.025 | 8.93x | $0.25 | 3.33x | $1.50 | 6.00x | Standard paid tier text/image/video |
+| Gemini 3.5 Flash-Lite | Google | $0.03 | 10.71x | $0.30 | 4.00x | $2.50 | 10.00x | Standard paid tier text/image/video/audio |
+| GPT-5.6 Luna (long context) | OpenAI | $0.04 | 14.29x | $0.40 | 5.33x | $1.80 | 7.20x | Standard API >272K input tokens |
+| DeepSeek V4 Pro (peak) | DeepSeek | $0.044 | 15.71x | $1.32 | 17.60x | $3.96 | 15.84x | Standard API peak |
+| GPT-5.4 Mini | OpenAI | $0.075 | 26.79x | $0.75 | 10.00x | $4.50 | 18.00x | Standard API short context |
+| Gemini 3.6 Flash | Google | $0.075 | 26.79x | $0.75 | 10.00x | $3.75 | 15.00x | Standard paid tier promotional price through 2026-12-31 |
+| Gemini 3.7 Flash | Google | $0.075 | 26.79x | $0.75 | 10.00x | $3.75 | 15.00x | Standard paid tier promotional price through 2026-12-31 |
+| Gemini 3.5 Flash | Google | $0.15 | 53.57x | $1.50 | 20.00x | $9.00 | 36.00x | Standard paid tier |
+| Kimi K2.6 | Moonshot AI / Kimi | $0.16 | 57.14x | $0.95 | 12.67x | $4.00 | 16.00x | Standard API |
+| Kimi K2.7 Code | Moonshot AI / Kimi | $0.19 | 67.86x | $0.95 | 12.67x | $4.00 | 16.00x | Standard API |
+| GPT-5.6 Terra (short context) | OpenAI | $0.20 | 71.43x | $2.00 | 26.67x | $12.00 | 48.00x | Standard API <=272K input tokens |
+| GLM-5 | Z.AI | $0.20 | 71.43x | $1.00 | 13.33x | $3.20 | 12.80x | Standard API |
+| Claude Sonnet 5 | Anthropic | $0.20 | 71.43x | $2.00 | 26.67x | $10.00 | 40.00x | Standard Claude API global routing |
+| Gemini 3.1 Pro Preview (<=200K prompts) | Google | $0.20 | 71.43x | $2.00 | 26.67x | $12.00 | 48.00x | Standard paid tier <=200K prompts |
+| GLM-5-Turbo | Z.AI | $0.24 | 85.71x | $1.20 | 16.00x | $4.00 | 16.00x | Standard API |
+| GPT-5.4 (short context) | OpenAI | $0.25 | 89.29x | $2.50 | 33.33x | $15.00 | 60.00x | Standard API <=272K input tokens |
+| GLM-5.1 | Z.AI | $0.26 | 92.86x | $1.40 | 18.67x | $4.40 | 17.60x | Standard API |
+| GLM-5.2 | Z.AI | $0.26 | 92.86x | $1.40 | 18.67x | $4.40 | 17.60x | Standard API |
+| GLM-5.3 | Z.AI | $0.26 | 92.86x | $1.40 | 18.67x | $4.40 | 17.60x | Standard API |
+| Kimi K3 | Moonshot AI / Kimi | $0.30 | 107.14x | $3.00 | 40.00x | $15.00 | 60.00x | Standard API |
+| Kimi K2.7 Code HighSpeed | Moonshot AI / Kimi | $0.38 | 135.71x | $1.90 | 25.33x | $8.00 | 32.00x | HighSpeed API |
+| GPT-5.6 Terra (long context) | OpenAI | $0.40 | 142.86x | $4.00 | 53.33x | $18.00 | 72.00x | Standard API >272K input tokens |
+| Gemini 3.1 Pro Preview (>200K prompts) | Google | $0.40 | 142.86x | $4.00 | 53.33x | $18.00 | 72.00x | Standard paid tier >200K prompts |
+| GPT-5.6 Sol (short context) | OpenAI | $0.40 | 142.86x | $4.00 | 53.33x | $20.00 | 80.00x | Standard API promotional price <=272K input tokens |
+| GPT-5.4 (long context) | OpenAI | $0.50 | 178.57x | $5.00 | 66.67x | $22.50 | 90.00x | Standard API >272K input tokens |
+| Claude Opus 4.7 | Anthropic | $0.50 | 178.57x | $5.00 | 66.67x | $25.00 | 100.00x | Standard Claude API global routing |
+| Claude Opus 4.8 | Anthropic | $0.50 | 178.57x | $5.00 | 66.67x | $25.00 | 100.00x | Standard Claude API global routing |
+| Claude Opus 5 | Anthropic | $0.50 | 178.57x | $5.00 | 66.67x | $25.00 | 100.00x | Standard Claude API global routing |
+| GPT-5.5 (short context) | OpenAI | $0.50 | 178.57x | $5.00 | 66.67x | $30.00 | 120.00x | Standard API <=272K input tokens |
+| GPT-5.6 Sol (long context) | OpenAI | $0.80 | 285.71x | $8.00 | 106.67x | $30.00 | 120.00x | Standard API promotional price >272K input tokens |
+| GPT-5.5 (long context) | OpenAI | $1.00 | 357.14x | $10.00 | 133.33x | $45.00 | 180.00x | Standard API >272K input tokens |
+| Claude Fable 5 | Anthropic | $1.00 | 357.14x | $10.00 | 133.33x | $50.00 | 200.00x | Standard Claude API global routing |
+| Claude Mythos 5 | Anthropic | $1.00 | 357.14x | $10.00 | 133.33x | $50.00 | 200.00x | Standard Claude API global routing limited availability |
 ## Important Notes
 
-- Rechecked the official pricing and current-model pages. No newly eligible models were found. OpenAI GPT-5.6 Sol Standard pricing is now promotional at least through `2026-11-21`: short-context cache hit/input/output are USD `0.40/4.00/20.00`, and long-context prices are USD `0.80/8.00/30.00` per 1M tokens.
+- Rechecked the official pricing and current-model pages. Added the newly eligible Z.AI GLM-5.3-Flash at its current 50% promotional cache hit/input/output prices of USD `0.015/0.075/0.25` per 1M tokens through `2026-09-09 24:00 UTC+8`; its list prices are USD `0.03/0.15/0.50`. OpenAI GPT-5.6 Sol Standard pricing remains promotional at least through `2026-11-21`: short-context cache hit/input/output are USD `0.40/4.00/20.00`, and long-context prices are USD `0.80/8.00/30.00` per 1M tokens.
 - User-requested version floors: exclude Z.AI/GLM models below 5, Claude models below 4.7, Google Gemini models below 3.1, OpenAI models below 5.4, and Kimi models below 2.6.
 - Excluded discovered entries: OpenAI chat-latest and Daybreak aliases, gpt-5.3-codex below the OpenAI version floor, OpenAI gpt-5.4-pro and gpt-5.5-pro without cache prices, the specialized OpenAI gpt-5.6-cyber model, OpenAI image/audio/video/transcription/deep-research/tool rows, deprecated or retired Claude rows, Claude Mythos Preview invitation-only row without a separate pricing-table entry, DeepSeek V4 Flash Vision Exp, Z.AI free/text rows without cached-input prices, Z.AI vision/image/audio/video/tool/agent rows, Gemini Omni Flash Preview without a comparable cache-hit text price, Gemini 3 Flash Preview below the Gemini version floor, Gemini live/audio/TTS/image-generation models, Kimi Moonshot V1 rows without cache-hit prices, Kimi promotions and vouchers, deprecated Xiaomi MiMo legacy names, and image/audio/video/tool-only pricing.
 - USD/CNY reference rate for the Chinese README is `1 USD = 6.7210 CNY`, from the Federal Reserve H.10 current release for `2026-08-21`, published `2026-08-24`.

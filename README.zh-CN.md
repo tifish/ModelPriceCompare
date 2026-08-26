@@ -2,55 +2,56 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-生成日期：2026-08-26
+生成日期：2026-08-27
 
-所有价格统一为人民币约价 / 1M tokens。除提供方直接列出人民币价格的情况外，美元价格按 `1 USD = 6.7210 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`；在本次模型列表中，Xiaomi MiMo-V2.5 作为缓存命中输入、缓存未命中输入与输出基准。
+所有价格统一为人民币约价 / 1M tokens。除提供方直接列出人民币价格的情况外，美元价格按 `1 USD = 6.7210 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`；在本次模型列表中，Xiaomi MiMo-V2.5 是缓存命中输入基准，GLM-5.3-Flash 是缓存未命中输入与输出基准。
 
 | 模型 | 提供方 | 输入缓存命中 | 命中倍率 | 输入缓存未命中 | 未命中倍率 | 输出 | 输出倍率 | 价格口径 |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| Xiaomi MiMo-V2.5 | Xiaomi MiMo | ¥0.019 | 1.00x | ¥0.94 | 1.00x | ¥1.88 | 1.00x | 海外 API，V2.5 降价后价格 |
-| Xiaomi MiMo-V2.5-Pro | Xiaomi MiMo | ¥0.024 | 1.29x | ¥2.92 | 3.11x | ¥5.85 | 3.11x | 海外 API，V2.5 降价后价格 |
-| DeepSeek V4 Flash（低谷） | DeepSeek | ¥0.047 | 2.50x | ¥1.48 | 1.57x | ¥4.44 | 2.36x | 标准 API 低谷价 |
-| DeepSeek V4 Flash（高峰） | DeepSeek | ¥0.094 | 5.00x | ¥2.96 | 3.14x | ¥8.87 | 4.71x | 标准 API 高峰价 |
-| GPT-5.4 Nano | OpenAI | ¥0.13 | 7.14x | ¥1.34 | 1.43x | ¥8.40 | 4.46x | 标准 API 短上下文 |
-| GPT-5.6 Luna （短上下文） | OpenAI | ¥0.13 | 7.14x | ¥1.34 | 1.43x | ¥8.07 | 4.29x | 标准 API，输入 <=272K tokens |
-| DeepSeek V4 Pro（低谷） | DeepSeek | ¥0.15 | 7.86x | ¥4.44 | 4.71x | ¥13.31 | 7.07x | 标准 API 低谷价 |
-| Gemini 3.1 Flash-Lite | Google | ¥0.17 | 8.93x | ¥1.68 | 1.79x | ¥10.08 | 5.36x | 付费 Standard，文本/图像/视频 |
-| Gemini 3.5 Flash-Lite | Google | ¥0.20 | 10.71x | ¥2.02 | 2.14x | ¥16.80 | 8.93x | 付费 Standard，文本/图像/视频/音频 |
-| GPT-5.6 Luna （长上下文） | OpenAI | ¥0.27 | 14.29x | ¥2.69 | 2.86x | ¥12.10 | 6.43x | 标准 API，输入 >272K tokens |
-| DeepSeek V4 Pro（高峰） | DeepSeek | ¥0.30 | 15.71x | ¥8.87 | 9.43x | ¥26.62 | 14.14x | 标准 API 高峰价 |
-| GPT-5.4 Mini | OpenAI | ¥0.50 | 26.79x | ¥5.04 | 5.36x | ¥30.24 | 16.07x | 标准 API 短上下文 |
-| Gemini 3.6 Flash | Google | ¥0.50 | 26.79x | ¥5.04 | 5.36x | ¥25.20 | 13.39x | 付费 Standard，促销价截至 2026-12-31 |
-| Gemini 3.7 Flash | Google | ¥0.50 | 26.79x | ¥5.04 | 5.36x | ¥25.20 | 13.39x | 付费 Standard，促销价截至 2026-12-31 |
-| Gemini 3.5 Flash | Google | ¥1.01 | 53.57x | ¥10.08 | 10.71x | ¥60.49 | 32.14x | 付费 Standard 档 |
-| Kimi K2.6 | Moonshot AI / Kimi | ¥1.08 | 57.14x | ¥6.38 | 6.79x | ¥26.88 | 14.29x | 标准 API |
-| Kimi K2.7 Code | Moonshot AI / Kimi | ¥1.28 | 67.86x | ¥6.38 | 6.79x | ¥26.88 | 14.29x | 标准 API |
-| GPT-5.6 Terra （短上下文） | OpenAI | ¥1.34 | 71.43x | ¥13.44 | 14.29x | ¥80.65 | 42.86x | 标准 API，输入 <=272K tokens |
-| GLM-5 | Z.AI | ¥1.34 | 71.43x | ¥6.72 | 7.14x | ¥21.51 | 11.43x | 标准 API |
-| Claude Sonnet 5 | Anthropic | ¥1.34 | 71.43x | ¥13.44 | 14.29x | ¥67.21 | 35.71x | Claude API 全球路由标准价 |
-| Gemini 3.1 Pro Preview （<=200K prompts） | Google | ¥1.34 | 71.43x | ¥13.44 | 14.29x | ¥80.65 | 42.86x | 付费 Standard，<=200K prompts 档 |
-| GLM-5-Turbo | Z.AI | ¥1.61 | 85.71x | ¥8.07 | 8.57x | ¥26.88 | 14.29x | 标准 API |
-| GPT-5.4 （短上下文） | OpenAI | ¥1.68 | 89.29x | ¥16.80 | 17.86x | ¥100.82 | 53.57x | 标准 API，输入 <=272K tokens |
-| GLM-5.1 | Z.AI | ¥1.75 | 92.86x | ¥9.41 | 10.00x | ¥29.57 | 15.71x | 标准 API |
-| GLM-5.2 | Z.AI | ¥1.75 | 92.86x | ¥9.41 | 10.00x | ¥29.57 | 15.71x | 标准 API |
-| GLM-5.3 | Z.AI | ¥1.75 | 92.86x | ¥9.41 | 10.00x | ¥29.57 | 15.71x | 标准 API |
-| Kimi K3 | Moonshot AI / Kimi | ¥2.02 | 107.14x | ¥20.16 | 21.43x | ¥100.82 | 53.57x | 标准 API |
-| Kimi K2.7 Code HighSpeed | Moonshot AI / Kimi | ¥2.55 | 135.71x | ¥12.77 | 13.57x | ¥53.77 | 28.57x | HighSpeed API |
-| GPT-5.6 Terra （长上下文） | OpenAI | ¥2.69 | 142.86x | ¥26.88 | 28.57x | ¥120.98 | 64.29x | 标准 API，输入 >272K tokens |
-| Gemini 3.1 Pro Preview （>200K prompts） | Google | ¥2.69 | 142.86x | ¥26.88 | 28.57x | ¥120.98 | 64.29x | 付费 Standard，>200K prompts 档 |
-| GPT-5.6 Sol （短上下文） | OpenAI | ¥2.69 | 142.86x | ¥26.88 | 28.57x | ¥134.42 | 71.43x | 标准 API 促销价，输入 <=272K tokens |
-| GPT-5.4 （长上下文） | OpenAI | ¥3.36 | 178.57x | ¥33.61 | 35.71x | ¥151.22 | 80.36x | 标准 API，输入 >272K tokens |
-| Claude Opus 4.7 | Anthropic | ¥3.36 | 178.57x | ¥33.61 | 35.71x | ¥168.03 | 89.29x | Claude API 全球路由 |
-| Claude Opus 4.8 | Anthropic | ¥3.36 | 178.57x | ¥33.61 | 35.71x | ¥168.03 | 89.29x | Claude API 全球路由 |
-| Claude Opus 5 | Anthropic | ¥3.36 | 178.57x | ¥33.61 | 35.71x | ¥168.03 | 89.29x | Claude API 全球路由 |
-| GPT-5.5 （短上下文） | OpenAI | ¥3.36 | 178.57x | ¥33.61 | 35.71x | ¥201.63 | 107.14x | 标准 API，输入 <=272K tokens |
-| GPT-5.6 Sol （长上下文） | OpenAI | ¥5.38 | 285.71x | ¥53.77 | 57.14x | ¥201.63 | 107.14x | 标准 API 促销价，输入 >272K tokens |
-| GPT-5.5 （长上下文） | OpenAI | ¥6.72 | 357.14x | ¥67.21 | 71.43x | ¥302.45 | 160.71x | 标准 API，输入 >272K tokens |
-| Claude Fable 5 | Anthropic | ¥6.72 | 357.14x | ¥67.21 | 71.43x | ¥336.05 | 178.57x | Claude API 全球路由 |
-| Claude Mythos 5 | Anthropic | ¥6.72 | 357.14x | ¥67.21 | 71.43x | ¥336.05 | 178.57x | Claude API 全球路由，limited availability |
+| Xiaomi MiMo-V2.5 | Xiaomi MiMo | ¥0.019 | 1.00x | ¥0.94 | 1.87x | ¥1.88 | 1.12x | 海外 API，V2.5 降价后价格 |
+| Xiaomi MiMo-V2.5-Pro | Xiaomi MiMo | ¥0.024 | 1.29x | ¥2.92 | 5.80x | ¥5.85 | 3.48x | 海外 API，V2.5 降价后价格 |
+| DeepSeek V4 Flash（低谷） | DeepSeek | ¥0.047 | 2.50x | ¥1.48 | 2.93x | ¥4.44 | 2.64x | 标准 API 低谷价 |
+| DeepSeek V4 Flash（高峰） | DeepSeek | ¥0.094 | 5.00x | ¥2.96 | 5.87x | ¥8.87 | 5.28x | 标准 API 高峰价 |
+| GLM-5.3-Flash | Z.AI | ¥0.10 | 5.36x | ¥0.50 | 1.00x | ¥1.68 | 1.00x | 标准 API 促销价，截至 2026-09-09 |
+| GPT-5.4 Nano | OpenAI | ¥0.13 | 7.14x | ¥1.34 | 2.67x | ¥8.40 | 5.00x | 标准 API 短上下文 |
+| GPT-5.6 Luna （短上下文） | OpenAI | ¥0.13 | 7.14x | ¥1.34 | 2.67x | ¥8.07 | 4.80x | 标准 API，输入 <=272K tokens |
+| DeepSeek V4 Pro（低谷） | DeepSeek | ¥0.15 | 7.86x | ¥4.44 | 8.80x | ¥13.31 | 7.92x | 标准 API 低谷价 |
+| Gemini 3.1 Flash-Lite | Google | ¥0.17 | 8.93x | ¥1.68 | 3.33x | ¥10.08 | 6.00x | 付费 Standard，文本/图像/视频 |
+| Gemini 3.5 Flash-Lite | Google | ¥0.20 | 10.71x | ¥2.02 | 4.00x | ¥16.80 | 10.00x | 付费 Standard，文本/图像/视频/音频 |
+| GPT-5.6 Luna （长上下文） | OpenAI | ¥0.27 | 14.29x | ¥2.69 | 5.33x | ¥12.10 | 7.20x | 标准 API，输入 >272K tokens |
+| DeepSeek V4 Pro（高峰） | DeepSeek | ¥0.30 | 15.71x | ¥8.87 | 17.60x | ¥26.62 | 15.84x | 标准 API 高峰价 |
+| GPT-5.4 Mini | OpenAI | ¥0.50 | 26.79x | ¥5.04 | 10.00x | ¥30.24 | 18.00x | 标准 API 短上下文 |
+| Gemini 3.6 Flash | Google | ¥0.50 | 26.79x | ¥5.04 | 10.00x | ¥25.20 | 15.00x | 付费 Standard，促销价截至 2026-12-31 |
+| Gemini 3.7 Flash | Google | ¥0.50 | 26.79x | ¥5.04 | 10.00x | ¥25.20 | 15.00x | 付费 Standard，促销价截至 2026-12-31 |
+| Gemini 3.5 Flash | Google | ¥1.01 | 53.57x | ¥10.08 | 20.00x | ¥60.49 | 36.00x | 付费 Standard 档 |
+| Kimi K2.6 | Moonshot AI / Kimi | ¥1.08 | 57.14x | ¥6.38 | 12.67x | ¥26.88 | 16.00x | 标准 API |
+| Kimi K2.7 Code | Moonshot AI / Kimi | ¥1.28 | 67.86x | ¥6.38 | 12.67x | ¥26.88 | 16.00x | 标准 API |
+| GPT-5.6 Terra （短上下文） | OpenAI | ¥1.34 | 71.43x | ¥13.44 | 26.67x | ¥80.65 | 48.00x | 标准 API，输入 <=272K tokens |
+| GLM-5 | Z.AI | ¥1.34 | 71.43x | ¥6.72 | 13.33x | ¥21.51 | 12.80x | 标准 API |
+| Claude Sonnet 5 | Anthropic | ¥1.34 | 71.43x | ¥13.44 | 26.67x | ¥67.21 | 40.00x | Claude API 全球路由标准价 |
+| Gemini 3.1 Pro Preview （<=200K prompts） | Google | ¥1.34 | 71.43x | ¥13.44 | 26.67x | ¥80.65 | 48.00x | 付费 Standard，<=200K prompts 档 |
+| GLM-5-Turbo | Z.AI | ¥1.61 | 85.71x | ¥8.07 | 16.00x | ¥26.88 | 16.00x | 标准 API |
+| GPT-5.4 （短上下文） | OpenAI | ¥1.68 | 89.29x | ¥16.80 | 33.33x | ¥100.82 | 60.00x | 标准 API，输入 <=272K tokens |
+| GLM-5.1 | Z.AI | ¥1.75 | 92.86x | ¥9.41 | 18.67x | ¥29.57 | 17.60x | 标准 API |
+| GLM-5.2 | Z.AI | ¥1.75 | 92.86x | ¥9.41 | 18.67x | ¥29.57 | 17.60x | 标准 API |
+| GLM-5.3 | Z.AI | ¥1.75 | 92.86x | ¥9.41 | 18.67x | ¥29.57 | 17.60x | 标准 API |
+| Kimi K3 | Moonshot AI / Kimi | ¥2.02 | 107.14x | ¥20.16 | 40.00x | ¥100.82 | 60.00x | 标准 API |
+| Kimi K2.7 Code HighSpeed | Moonshot AI / Kimi | ¥2.55 | 135.71x | ¥12.77 | 25.33x | ¥53.77 | 32.00x | HighSpeed API |
+| GPT-5.6 Terra （长上下文） | OpenAI | ¥2.69 | 142.86x | ¥26.88 | 53.33x | ¥120.98 | 72.00x | 标准 API，输入 >272K tokens |
+| Gemini 3.1 Pro Preview （>200K prompts） | Google | ¥2.69 | 142.86x | ¥26.88 | 53.33x | ¥120.98 | 72.00x | 付费 Standard，>200K prompts 档 |
+| GPT-5.6 Sol （短上下文） | OpenAI | ¥2.69 | 142.86x | ¥26.88 | 53.33x | ¥134.42 | 80.00x | 标准 API 促销价，输入 <=272K tokens |
+| GPT-5.4 （长上下文） | OpenAI | ¥3.36 | 178.57x | ¥33.61 | 66.67x | ¥151.22 | 90.00x | 标准 API，输入 >272K tokens |
+| Claude Opus 4.7 | Anthropic | ¥3.36 | 178.57x | ¥33.61 | 66.67x | ¥168.03 | 100.00x | Claude API 全球路由 |
+| Claude Opus 4.8 | Anthropic | ¥3.36 | 178.57x | ¥33.61 | 66.67x | ¥168.03 | 100.00x | Claude API 全球路由 |
+| Claude Opus 5 | Anthropic | ¥3.36 | 178.57x | ¥33.61 | 66.67x | ¥168.03 | 100.00x | Claude API 全球路由 |
+| GPT-5.5 （短上下文） | OpenAI | ¥3.36 | 178.57x | ¥33.61 | 66.67x | ¥201.63 | 120.00x | 标准 API，输入 <=272K tokens |
+| GPT-5.6 Sol （长上下文） | OpenAI | ¥5.38 | 285.71x | ¥53.77 | 106.67x | ¥201.63 | 120.00x | 标准 API 促销价，输入 >272K tokens |
+| GPT-5.5 （长上下文） | OpenAI | ¥6.72 | 357.14x | ¥67.21 | 133.33x | ¥302.45 | 180.00x | 标准 API，输入 >272K tokens |
+| Claude Fable 5 | Anthropic | ¥6.72 | 357.14x | ¥67.21 | 133.33x | ¥336.05 | 200.00x | Claude API 全球路由 |
+| Claude Mythos 5 | Anthropic | ¥6.72 | 357.14x | ¥67.21 | 133.33x | ¥336.05 | 200.00x | Claude API 全球路由，limited availability |
 ## 重要说明
 
-- 本次已复核各官方价格页和当前模型页；未发现新的合格模型。OpenAI GPT-5.6 Sol 的 Standard 价格现为促销价，至少持续至 `2026-11-21`：短上下文缓存命中/输入/输出价为每 1M tokens USD `0.40/4.00/20.00`，长上下文为 USD `0.80/8.00/30.00`。
+- 本次已复核各官方价格页和当前模型页；新增符合条件的 Z.AI GLM-5.3-Flash。其当前 50% 促销缓存命中/输入/输出价为每 1M tokens USD `0.015/0.075/0.25`，有效至 `2026-09-09 24:00 UTC+8`；原价为 USD `0.03/0.15/0.50`。OpenAI GPT-5.6 Sol 的 Standard 价格仍为促销价，至少持续至 `2026-11-21`：短上下文缓存命中/输入/输出价为每 1M tokens USD `0.40/4.00/20.00`，长上下文为 USD `0.80/8.00/30.00`。
 - 用户指定的版本下限：排除 5 以下的 Z.AI/GLM 模型、4.7 以下的 Claude 模型、3.1 以下的 Google Gemini 模型、5.4 以下的 OpenAI 模型，以及 2.6 以下的 Kimi 模型。
 - 已排除的发现项：OpenAI chat-latest 与 Daybreak 别名、低于 OpenAI 版本下限的 gpt-5.3-codex、缺少缓存价格的 OpenAI gpt-5.4-pro 和 gpt-5.5-pro、专用网络安全模型 gpt-5.6-cyber、OpenAI 图像/音频/视频/转录/deep research/工具行、已废弃或退役 Claude 行、没有单独价格表行的邀请制 Claude Mythos Preview、DeepSeek V4 Flash Vision Exp、Z.AI 免费或缺少缓存命中价格的文本行、Z.AI 视觉/图像/音频/视频/工具/agent 行、缺少可比缓存命中文本价格的 Gemini Omni Flash Preview、低于 Gemini 版本下限的 Gemini 3 Flash Preview、Gemini live/audio/TTS/图像生成模型、缺少缓存命中价格的 Kimi Moonshot V1 行、Kimi 促销和代金券、已退役的小米 MiMo V2 旧模型名，以及仅图像/音频/视频/工具计费项。
 - 汇率采用近似值 `1 USD = 6.7210 CNY`。该汇率取自 Federal Reserve H.10 current release 中 `2026-08-21` 的 CHINA, P.R. YUAN 数据，发布时间为 `2026-08-24`；实际账单以服务商结算币种和付款时汇率为准。
