@@ -31,3 +31,6 @@ Gemini 3.6 Flash
 Gemini 3.5 Flash-Lite
 Gemini 3.1 Flash-Lite
 Gemini 3.1 Pro Preview
+GPT-6 Astra
+Claude Fable 5.1
+Claude Mythos 5.1
