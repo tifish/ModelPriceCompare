@@ -23,6 +23,7 @@
 | GPT-5.4 Mini | OpenAI | ¥0.50 | 26.79x | ¥5.04 | 10.00x | ¥30.27 | 18.00x | Standard API short context |
 | Gemini 3.6 Flash | Google | ¥0.50 | 26.79x | ¥5.04 | 10.00x | ¥25.22 | 15.00x | Standard paid tier promotional price through 2026-12-31 |
 | Gemini 3.7 Flash | Google | ¥0.50 | 26.79x | ¥5.04 | 10.00x | ¥25.22 | 15.00x | Standard paid tier promotional price through 2026-12-31 |
+| Gemini 3.8 Flash | Google | ¥0.50 | 26.79x | ¥5.04 | 10.00x | ¥25.22 | 15.00x | Standard paid tier introductory price through 2026-12-31 |
 | Gemini 3.5 Flash | Google | ¥1.01 | 53.57x | ¥10.09 | 20.00x | ¥60.53 | 36.00x | Standard paid tier |
 | Kimi K2.6 | Moonshot AI / Kimi | ¥1.08 | 57.14x | ¥6.39 | 12.67x | ¥26.90 | 16.00x | Standard API |
 | Kimi K2.7 Code | Moonshot AI / Kimi | ¥1.28 | 67.86x | ¥6.39 | 12.67x | ¥26.90 | 16.00x | Standard API |

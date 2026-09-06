@@ -23,6 +23,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | GPT-5.4 Mini | OpenAI | $0.075 | 26.79x | $0.75 | 10.00x | $4.5 | 18.00x | Standard API short context |
 | Gemini 3.6 Flash | Google | $0.075 | 26.79x | $0.75 | 10.00x | $3.75 | 15.00x | Standard paid tier promotional price through 2026-12-31 |
 | Gemini 3.7 Flash | Google | $0.075 | 26.79x | $0.75 | 10.00x | $3.75 | 15.00x | Standard paid tier promotional price through 2026-12-31 |
+| Gemini 3.8 Flash | Google | $0.075 | 26.79x | $0.75 | 10.00x | $3.75 | 15.00x | Standard paid tier introductory price through 2026-12-31 |
 | Gemini 3.5 Flash | Google | $0.15 | 53.57x | $1.5 | 20.00x | $9 | 36.00x | Standard paid tier |
 | Kimi K2.6 | Moonshot AI / Kimi | $0.16 | 57.14x | $0.95 | 12.67x | $4 | 16.00x | Standard API |
 | Kimi K2.7 Code | Moonshot AI / Kimi | $0.19 | 67.86x | $0.95 | 12.67x | $4 | 16.00x | Standard API |
