@@ -1,4 +1,4 @@
-DeepSeek V4 Flash
+DeepSeek V4.1 Flash
 DeepSeek V4 Pro
 Xiaomi MiMo-V2.5
 Xiaomi MiMo-V2.5-Pro
@@ -34,3 +34,4 @@ Gemini 3.1 Pro Preview
 GPT-6 Astra
 Claude Fable 5.1
 Claude Mythos 5.1
+Gemini 3.8 Flash
