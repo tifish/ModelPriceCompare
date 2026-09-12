@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-生成日期：2026-09-11
+生成日期：2026-09-12
 
 所有价格统一为人民币约价 / 1M tokens。主表统一采用海外 API 美元价格，按 `1 USD = 6.7108 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`；在本次模型列表中，Xiaomi MiMo-V2.5 是三个类别的基准（美元缓存命中 0.0028、输入 0.14、输出 0.28）。
 
@@ -57,11 +57,11 @@
 
 ## 重要说明
 
-- 本次于 2026-09-11 复核官方来源：DeepSeek V4.1 Flash 替换已退役的 V4 Flash，并降低单价；其余已核验模型未发现单价变化。修复 GLM-5.3-Flash 常规价在双语主表中的同步问题，重算全部倍率。Kimi 页面仍未返回价格表，GLM-5-Turbo 未出现在当前 Z.AI 价格表中；这五行保留旧值并标为 `unverified`（待核验）。
+- 本次于 2026-09-12 复核官方来源：未发现已确认的 token 单价变化或符合纳入规则的新模型。DeepSeek 已取消原定 9 月 14 日的 V4 Pro 路由切换，将继续提供 API 服务并维持计费方式。Kimi 页面仍未返回价格表，GLM-5-Turbo 未出现在当前 Z.AI 价格表中；这五行保留旧值并标为 `unverified`（待核验）。
 - 用户指定的版本下限：排除 5 以下的 Z.AI/GLM 模型、4.7 以下的 Claude 模型、3.1 以下的 Google Gemini 模型、5.4 以下的 OpenAI 模型，以及 2.6 以下的 Kimi 模型。
 - 已排除的发现项：OpenAI chat-latest 与 Daybreak 别名、低于 OpenAI 版本下限的 gpt-5.3-codex、缺少缓存价格的 OpenAI gpt-5.4-pro 和 gpt-5.5-pro、专用网络安全模型 gpt-5.6-cyber、OpenAI 图像/音频/视频/转录/deep research/工具行、已废弃或退役 Claude 行、没有单独价格表行的邀请制 Claude Mythos Preview、已退役的 DeepSeek V4 Flash Vision Exp 别名、Z.AI 免费或缺少缓存命中价格的文本行、Z.AI 视觉/图像/音频/视频/工具/agent 行、缺少可比缓存命中文本价格的 Gemini Omni Flash 与 Gemini Omni Flash Preview、低于 Gemini 版本下限的 Gemini 3 Flash Preview、Gemini live/audio/TTS/图像生成模型、缺少缓存命中价格的 Kimi Moonshot V1 行、Kimi 促销和代金券、已退役的小米 MiMo V2 旧模型名，以及仅图像/音频/视频/工具计费项。
 - 汇率采用近似值 `1 USD = 6.7108 CNY`。该汇率取自 Federal Reserve H.10 current release 中 `2026-09-04` 的 CHINA, P.R. YUAN 数据，发布时间为 `2026-09-08`；实际账单以服务商结算币种和付款时汇率为准。
-- DeepSeek V4.1 Flash 使用官方 ID `deepseek-flash`。低谷缓存命中/输入/输出为 USD `0.003/0.15/0.60`，高峰为 `0.006/0.30/1.20` / 1M tokens。旧 `deepseek-v4-flash` 和 `deepseek-v4-flash-vision-exp` 已退役，其别名请求由 V4.1 Flash 服务并按新价计费。V4 Pro 当前价格不变；自北京时间 `2026-09-14 12:00` 起，`deepseek-v4-pro` 请求将转到 V4.1 Flash 并按其价格计费，直至 V4.1 Pro 发布。官方当前高峰时段为周一至周五 UTC `01:00-04:00`、`06:00-10:00`，其余时间均为低谷。
+- DeepSeek V4.1 Flash 使用官方 ID `deepseek-flash`。低谷缓存命中/输入/输出为 USD `0.003/0.15/0.60`，高峰为 `0.006/0.30/1.20` / 1M tokens。旧 `deepseek-v4-flash` 和 `deepseek-v4-flash-vision-exp` 已退役，其别名请求由 V4.1 Flash 服务并按新价计费。DeepSeek 已取消此前宣布的 9 月 14 日路由切换：`2026-09-14` 之后仍继续提供 V4 Pro API 服务，计费方式不变；后续变化将另行公告。官方当前高峰时段为周一至周五 UTC `01:00-04:00`、`06:00-10:00`，其余时间均为低谷。
 - Xiaomi MiMo-V2.5 和 MiMo-V2.5-Pro 使用官方海外 API V2.5 价格。国内价格已写入 CSV 备注；缓存写入当前限时免费。V2 旧模型名已分批自动路由到 V2.5 价格，并已自 `2026-06-30` 起退役。小米价格页显示更新时间为 `2026-08-06`。
 - Kimi K3、K2.6、K2.7 Code 和 K2.7 Code HighSpeed 使用各自官方模型价格页，并支持自动上下文缓存。Kimi K3 的上下文窗口为 `1,048,576` tokens；K2.x 模型为 `262,144` tokens。促销和代金券不折入 token 单价。
 - Gemini 3.1 Flash-Lite、Gemini 3.5 Flash-Lite、Gemini 3.5 Flash、Gemini 3.6 Flash、Gemini 3.7 Flash 和 Gemini 3.8 Flash 使用官方付费 Standard 价格。Gemini 3.6 Flash、Gemini 3.7 Flash 与 Gemini 3.8 Flash 当前共享每 1M tokens USD `0.75/0.075/3.75` 的输入/缓存命中/输出价，有效至 `2026-12-31`；自 `2027-01-01` 起恢复为 USD `1.50/0.15/7.50`。Gemini 3.1 Pro 使用官方 `gemini-3.1-pro-preview` 付费 Standard 档，并按 `200K` prompt tokens 阈值拆成两行。Gemini 的缓存存储、Batch、Flex、Priority、Google Search、Maps grounding、live、TTS 与图像生成计费均未折入主表。
