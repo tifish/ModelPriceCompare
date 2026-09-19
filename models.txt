@@ -35,3 +35,4 @@ GPT-6 Astra
 Claude Fable 5.1
 Claude Mythos 5.1
 Gemini 3.8 Flash
+GLM-5.3-FlashX
