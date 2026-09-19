@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-Generated: 2026-09-19
+Generated: 2026-09-20
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`; in this model set, Xiaomi MiMo-V2.5 is the baseline in all three categories (USD 0.0028 cache hit, 0.14 input, and 0.28 output).
 
@@ -58,7 +58,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 
 ## Important Notes
 
-- Rechecked official sources on 2026-09-19: Added GLM-5.3-FlashX (official ID `glm-5.3-flashx`) at cache-hit/input/output USD `0.075/0.37/1.25` per 1M tokens. Other verified USD token prices are unchanged. Updated the CNY conversion rate to `1 USD = 6.7080 CNY`. Kimi pages still omit pricing tables and GLM-5-Turbo is absent from Z.AI pricing; these five rows retain previous values marked `unverified`.
+- Rechecked official sources on 2026-09-20: No confirmed USD token-price changes or eligible new models; all 47 price rows are retained. The CNY conversion rate remains `1 USD = 6.7080 CNY`. Kimi per-model pricing URLs still redirect to an overview without price tables, and GLM-5-Turbo is absent from Z.AI pricing; these five rows retain previous values marked `unverified`.
 - User-requested version floors: exclude Z.AI/GLM models below 5, Claude models below 4.7, Google Gemini models below 3.1, OpenAI models below 5.4, and Kimi models below 2.6.
 - Excluded discovered entries: OpenAI chat-latest and Daybreak aliases, gpt-5.3-codex below the OpenAI version floor, OpenAI gpt-5.4-pro and gpt-5.5-pro without cache prices, the specialized OpenAI gpt-5.6-cyber and restricted gpt-rosalind-research models, OpenAI image/audio/video/transcription/deep-research/tool rows, deprecated or retired Claude rows, Claude Mythos Preview invitation-only row without a separate pricing-table entry, retired DeepSeek V4 Flash Vision Exp alias, Z.AI free/text rows without cached-input prices, Z.AI vision/image/audio/video/tool/agent rows, Gemini Omni Flash and Gemini Omni Flash Preview without a comparable cache-hit text price, Gemini 3 Flash Preview below the Gemini version floor, Gemini live/audio/TTS/image-generation models, Kimi Moonshot V1 rows without cache-hit prices, Kimi promotions and vouchers, deprecated Xiaomi MiMo legacy names, and image/audio/video/tool-only pricing.
 - USD/CNY reference rate for the Chinese README is `1 USD = 6.7080 CNY`, from the Federal Reserve H.10 current release for `2026-09-11`, published `2026-09-14`.

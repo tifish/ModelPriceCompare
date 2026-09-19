@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-生成日期：2026-09-19
+生成日期：2026-09-20
 
 所有价格统一为人民币约价 / 1M tokens。主表统一采用海外 API 美元价格，按 `1 USD = 6.7080 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`；在本次模型列表中，Xiaomi MiMo-V2.5 是三个类别的基准（美元缓存命中 0.0028、输入 0.14、输出 0.28）。
 
@@ -58,7 +58,7 @@
 
 ## 重要说明
 
-- 本次于 2026-09-19 复核官方来源：新增 GLM-5.3-FlashX（官方 ID `glm-5.3-flashx`），缓存命中/输入/输出为 USD `0.075/0.37/1.25` / 1M tokens。其余已核实模型的美元 token 单价未变。人民币换算汇率更新为 `1 USD = 6.7080 CNY`。Kimi 页面仍未返回价格表，GLM-5-Turbo 未出现在当前 Z.AI 价格表中；这五行保留旧值并标为 `unverified`（待核验）。
+- 本次于 2026-09-20 复核官方来源：未发现已确认的美元 token 单价变化或符合纳入条件的新模型，保留全部 47 条价格记录。人民币换算汇率仍为 `1 USD = 6.7080 CNY`。Kimi 模型专属价格链接仍跳转至不含价格表的总览页，GLM-5-Turbo 未出现在当前 Z.AI 价格表中；这五行保留旧值并标为 `unverified`（待核验）。
 - 用户指定的版本下限：排除 5 以下的 Z.AI/GLM 模型、4.7 以下的 Claude 模型、3.1 以下的 Google Gemini 模型、5.4 以下的 OpenAI 模型，以及 2.6 以下的 Kimi 模型。
 - 已排除的发现项：OpenAI chat-latest 与 Daybreak 别名、低于 OpenAI 版本下限的 gpt-5.3-codex、缺少缓存价格的 OpenAI gpt-5.4-pro 和 gpt-5.5-pro、专用网络安全模型 gpt-5.6-cyber 和限受信研究机构使用的 gpt-rosalind-research、OpenAI 图像/音频/视频/转录/deep research/工具行、已废弃或退役 Claude 行、没有单独价格表行的邀请制 Claude Mythos Preview、已退役的 DeepSeek V4 Flash Vision Exp 别名、Z.AI 免费或缺少缓存命中价格的文本行、Z.AI 视觉/图像/音频/视频/工具/agent 行、缺少可比缓存命中文本价格的 Gemini Omni Flash 与 Gemini Omni Flash Preview、低于 Gemini 版本下限的 Gemini 3 Flash Preview、Gemini live/audio/TTS/图像生成模型、缺少缓存命中价格的 Kimi Moonshot V1 行、Kimi 促销和代金券、已退役的小米 MiMo V2 旧模型名，以及仅图像/音频/视频/工具计费项。
 - 汇率采用近似值 `1 USD = 6.7080 CNY`。该汇率取自 Federal Reserve H.10 current release 中 `2026-09-11` 的 CHINA, P.R. YUAN 数据，发布时间为 `2026-09-14`；实际账单以服务商结算币种和付款时汇率为准。
