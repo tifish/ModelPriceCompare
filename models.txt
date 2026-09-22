@@ -36,3 +36,9 @@ Claude Fable 5.1
 Claude Mythos 5.1
 Gemini 3.8 Flash
 GLM-5.3-FlashX
+Claude Opus 5.5
+Xiaomi MiMo-V2.6-Flash
+Xiaomi MiMo-V2.6-Pro
+Xiaomi MiMo-V2.6-Pro-UltraSpeed
+GPT-6 Sol
+GPT-6 Luna
