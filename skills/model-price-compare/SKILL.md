@@ -46,7 +46,7 @@ description: 使用官方价格页面比较当前 LLM API token 价格。适用�
 
 ## 输出风格
 
-默认使用简体中文与用户沟通，除非用户明确要求英文或双语。主表保持紧凑；README 和 CSV 中把 input cache hit 放在 input cache miss 前，并按 input cache hit 价格降序排序（从大到小），同价条目保持原相对顺序。详细限制写在 `Important Notes` 或中文 README 的 `重要说明` 下，来源 URL 写在 `Price URLs Visited` 或中文 README 的 `已访问价格 URL` 下。
+默认使用简体中文与用户沟通，除非用户明确要求英文或双语。主表保持紧凑；README 和 CSV 的最左列为 provider，第二列为 model，每组 multiplier 列放在对应价格列之前，价格类别按 input cache hit、input cache miss、output 排列。按 input cache hit 价格降序排序（从大到小），同价条目保持原相对顺序。详细限制写在 `Important Notes` 或中文 README 的 `重要说明` 下，来源 URL 写在 `Price URLs Visited` 或中文 README 的 `已访问价格 URL` 下。
 
 ## 开源卫生
 
