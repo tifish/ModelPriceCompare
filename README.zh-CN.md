@@ -46,18 +46,24 @@
 | GLM-5.1 | Z.AI | ¥1.74 | 92.86x | ¥9.38 | 14.00x | ¥29.47 | 15.71x | Standard API |
 | GLM-5.2 | Z.AI | ¥1.74 | 92.86x | ¥9.38 | 14.00x | ¥29.47 | 15.71x | Standard API |
 | GLM-5.3 | Z.AI | ¥1.74 | 92.86x | ¥9.38 | 14.00x | ¥29.47 | 15.71x | Standard API |
+| Grok 4.5（短上下文） | xAI | ¥2.01 | 107.14x | ¥13.40 | 20.00x | ¥40.19 | 21.43x | Standard global API <200K input tokens |
 | Kimi K3 | Moonshot AI / Kimi | ¥2.01 | 107.14x | ¥20.09 | 30.00x | ¥100.46 | 53.57x | unverified - previous Standard API |
 | Kimi K2.7 Code HighSpeed | Moonshot AI / Kimi | ¥2.55 | 135.71x | ¥12.73 | 19.00x | ¥53.58 | 28.57x | unverified - previous HighSpeed API |
 | GPT-6 Sol（长上下文） | OpenAI | ¥2.68 | 142.86x | ¥26.79 | 40.00x | ¥100.46 | 53.57x | Standard API >272K input tokens |
 | GPT-5.6 Sol（短上下文） | OpenAI | ¥2.68 | 142.86x | ¥26.79 | 40.00x | ¥133.95 | 71.43x | Standard API promotional price <=272K input tokens |
 | GPT-5.6 Terra（长上下文） | OpenAI | ¥2.68 | 142.86x | ¥26.79 | 40.00x | ¥120.56 | 64.29x | Standard API >272K input tokens |
 | Gemini 3.1 Pro Preview (>200K prompts) | Google | ¥2.68 | 142.86x | ¥26.79 | 40.00x | ¥120.56 | 64.29x | Standard paid tier >200K prompts |
+| Grok 4.7（短上下文） | xAI | ¥3.35 | 178.57x | ¥13.40 | 20.00x | ¥40.19 | 21.43x | Standard global API <200K input tokens |
+| Grok 4.6（短上下文） | xAI | ¥3.35 | 178.57x | ¥13.40 | 20.00x | ¥40.19 | 21.43x | Standard global API <200K input tokens |
 | Claude Opus 4.7 | Anthropic | ¥3.35 | 178.57x | ¥33.49 | 50.00x | ¥167.44 | 89.29x | Standard Claude API global routing |
 | Claude Opus 4.8 | Anthropic | ¥3.35 | 178.57x | ¥33.49 | 50.00x | ¥167.44 | 89.29x | Standard Claude API global routing |
 | Claude Opus 5 | Anthropic | ¥3.35 | 178.57x | ¥33.49 | 50.00x | ¥167.44 | 89.29x | Standard Claude API global routing |
 | GPT-5.4（长上下文） | OpenAI | ¥3.35 | 178.57x | ¥33.49 | 50.00x | ¥150.69 | 80.36x | Standard API >272K input tokens |
 | GPT-5.5（短上下文） | OpenAI | ¥3.35 | 178.57x | ¥33.49 | 50.00x | ¥200.93 | 107.14x | Standard API <=272K input tokens |
+| Grok 4.5（长上下文） | xAI | ¥4.02 | 214.29x | ¥26.79 | 40.00x | ¥80.37 | 42.86x | Standard global API >=200K input tokens |
 | GPT-5.6 Sol（长上下文） | OpenAI | ¥5.36 | 285.71x | ¥53.58 | 80.00x | ¥200.93 | 107.14x | Standard API promotional price >272K input tokens |
+| Grok 4.7（长上下文） | xAI | ¥6.70 | 357.14x | ¥26.79 | 40.00x | ¥80.37 | 42.86x | Standard global API >=200K input tokens |
+| Grok 4.6（长上下文） | xAI | ¥6.70 | 357.14x | ¥26.79 | 40.00x | ¥80.37 | 42.86x | Standard global API >=200K input tokens |
 | Claude Fable 5 | Anthropic | ¥6.70 | 357.14x | ¥66.98 | 100.00x | ¥334.88 | 178.57x | Standard Claude API global routing |
 | Claude Mythos 5 | Anthropic | ¥6.70 | 357.14x | ¥66.98 | 100.00x | ¥334.88 | 178.57x | Standard Claude API global routing limited availability |
 | GPT-5.5（长上下文） | OpenAI | ¥6.70 | 357.14x | ¥66.98 | 100.00x | ¥301.39 | 160.71x | Standard API >272K input tokens |
@@ -65,6 +71,10 @@
 | GPT-6 Astra（长上下文） | OpenAI | ¥13.40 | 714.29x | ¥133.95 | 200.00x | ¥502.31 | 267.86x | Standard API >272K input tokens |
 
 ## 重要说明
+
+- 于 2026-09-23 加入 xAI：新增 Grok 4.5、4.6、4.7，共 6 条上下文分层价格记录，现共 47 个模型、61 条价格记录。本次添加不改变已有模型价格、各列基准或人民币换算汇率。
+- 用户指定 xAI 版本下限：只收录 Grok 4.5 及更新版本。排除更早代际的 Grok 4.20 系列、Grok 4.3 及 Grok Build 0.1；模型代际不按小数或字符串排序判断。
+- xAI 采用公共 API 全球端点 Standard 价格。官方价格表对已纳入模型均标注输入达到 `200K`（`>=200K`）时，整个请求适用长上下文价；部分模型页面正文则写作“超过”，本表采用价格表明确标注的边界。Batch、Priority、美国区域加价、工具费用、Imagine/Voice 模型、重复别名和非公共 API 的 Grok 4.7 Fast 渠道版本不纳入。
 
 - 本次于 2026-09-23 复核官方来源：新增 GPT-6 Sol、GPT-6 Luna、Claude Opus 5.5 和 Xiaomi MiMo-V2.6-Flash/Pro/Pro-UltraSpeed，现共 44 个模型、55 条价格记录。原有 47 行美元单价未变。输入倍率按 GPT-6 Luna 短上下文输入价 USD 0.10 重新计算，人民币约价按 `1 USD = 6.6975 CNY` 更新。Kimi 模型专属链接均跳转至不含价格表的总览页，GLM-5-Turbo 未出现在当前 Z.AI 价格表中；这五行保留旧值并标为 `unverified`（待核验）。
 - 用户指定的版本下限：排除 5 以下的 Z.AI/GLM 模型、4.7 以下的 Claude 模型、3.1 以下的 Google Gemini 模型、5.4 以下的 OpenAI 模型，以及 2.6 以下的 Kimi 模型。
@@ -82,6 +92,13 @@
 - 除非特别说明，本比较不包含 Batch、Flex、Fast mode、数据驻留、联网/工具调用费用、session runtime、缓存存储、缓存写入、免费档、促销、代金券和企业折扣等变体。
 
 ## 访问过的价格网址
+
+- xAI pricing: https://docs.x.ai/developers/pricing
+- xAI models: https://docs.x.ai/developers/models
+- Grok 4.7: https://docs.x.ai/developers/models/grok-4.7
+- Grok 4.6: https://docs.x.ai/developers/models/grok-4.6
+- Grok Build 0.1: https://docs.x.ai/developers/models/grok-build-0.1
+- Grok 4.20 Multi-Agent Beta: https://docs.x.ai/developers/models/grok-4.20-multi-agent-0309
 
 - OpenAI pricing: https://developers.openai.com/api/docs/pricing
 - OpenAI gpt-5.4: https://developers.openai.com/api/docs/models/gpt-5.4

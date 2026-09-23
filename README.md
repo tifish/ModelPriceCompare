@@ -46,18 +46,24 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | GLM-5.1 | Z.AI | $0.26 | 92.86x | $1.4 | 14.00x | $4.4 | 15.71x | Standard API |
 | GLM-5.2 | Z.AI | $0.26 | 92.86x | $1.4 | 14.00x | $4.4 | 15.71x | Standard API |
 | GLM-5.3 | Z.AI | $0.26 | 92.86x | $1.4 | 14.00x | $4.4 | 15.71x | Standard API |
+| Grok 4.5 (short context) | xAI | $0.3 | 107.14x | $2 | 20.00x | $6 | 21.43x | Standard global API <200K input tokens |
 | Kimi K3 | Moonshot AI / Kimi | $0.3 | 107.14x | $3 | 30.00x | $15 | 53.57x | unverified - previous Standard API |
 | Kimi K2.7 Code HighSpeed | Moonshot AI / Kimi | $0.38 | 135.71x | $1.9 | 19.00x | $8 | 28.57x | unverified - previous HighSpeed API |
 | GPT-6 Sol (long context) | OpenAI | $0.4 | 142.86x | $4 | 40.00x | $15 | 53.57x | Standard API >272K input tokens |
 | GPT-5.6 Sol (short context) | OpenAI | $0.4 | 142.86x | $4 | 40.00x | $20 | 71.43x | Standard API promotional price <=272K input tokens |
 | GPT-5.6 Terra (long context) | OpenAI | $0.4 | 142.86x | $4 | 40.00x | $18 | 64.29x | Standard API >272K input tokens |
 | Gemini 3.1 Pro Preview (>200K prompts) | Google | $0.4 | 142.86x | $4 | 40.00x | $18 | 64.29x | Standard paid tier >200K prompts |
+| Grok 4.7 (short context) | xAI | $0.5 | 178.57x | $2 | 20.00x | $6 | 21.43x | Standard global API <200K input tokens |
+| Grok 4.6 (short context) | xAI | $0.5 | 178.57x | $2 | 20.00x | $6 | 21.43x | Standard global API <200K input tokens |
 | Claude Opus 4.7 | Anthropic | $0.5 | 178.57x | $5 | 50.00x | $25 | 89.29x | Standard Claude API global routing |
 | Claude Opus 4.8 | Anthropic | $0.5 | 178.57x | $5 | 50.00x | $25 | 89.29x | Standard Claude API global routing |
 | Claude Opus 5 | Anthropic | $0.5 | 178.57x | $5 | 50.00x | $25 | 89.29x | Standard Claude API global routing |
 | GPT-5.4 (long context) | OpenAI | $0.5 | 178.57x | $5 | 50.00x | $22.5 | 80.36x | Standard API >272K input tokens |
 | GPT-5.5 (short context) | OpenAI | $0.5 | 178.57x | $5 | 50.00x | $30 | 107.14x | Standard API <=272K input tokens |
+| Grok 4.5 (long context) | xAI | $0.6 | 214.29x | $4 | 40.00x | $12 | 42.86x | Standard global API >=200K input tokens |
 | GPT-5.6 Sol (long context) | OpenAI | $0.8 | 285.71x | $8 | 80.00x | $30 | 107.14x | Standard API promotional price >272K input tokens |
+| Grok 4.7 (long context) | xAI | $1 | 357.14x | $4 | 40.00x | $12 | 42.86x | Standard global API >=200K input tokens |
+| Grok 4.6 (long context) | xAI | $1 | 357.14x | $4 | 40.00x | $12 | 42.86x | Standard global API >=200K input tokens |
 | Claude Fable 5 | Anthropic | $1 | 357.14x | $10 | 100.00x | $50 | 178.57x | Standard Claude API global routing |
 | Claude Mythos 5 | Anthropic | $1 | 357.14x | $10 | 100.00x | $50 | 178.57x | Standard Claude API global routing limited availability |
 | GPT-5.5 (long context) | OpenAI | $1 | 357.14x | $10 | 100.00x | $45 | 160.71x | Standard API >272K input tokens |
@@ -65,6 +71,10 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | GPT-6 Astra (long context) | OpenAI | $2 | 714.29x | $20 | 200.00x | $75 | 267.86x | Standard API >272K input tokens |
 
 ## Important Notes
+
+- Added xAI on 2026-09-23: Grok 4.5, 4.6, and 4.7 with six context-tier rows; total coverage is now 47 models and 61 price rows. Existing prices, baselines, and the CNY exchange rate are unchanged by this addition.
+- User-requested xAI version floor: Grok 4.5 and newer only. The earlier Grok 4.20 family, Grok 4.3, and Grok Build 0.1 are excluded; model generations are not compared as decimal numbers or lexicographic strings.
+- xAI uses public global-endpoint Standard API prices. The pricing table specifies long-context rates at `>=200K` prompt tokens for all included models, applied to every token in the request; some model-page prose instead says "exceed", so the explicit pricing-table boundary is used here. Batch, Priority, US regional uplift, tools, Imagine/Voice models, aliases, and the non-public-API Grok 4.7 Fast channel variant are excluded.
 
 - Rechecked official sources on 2026-09-23: added GPT-6 Sol, GPT-6 Luna, Claude Opus 5.5, and Xiaomi MiMo-V2.6-Flash/Pro/Pro-UltraSpeed, bringing coverage to 44 models and 55 price rows. The previous 47 USD price rows are unchanged. Recalculated input multipliers against GPT-6 Luna's USD 0.10 short-context input price and CNY amounts at `1 USD = 6.6975 CNY`. Kimi per-model links redirect to an overview without price tables, and GLM-5-Turbo is absent from Z.AI pricing; these five rows retain previous values marked `unverified`.
 - User-requested version floors: exclude Z.AI/GLM models below 5, Claude models below 4.7, Google Gemini models below 3.1, OpenAI models below 5.4, and Kimi models below 2.6.
@@ -82,6 +92,13 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 - Unless noted, Batch, Flex, Fast mode, data residency, web/tool charges, session runtime, cache storage, cache writes, free tiers, promotions, vouchers, and provider-specific enterprise discounts are excluded.
 
 ## Price URLs Visited
+
+- xAI pricing: https://docs.x.ai/developers/pricing
+- xAI models: https://docs.x.ai/developers/models
+- Grok 4.7: https://docs.x.ai/developers/models/grok-4.7
+- Grok 4.6: https://docs.x.ai/developers/models/grok-4.6
+- Grok Build 0.1: https://docs.x.ai/developers/models/grok-build-0.1
+- Grok 4.20 Multi-Agent Beta: https://docs.x.ai/developers/models/grok-4.20-multi-agent-0309
 
 - OpenAI pricing: https://developers.openai.com/api/docs/pricing
 - OpenAI gpt-5.4: https://developers.openai.com/api/docs/models/gpt-5.4

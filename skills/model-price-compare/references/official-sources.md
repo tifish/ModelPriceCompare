@@ -4,6 +4,7 @@
 
 | 厂商 | 官方价格 URL | 模型/规格 URL 示例 | 说明 |
 |---|---|---|---|
+| xAI / Grok | https://docs.x.ai/developers/pricing | https://docs.x.ai/developers/models | 用户指定只纳入 Grok 4.5 及更新版本；Grok 4.20 系列为更早代际，不按小数或字符串排序判断，Grok Build 0.1 也不纳入。使用公共 API 全球端点 Standard 价格，不重复计入别名。按价格表标注的输入阈值拆分长短上下文，达到阈值后整个请求适用长上下文价。排除 Batch、Priority、美国区域加价、工具费用、图像/视频/语音模型及非公共 API 的渠道专属 Fast 版本。 |
 | OpenAI | https://developers.openai.com/api/docs/pricing | https://developers.openai.com/api/docs/models/gpt-5.4, https://developers.openai.com/api/docs/models/gpt-5.5 | 默认只纳入 5.4 及以上。除非用户要求 Batch、Flex 或 Priority，否则使用 Standard 价格。GPT-5.4/GPT-5.5 的长上下文提示超过 272K input tokens 时，说明完整 session 的长上下文加价。 |
 | Anthropic | https://platform.claude.com/docs/en/about-claude/pricing | https://platform.claude.com/docs/en/about-claude/models/overview | 除非用户要求 data residency 或云市场价格，否则使用 Claude API global routing。Cache hit 对应 Cache Hits & Refreshes。默认只纳入 Claude 4.7 及以上；limited availability 模型保留但必须在备注中说明。 |
 | DeepSeek | https://api-docs.deepseek.com/quick_start/pricing | https://api-docs.deepseek.com/news/news260424 | 检查是否存在有效的限时折扣；页面同时显示当前有效价和常规价时，两者都要报告。 |
