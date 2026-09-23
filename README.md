@@ -8,51 +8,15 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 
 | Model | Provider | Input cache hit | Hit x | Input cache miss | Miss x | Output | Output x | Basis |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| Xiaomi MiMo-V2.6-Flash | Xiaomi MiMo | $0.0028 | 1.00x | $0.14 | 1.40x | $0.28 | 1.00x | Overseas real-time API |
-| Xiaomi MiMo-V2.5 | Xiaomi MiMo | $0.0028 | 1.00x | $0.14 | 1.40x | $0.28 | 1.00x | Overseas API V2.5 reduced price |
-| DeepSeek V4.1 Flash (off-peak) | DeepSeek | $0.003 | 1.07x | $0.15 | 1.50x | $0.6 | 2.14x | Standard API off-peak |
-| Xiaomi MiMo-V2.6-Pro | Xiaomi MiMo | $0.0036 | 1.29x | $0.435 | 4.35x | $0.87 | 3.11x | Overseas real-time API |
-| Xiaomi MiMo-V2.5-Pro | Xiaomi MiMo | $0.0036 | 1.29x | $0.435 | 4.35x | $0.87 | 3.11x | Overseas API V2.5 reduced price |
-| DeepSeek V4.1 Flash (peak) | DeepSeek | $0.006 | 2.14x | $0.3 | 3.00x | $1.2 | 4.29x | Standard API peak |
-| GPT-6 Luna (short context) | OpenAI | $0.01 | 3.57x | $0.1 | 1.00x | $0.5 | 1.79x | Standard API <=272K input tokens |
-| GPT-6 Luna (long context) | OpenAI | $0.02 | 7.14x | $0.2 | 2.00x | $0.75 | 2.68x | Standard API >272K input tokens |
-| GPT-5.4 Nano | OpenAI | $0.02 | 7.14x | $0.2 | 2.00x | $1.25 | 4.46x | Standard API short context |
-| GPT-5.6 Luna (short context) | OpenAI | $0.02 | 7.14x | $0.2 | 2.00x | $1.2 | 4.29x | Standard API <=272K input tokens |
-| DeepSeek V4 Pro (off-peak) | DeepSeek | $0.022 | 7.86x | $0.66 | 6.60x | $1.98 | 7.07x | Standard API off-peak |
-| Gemini 3.1 Flash-Lite | Google | $0.025 | 8.93x | $0.25 | 2.50x | $1.5 | 5.36x | Standard paid tier text/image/video |
-| GLM-5.3-Flash | Z.AI | $0.03 | 10.71x | $0.15 | 1.50x | $0.5 | 1.79x | Standard API list price |
-| Gemini 3.5 Flash-Lite | Google | $0.03 | 10.71x | $0.3 | 3.00x | $2.5 | 8.93x | Standard paid tier text/image/video/audio |
-| Xiaomi MiMo-V2.6-Pro-UltraSpeed | Xiaomi MiMo | $0.036 | 12.86x | $4.35 | 43.50x | $8.7 | 31.07x | Overseas real-time API |
-| GPT-5.6 Luna (long context) | OpenAI | $0.04 | 14.29x | $0.4 | 4.00x | $1.8 | 6.43x | Standard API >272K input tokens |
-| DeepSeek V4 Pro (peak) | DeepSeek | $0.044 | 15.71x | $1.32 | 13.20x | $3.96 | 14.14x | Standard API peak |
-| GPT-5.4 Mini | OpenAI | $0.075 | 26.79x | $0.75 | 7.50x | $4.5 | 16.07x | Standard API short context |
-| Gemini 3.6 Flash | Google | $0.075 | 26.79x | $0.75 | 7.50x | $3.75 | 13.39x | Standard paid tier promotional price through 2026-12-31 |
-| Gemini 3.7 Flash | Google | $0.075 | 26.79x | $0.75 | 7.50x | $3.75 | 13.39x | Standard paid tier promotional price through 2026-12-31 |
-| Gemini 3.8 Flash | Google | $0.075 | 26.79x | $0.75 | 7.50x | $3.75 | 13.39x | Standard paid tier introductory price through 2026-12-31 |
-| GLM-5.3-FlashX | Z.AI | $0.075 | 26.79x | $0.37 | 3.70x | $1.25 | 4.46x | Standard API |
-| Gemini 3.5 Flash | Google | $0.15 | 53.57x | $1.5 | 15.00x | $9 | 32.14x | Standard paid tier |
-| Kimi K2.6 | Moonshot AI / Kimi | $0.16 | 57.14x | $0.95 | 9.50x | $4 | 14.29x | unverified - previous Standard API |
-| Kimi K2.7 Code | Moonshot AI / Kimi | $0.19 | 67.86x | $0.95 | 9.50x | $4 | 14.29x | unverified - previous Standard API |
-| Claude Opus 5.5 | Anthropic | $0.2 | 71.43x | $4 | 40.00x | $20 | 71.43x | Standard Claude API global routing |
-| GPT-6 Sol (short context) | OpenAI | $0.2 | 71.43x | $2 | 20.00x | $10 | 35.71x | Standard API <=272K input tokens |
-| GLM-5 | Z.AI | $0.2 | 71.43x | $1 | 10.00x | $3.2 | 11.43x | Standard API |
-| Claude Sonnet 5 | Anthropic | $0.2 | 71.43x | $2 | 20.00x | $10 | 35.71x | Standard Claude API global routing |
-| GPT-5.6 Terra (short context) | OpenAI | $0.2 | 71.43x | $2 | 20.00x | $12 | 42.86x | Standard API <=272K input tokens |
-| Gemini 3.1 Pro Preview (<=200K prompts) | Google | $0.2 | 71.43x | $2 | 20.00x | $12 | 42.86x | Standard paid tier <=200K prompts |
-| GLM-5-Turbo | Z.AI | $0.24 | 85.71x | $1.2 | 12.00x | $4 | 14.29x | unverified - previous Standard API |
-| GPT-5.4 (short context) | OpenAI | $0.25 | 89.29x | $2.5 | 25.00x | $15 | 53.57x | Standard API <=272K input tokens |
-| Claude Fable 5.1 | Anthropic | $0.25 | 89.29x | $10 | 100.00x | $50 | 178.57x | Standard Claude API global routing |
-| Claude Mythos 5.1 | Anthropic | $0.25 | 89.29x | $10 | 100.00x | $50 | 178.57x | Standard Claude API global routing |
-| GLM-5.1 | Z.AI | $0.26 | 92.86x | $1.4 | 14.00x | $4.4 | 15.71x | Standard API |
-| GLM-5.2 | Z.AI | $0.26 | 92.86x | $1.4 | 14.00x | $4.4 | 15.71x | Standard API |
-| GLM-5.3 | Z.AI | $0.26 | 92.86x | $1.4 | 14.00x | $4.4 | 15.71x | Standard API |
-| Grok 4.5 (short context) | xAI | $0.3 | 107.14x | $2 | 20.00x | $6 | 21.43x | Standard global API <200K input tokens |
-| Kimi K3 | Moonshot AI / Kimi | $0.3 | 107.14x | $3 | 30.00x | $15 | 53.57x | unverified - previous Standard API |
-| Kimi K2.7 Code HighSpeed | Moonshot AI / Kimi | $0.38 | 135.71x | $1.9 | 19.00x | $8 | 28.57x | unverified - previous HighSpeed API |
-| GPT-6 Sol (long context) | OpenAI | $0.4 | 142.86x | $4 | 40.00x | $15 | 53.57x | Standard API >272K input tokens |
-| GPT-5.6 Sol (short context) | OpenAI | $0.4 | 142.86x | $4 | 40.00x | $20 | 71.43x | Standard API promotional price <=272K input tokens |
-| GPT-5.6 Terra (long context) | OpenAI | $0.4 | 142.86x | $4 | 40.00x | $18 | 64.29x | Standard API >272K input tokens |
-| Gemini 3.1 Pro Preview (>200K prompts) | Google | $0.4 | 142.86x | $4 | 40.00x | $18 | 64.29x | Standard paid tier >200K prompts |
+| GPT-6 Astra (long context) | OpenAI | $2 | 714.29x | $20 | 200.00x | $75 | 267.86x | Standard API >272K input tokens |
+| Grok 4.7 (long context) | xAI | $1 | 357.14x | $4 | 40.00x | $12 | 42.86x | Standard global API >=200K input tokens |
+| Grok 4.6 (long context) | xAI | $1 | 357.14x | $4 | 40.00x | $12 | 42.86x | Standard global API >=200K input tokens |
+| Claude Fable 5 | Anthropic | $1 | 357.14x | $10 | 100.00x | $50 | 178.57x | Standard Claude API global routing |
+| Claude Mythos 5 | Anthropic | $1 | 357.14x | $10 | 100.00x | $50 | 178.57x | Standard Claude API global routing limited availability |
+| GPT-5.5 (long context) | OpenAI | $1 | 357.14x | $10 | 100.00x | $45 | 160.71x | Standard API >272K input tokens |
+| GPT-6 Astra (short context) | OpenAI | $1 | 357.14x | $10 | 100.00x | $50 | 178.57x | Standard API <=272K input tokens |
+| GPT-5.6 Sol (long context) | OpenAI | $0.8 | 285.71x | $8 | 80.00x | $30 | 107.14x | Standard API promotional price >272K input tokens |
+| Grok 4.5 (long context) | xAI | $0.6 | 214.29x | $4 | 40.00x | $12 | 42.86x | Standard global API >=200K input tokens |
 | Grok 4.7 (short context) | xAI | $0.5 | 178.57x | $2 | 20.00x | $6 | 21.43x | Standard global API <200K input tokens |
 | Grok 4.6 (short context) | xAI | $0.5 | 178.57x | $2 | 20.00x | $6 | 21.43x | Standard global API <200K input tokens |
 | Claude Opus 4.7 | Anthropic | $0.5 | 178.57x | $5 | 50.00x | $25 | 89.29x | Standard Claude API global routing |
@@ -60,15 +24,51 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Claude Opus 5 | Anthropic | $0.5 | 178.57x | $5 | 50.00x | $25 | 89.29x | Standard Claude API global routing |
 | GPT-5.4 (long context) | OpenAI | $0.5 | 178.57x | $5 | 50.00x | $22.5 | 80.36x | Standard API >272K input tokens |
 | GPT-5.5 (short context) | OpenAI | $0.5 | 178.57x | $5 | 50.00x | $30 | 107.14x | Standard API <=272K input tokens |
-| Grok 4.5 (long context) | xAI | $0.6 | 214.29x | $4 | 40.00x | $12 | 42.86x | Standard global API >=200K input tokens |
-| GPT-5.6 Sol (long context) | OpenAI | $0.8 | 285.71x | $8 | 80.00x | $30 | 107.14x | Standard API promotional price >272K input tokens |
-| Grok 4.7 (long context) | xAI | $1 | 357.14x | $4 | 40.00x | $12 | 42.86x | Standard global API >=200K input tokens |
-| Grok 4.6 (long context) | xAI | $1 | 357.14x | $4 | 40.00x | $12 | 42.86x | Standard global API >=200K input tokens |
-| Claude Fable 5 | Anthropic | $1 | 357.14x | $10 | 100.00x | $50 | 178.57x | Standard Claude API global routing |
-| Claude Mythos 5 | Anthropic | $1 | 357.14x | $10 | 100.00x | $50 | 178.57x | Standard Claude API global routing limited availability |
-| GPT-5.5 (long context) | OpenAI | $1 | 357.14x | $10 | 100.00x | $45 | 160.71x | Standard API >272K input tokens |
-| GPT-6 Astra (short context) | OpenAI | $1 | 357.14x | $10 | 100.00x | $50 | 178.57x | Standard API <=272K input tokens |
-| GPT-6 Astra (long context) | OpenAI | $2 | 714.29x | $20 | 200.00x | $75 | 267.86x | Standard API >272K input tokens |
+| GPT-6 Sol (long context) | OpenAI | $0.4 | 142.86x | $4 | 40.00x | $15 | 53.57x | Standard API >272K input tokens |
+| GPT-5.6 Sol (short context) | OpenAI | $0.4 | 142.86x | $4 | 40.00x | $20 | 71.43x | Standard API promotional price <=272K input tokens |
+| GPT-5.6 Terra (long context) | OpenAI | $0.4 | 142.86x | $4 | 40.00x | $18 | 64.29x | Standard API >272K input tokens |
+| Gemini 3.1 Pro Preview (>200K prompts) | Google | $0.4 | 142.86x | $4 | 40.00x | $18 | 64.29x | Standard paid tier >200K prompts |
+| Kimi K2.7 Code HighSpeed | Moonshot AI / Kimi | $0.38 | 135.71x | $1.9 | 19.00x | $8 | 28.57x | unverified - previous HighSpeed API |
+| Grok 4.5 (short context) | xAI | $0.3 | 107.14x | $2 | 20.00x | $6 | 21.43x | Standard global API <200K input tokens |
+| Kimi K3 | Moonshot AI / Kimi | $0.3 | 107.14x | $3 | 30.00x | $15 | 53.57x | unverified - previous Standard API |
+| GLM-5.1 | Z.AI | $0.26 | 92.86x | $1.4 | 14.00x | $4.4 | 15.71x | Standard API |
+| GLM-5.2 | Z.AI | $0.26 | 92.86x | $1.4 | 14.00x | $4.4 | 15.71x | Standard API |
+| GLM-5.3 | Z.AI | $0.26 | 92.86x | $1.4 | 14.00x | $4.4 | 15.71x | Standard API |
+| GPT-5.4 (short context) | OpenAI | $0.25 | 89.29x | $2.5 | 25.00x | $15 | 53.57x | Standard API <=272K input tokens |
+| Claude Fable 5.1 | Anthropic | $0.25 | 89.29x | $10 | 100.00x | $50 | 178.57x | Standard Claude API global routing |
+| Claude Mythos 5.1 | Anthropic | $0.25 | 89.29x | $10 | 100.00x | $50 | 178.57x | Standard Claude API global routing |
+| GLM-5-Turbo | Z.AI | $0.24 | 85.71x | $1.2 | 12.00x | $4 | 14.29x | unverified - previous Standard API |
+| Claude Opus 5.5 | Anthropic | $0.2 | 71.43x | $4 | 40.00x | $20 | 71.43x | Standard Claude API global routing |
+| GPT-6 Sol (short context) | OpenAI | $0.2 | 71.43x | $2 | 20.00x | $10 | 35.71x | Standard API <=272K input tokens |
+| GLM-5 | Z.AI | $0.2 | 71.43x | $1 | 10.00x | $3.2 | 11.43x | Standard API |
+| Claude Sonnet 5 | Anthropic | $0.2 | 71.43x | $2 | 20.00x | $10 | 35.71x | Standard Claude API global routing |
+| GPT-5.6 Terra (short context) | OpenAI | $0.2 | 71.43x | $2 | 20.00x | $12 | 42.86x | Standard API <=272K input tokens |
+| Gemini 3.1 Pro Preview (<=200K prompts) | Google | $0.2 | 71.43x | $2 | 20.00x | $12 | 42.86x | Standard paid tier <=200K prompts |
+| Kimi K2.7 Code | Moonshot AI / Kimi | $0.19 | 67.86x | $0.95 | 9.50x | $4 | 14.29x | unverified - previous Standard API |
+| Kimi K2.6 | Moonshot AI / Kimi | $0.16 | 57.14x | $0.95 | 9.50x | $4 | 14.29x | unverified - previous Standard API |
+| Gemini 3.5 Flash | Google | $0.15 | 53.57x | $1.5 | 15.00x | $9 | 32.14x | Standard paid tier |
+| GPT-5.4 Mini | OpenAI | $0.075 | 26.79x | $0.75 | 7.50x | $4.5 | 16.07x | Standard API short context |
+| Gemini 3.6 Flash | Google | $0.075 | 26.79x | $0.75 | 7.50x | $3.75 | 13.39x | Standard paid tier promotional price through 2026-12-31 |
+| Gemini 3.7 Flash | Google | $0.075 | 26.79x | $0.75 | 7.50x | $3.75 | 13.39x | Standard paid tier promotional price through 2026-12-31 |
+| Gemini 3.8 Flash | Google | $0.075 | 26.79x | $0.75 | 7.50x | $3.75 | 13.39x | Standard paid tier introductory price through 2026-12-31 |
+| GLM-5.3-FlashX | Z.AI | $0.075 | 26.79x | $0.37 | 3.70x | $1.25 | 4.46x | Standard API |
+| DeepSeek V4 Pro (peak) | DeepSeek | $0.044 | 15.71x | $1.32 | 13.20x | $3.96 | 14.14x | Standard API peak |
+| GPT-5.6 Luna (long context) | OpenAI | $0.04 | 14.29x | $0.4 | 4.00x | $1.8 | 6.43x | Standard API >272K input tokens |
+| Xiaomi MiMo-V2.6-Pro-UltraSpeed | Xiaomi MiMo | $0.036 | 12.86x | $4.35 | 43.50x | $8.7 | 31.07x | Overseas real-time API |
+| GLM-5.3-Flash | Z.AI | $0.03 | 10.71x | $0.15 | 1.50x | $0.5 | 1.79x | Standard API list price |
+| Gemini 3.5 Flash-Lite | Google | $0.03 | 10.71x | $0.3 | 3.00x | $2.5 | 8.93x | Standard paid tier text/image/video/audio |
+| Gemini 3.1 Flash-Lite | Google | $0.025 | 8.93x | $0.25 | 2.50x | $1.5 | 5.36x | Standard paid tier text/image/video |
+| DeepSeek V4 Pro (off-peak) | DeepSeek | $0.022 | 7.86x | $0.66 | 6.60x | $1.98 | 7.07x | Standard API off-peak |
+| GPT-6 Luna (long context) | OpenAI | $0.02 | 7.14x | $0.2 | 2.00x | $0.75 | 2.68x | Standard API >272K input tokens |
+| GPT-5.4 Nano | OpenAI | $0.02 | 7.14x | $0.2 | 2.00x | $1.25 | 4.46x | Standard API short context |
+| GPT-5.6 Luna (short context) | OpenAI | $0.02 | 7.14x | $0.2 | 2.00x | $1.2 | 4.29x | Standard API <=272K input tokens |
+| GPT-6 Luna (short context) | OpenAI | $0.01 | 3.57x | $0.1 | 1.00x | $0.5 | 1.79x | Standard API <=272K input tokens |
+| DeepSeek V4.1 Flash (peak) | DeepSeek | $0.006 | 2.14x | $0.3 | 3.00x | $1.2 | 4.29x | Standard API peak |
+| Xiaomi MiMo-V2.6-Pro | Xiaomi MiMo | $0.0036 | 1.29x | $0.435 | 4.35x | $0.87 | 3.11x | Overseas real-time API |
+| Xiaomi MiMo-V2.5-Pro | Xiaomi MiMo | $0.0036 | 1.29x | $0.435 | 4.35x | $0.87 | 3.11x | Overseas API V2.5 reduced price |
+| DeepSeek V4.1 Flash (off-peak) | DeepSeek | $0.003 | 1.07x | $0.15 | 1.50x | $0.6 | 2.14x | Standard API off-peak |
+| Xiaomi MiMo-V2.6-Flash | Xiaomi MiMo | $0.0028 | 1.00x | $0.14 | 1.40x | $0.28 | 1.00x | Overseas real-time API |
+| Xiaomi MiMo-V2.5 | Xiaomi MiMo | $0.0028 | 1.00x | $0.14 | 1.40x | $0.28 | 1.00x | Overseas API V2.5 reduced price |
 
 ## Important Notes
 
