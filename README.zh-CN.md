@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-生成日期：2026-09-24
+生成日期：2026-09-25
 
 所有价格统一为人民币约价 / 1M tokens。主表统一采用海外 API 美元价格，按 `1 USD = 6.6975 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`：Xiaomi MiMo-V2.5 与 MiMo-V2.6-Flash 并列缓存命中和输出基准（美元 0.0028 和 0.28），GPT-6 Luna（短上下文）为输入基准（美元 0.10）。
 
@@ -72,7 +72,7 @@
 
 ## 重要说明
 
-- 于 2026-09-24 复核全部八家厂商：与 9 月 23 日版本相比，未发现已确认的价格变动或符合纳入条件的新模型。仍为 47 个模型、61 条价格记录；CSV 单价、倍率、排序及美元兑人民币汇率 6.6975 均未变。四条 Kimi 记录与 GLM-5-Turbo 因当前官方页面未提供对应价格表，继续标为待核验。
+- 于 2026-09-25 复核全部八家厂商：与 9 月 24 日复核结果相比，未发现已确认的价格变动或符合纳入条件的新模型。仍为 47 个模型、61 条价格记录；CSV 单价、倍率、排序及美元兑人民币汇率 6.6975 均未变。四条 Kimi 记录与 GLM-5-Turbo 因当前官方页面未提供对应价格表，继续标为待核验。
 
 - 于 2026-09-23 加入 xAI：新增 Grok 4.5、4.6、4.7，共 6 条上下文分层价格记录，现共 47 个模型、61 条价格记录。本次添加不改变已有模型价格、各列基准或人民币换算汇率。
 - 用户指定 xAI 版本下限：只收录 Grok 4.5 及更新版本。排除更早代际的 Grok 4.20 系列、Grok 4.3 及 Grok Build 0.1；模型代际不按小数或字符串排序判断。
@@ -84,7 +84,7 @@
 - 汇率采用近似值 `1 USD = 6.6975 CNY`。该汇率取自 Federal Reserve H.10 current release 中 `2026-09-18` 的 CHINA, P.R. YUAN 数据，发布时间为 `2026-09-21`；实际账单以服务商结算币种和付款时汇率为准。
 - DeepSeek V4.1 Flash 使用官方 ID `deepseek-flash`。低谷缓存命中/输入/输出为 USD `0.003/0.15/0.60`，高峰为 `0.006/0.30/1.20` / 1M tokens。旧 `deepseek-v4-flash` 和 `deepseek-v4-flash-vision-exp` 已退役，其别名请求由 V4.1 Flash 服务并按新价计费。当前官方价格表仍列有 V4 Pro，单价保持不变。官方当前高峰时段为周一至周五 UTC `01:00-04:00`、`06:00-10:00`，中国公共假日除外；其余时间、周末及中国公共假日全天均按低谷价计费。
 - Xiaomi MiMo-V2.6-Flash、MiMo-V2.6-Pro 和 MiMo-V2.6-Pro-UltraSpeed 使用官方海外实时 API 价格。MiMo-V2.5 和 MiMo-V2.5-Pro 仍列于官方价格表且价格未变，但已公告将于北京时间 `2026-10-21 10:00` 退役，本次仍保留。国内价格已写入 CSV 备注；缓存写入当前限时免费，Batch 和联网搜索费用未纳入。小米价格页更新时间为 `2026-09-22`。
-- 保留的 Kimi K3、K2.6、K2.7 Code 和 K2.7 Code HighSpeed 数据来自此前的官方模型价格页，并支持自动上下文缓存。Kimi K3 的上下文窗口为 `1,048,576` tokens；K2.x 模型为 `262,144` tokens。促销和代金券不折入 token 单价。
+- 保留的 Kimi K3、K2.6、K2.7 Code 和 K2.7 Code HighSpeed 数据来自此前的官方模型价格页，并支持自动上下文缓存。Kimi K3 的上下文窗口为 `1,048,576` tokens；K2.x 模型为 `262,144` tokens。当前 Kimi 总览说明 K3 缓存写入按 5 分钟和 1 小时 TTL 分别计费；这部分费用不计入本表。促销和代金券不折入 token 单价。
 - Gemini 3.1 Flash-Lite、Gemini 3.5 Flash-Lite、Gemini 3.5 Flash、Gemini 3.6 Flash、Gemini 3.7 Flash 和 Gemini 3.8 Flash 使用官方付费 Standard 价格。Gemini 3.6 Flash、Gemini 3.7 Flash 与 Gemini 3.8 Flash 当前共享每 1M tokens USD `0.75/0.075/3.75` 的输入/缓存命中/输出价，有效至 `2026-12-31`；自 `2027-01-01` 起恢复为 USD `1.50/0.15/7.50`。Gemini 3.1 Pro 使用官方 `gemini-3.1-pro-preview` 付费 Standard 档，并按 `200K` prompt tokens 阈值拆成两行。Gemini 的缓存存储、Batch、Flex、Priority、Google Search、Maps grounding、live、TTS 与图像生成计费均未折入主表。
 - OpenAI GPT-5.4、GPT-5.5、GPT-5.6 和 GPT-6 使用直接 API Standard 价格。主模型按 `272K` 输入 tokens 阈值拆成短上下文和长上下文行；GPT-5.4 Mini 与 Nano 只列官方短上下文 Standard 价格。GPT-6 Sol 和 Luna 超出该阈值时，整个请求按 2 倍输入/缓存价和 1.5 倍输出价计费。GPT-5.6 Sol 当前 Standard 促销价至少持续至 `2026-11-21`。缓存写入、Batch、Flex、Fast mode 未纳入主表；可用区域处理另加 `10%`，GPT-6 Sol/Luna 的欧盟数据驻留仅支持 Standard。
 - Claude Opus 5.5 于 `2026-09-22` 发布，官方 API ID 为 `claude-opus-5-5`。标准缓存命中/输入/输出价为每 1M tokens USD `0.20/4/20`，上下文窗口为 `1M` tokens，最大输出为 `128K` tokens。缓存读取为基础输入价的 0.05 倍；缓存写入、Batch、fast mode 和 US-only inference 加价未纳入。
