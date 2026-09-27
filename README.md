@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-Generated: 2026-09-27
+Generated: 2026-09-28
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`: Xiaomi MiMo-V2.5 and MiMo-V2.6-Flash share the cache-hit and output baselines (USD 0.0028 and 0.28), while GPT-6 Luna (short context) is the input baseline (USD 0.10).
 
@@ -72,7 +72,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 
 ## Important Notes
 
-- Rechecked all eight providers on 2026-09-27: no confirmed price changes or eligible new models since the September 25 verification. Coverage remains 47 models and 61 price rows; CSV prices, multipliers, ordering, and the USD/CNY rate of 6.6975 are unchanged. Four Kimi rows and GLM-5-Turbo remain unverified because current official pages do not expose their price tables.
+- Rechecked all eight providers on 2026-09-28: no confirmed price changes or eligible new models since the September 27 verification. Coverage remains 47 models and 61 price rows; CSV prices, multipliers, ordering, and the USD/CNY rate of 6.6975 are unchanged. Four Kimi rows and GLM-5-Turbo remain unverified because current official pages do not expose their price tables.
 
 - Added xAI on 2026-09-23: Grok 4.5, 4.6, and 4.7 with six context-tier rows; total coverage is now 47 models and 61 price rows. Existing prices, baselines, and the CNY exchange rate are unchanged by this addition.
 - User-requested xAI version floor: Grok 4.5 and newer only. The earlier Grok 4.20 family, Grok 4.3, and Grok Build 0.1 are excluded; model generations are not compared as decimal numbers or lexicographic strings.
