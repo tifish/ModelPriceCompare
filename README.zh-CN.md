@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-生成日期：2026-09-28
+生成日期：2026-09-29
 
 所有价格统一为人民币约价 / 1M tokens。主表统一采用海外 API 美元价格，按 `1 USD = 6.6975 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`：Xiaomi MiMo-V2.5 与 MiMo-V2.6-Flash 并列缓存命中和输出基准（美元 0.0028 和 0.28），GPT-6 Luna（短上下文）为输入基准（美元 0.10）。
 
@@ -44,6 +44,7 @@
 | Anthropic | Claude Sonnet 5 | 71.43x | ¥1.34 | 20.00x | ¥13.40 | 35.71x | ¥66.98 | Standard Claude API global routing |
 | OpenAI | GPT-5.6 Terra（短上下文） | 71.43x | ¥1.34 | 20.00x | ¥13.40 | 42.86x | ¥80.37 | Standard API <=272K input tokens |
 | Google | Gemini 3.1 Pro Preview (<=200K prompts) | 71.43x | ¥1.34 | 20.00x | ¥13.40 | 42.86x | ¥80.37 | Standard paid tier <=200K prompts |
+| Anthropic | Claude Sonnet 5.5 | 71.43x | ¥1.34 | 20.00x | ¥13.40 | 35.71x | ¥66.98 | Standard Claude API global routing |
 | Moonshot AI / Kimi | Kimi K2.7 Code | 67.86x | ¥1.27 | 9.50x | ¥6.36 | 14.29x | ¥26.79 | unverified - previous Standard API |
 | Moonshot AI / Kimi | Kimi K2.6 | 57.14x | ¥1.07 | 9.50x | ¥6.36 | 14.29x | ¥26.79 | unverified - previous Standard API |
 | Google | Gemini 3.5 Flash | 53.57x | ¥1.00 | 15.00x | ¥10.05 | 32.14x | ¥60.28 | Standard paid tier |
@@ -72,7 +73,7 @@
 
 ## 重要说明
 
-- 于 2026-09-28 复核全部八家厂商：与 9 月 27 日复核结果相比，未发现已确认的价格变动或符合纳入条件的新模型。仍为 47 个模型、61 条价格记录；CSV 单价、倍率、排序及美元兑人民币汇率 6.6975 均未变。四条 Kimi 记录与 GLM-5-Turbo 因当前官方页面未提供对应价格表，继续标为待核验。
+- 于 2026-09-29 复核全部八家厂商：新增 Claude Sonnet 5.5（API ID `claude-sonnet-5-5`），每百万 tokens 缓存命中/输入/输出价格为 USD 0.20/2/10，现共 48 个模型、62 条价格记录。已有美元单价、倍率及美元兑人民币参考汇率 6.6975 均未变。四条 Kimi 记录与 GLM-5-Turbo 因当前官方页面未提供对应价格表，继续标为待核验。
 
 - 于 2026-09-23 加入 xAI：新增 Grok 4.5、4.6、4.7，共 6 条上下文分层价格记录，现共 47 个模型、61 条价格记录。本次添加不改变已有模型价格、各列基准或人民币换算汇率。
 - 用户指定 xAI 版本下限：只收录 Grok 4.5 及更新版本。排除更早代际的 Grok 4.20 系列、Grok 4.3 及 Grok Build 0.1；模型代际不按小数或字符串排序判断。
@@ -112,6 +113,7 @@
 - OpenAI gpt-5.6-sol: https://developers.openai.com/api/docs/models/gpt-5.6-sol
 - OpenAI gpt-6-sol: https://developers.openai.com/api/docs/models/gpt-6-sol
 - OpenAI gpt-6-luna: https://developers.openai.com/api/docs/models/gpt-6-luna
+- Claude Sonnet 5.5: https://platform.claude.com/docs/en/models/sonnet-5-5/overview
 - Claude Opus 5.5: https://platform.claude.com/docs/en/models/opus-5-5/overview
 - Anthropic pricing: https://platform.claude.com/docs/en/about-claude/pricing
 - DeepSeek pricing: https://api-docs.deepseek.com/quick_start/pricing/
