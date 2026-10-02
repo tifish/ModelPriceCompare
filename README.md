@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-Generated: 2026-10-02
+Generated: 2026-10-03
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`: Xiaomi MiMo-V2.5 and MiMo-V2.6-Flash share the cache-hit and output baselines (USD 0.0028 and 0.28), while GPT-6 Luna (short context) is the input baseline (USD 0.10).
 
@@ -74,6 +74,8 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Xiaomi MiMo | Xiaomi MiMo-V2.5 | 1.00x | $0.0028 | 1.40x | $0.14 | 1.00x | $0.28 | Overseas API V2.5 reduced price |
 
 ## Important Notes
+
+- Rechecked all eight providers on 2026-10-03: no qualifying new models or verified token-price changes. Coverage remains 49 models and 64 price rows. USD prices, multipliers, and the USD/CNY reference rate of 6.7110 are unchanged. Four Kimi rows and GLM-5-Turbo remain unverified and retain previous values.
 
 - Rechecked all eight providers on 2026-10-02: no qualifying new models or verified token-price changes. Coverage remains 49 models and 64 price rows. USD prices, multipliers, and the USD/CNY reference rate of 6.7110 are unchanged. Four Kimi rows and GLM-5-Turbo remain unverified and retain previous values.
 
