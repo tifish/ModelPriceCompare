@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-Generated: 2026-10-06
+Generated: 2026-10-07
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`: Xiaomi MiMo-V2.5 and MiMo-V2.6-Flash share the cache-hit and output baselines (USD 0.0028 and 0.28), while GPT-6 Luna (short context) is the input baseline (USD 0.10).
 
@@ -75,6 +75,8 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 
 ## Important Notes
 
+- Rechecked all eight providers on 2026-10-07: no qualifying new models or verified token-price changes. Coverage remains 49 models and 64 price rows; USD prices and multipliers are unchanged. Recalculated CNY amounts at USD/CNY 6.7038 (Federal Reserve H.10 observation for 2026-10-02, published 2026-10-05). Four Kimi rows and GLM-5-Turbo remain unverified and retain previous values.
+
 - Rechecked all eight providers on 2026-10-06: no qualifying new models or verified token-price changes. Coverage remains 49 models and 64 price rows. USD prices, multipliers, and the USD/CNY reference rate of 6.7110 are unchanged. Four Kimi rows and GLM-5-Turbo remain unverified and retain previous values.
 
 - Rechecked all eight providers on 2026-10-05: no qualifying new models or verified token-price changes. Coverage remains 49 models and 64 price rows. USD prices, multipliers, and the USD/CNY reference rate of 6.7110 are unchanged. Four Kimi rows and GLM-5-Turbo remain unverified and retain previous values.
@@ -98,7 +100,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 - Rechecked official sources on 2026-09-23: added GPT-6 Sol, GPT-6 Luna, Claude Opus 5.5, and Xiaomi MiMo-V2.6-Flash/Pro/Pro-UltraSpeed, bringing coverage at that stage to 44 models and 55 price rows before the xAI addition. The previous 47 USD price rows are unchanged. Recalculated input multipliers against GPT-6 Luna's USD 0.10 short-context input price and CNY amounts at `1 USD = 6.6975 CNY`. Kimi per-model links redirect to an overview without price tables, and GLM-5-Turbo is absent from Z.AI pricing; these five rows retain previous values marked `unverified`.
 - User-requested version floors: exclude Z.AI/GLM models below 5, Claude models below 4.7, Google Gemini models below 3.1, OpenAI models below 5.4, and Kimi models below 2.6.
 - Excluded discovered entries: OpenAI chat-latest and Daybreak aliases, gpt-5.3-codex below the OpenAI version floor, OpenAI gpt-5.4-pro and gpt-5.5-pro without cache prices, the specialized OpenAI gpt-5.6-cyber and restricted gpt-rosalind-research models, OpenAI image/audio/video/transcription/deep-research/tool rows, deprecated or retired Claude rows, Claude Mythos Preview invitation-only row without a separate pricing-table entry, retired DeepSeek V4 Flash Vision Exp alias, Z.AI free/text rows without cached-input prices, Z.AI vision/image/audio/video/tool/agent rows, Gemini Omni Flash and Gemini Omni Flash Preview without a comparable cache-hit text price, Gemini 3 Flash Preview below the Gemini version floor, Gemini live/audio/TTS/image-generation models, Kimi Moonshot V1 rows without cache-hit prices, Kimi promotions and vouchers, deprecated Xiaomi MiMo legacy names, and image/audio/video/tool-only pricing.
-- USD/CNY reference rate for the Chinese README is `1 USD = 6.7110 CNY`, from the Federal Reserve H.10 observation for `2026-09-25`, published `2026-09-28`.
+- USD/CNY reference rate for the Chinese README is `1 USD = 6.7038 CNY`, from the Federal Reserve H.10 observation for `2026-10-02`, published `2026-10-05`.
 - DeepSeek V4.1 Flash uses `deepseek-flash`: cache-hit/input/output USD `0.003/0.15/0.60` off-peak and `0.006/0.30/1.20` peak per 1M tokens. Retired `deepseek-v4-flash` and `deepseek-v4-flash-vision-exp` aliases now use this model and price. The current official pricing table still lists V4 Pro with unchanged rates. Current peak hours are Monday-Friday `01:00-04:00` and `06:00-10:00 UTC`, excluding Chinese public holidays; all other hours, including weekends and Chinese public holidays in full, are off-peak.
 - Xiaomi MiMo-V2.6-Flash, MiMo-V2.6-Pro, and MiMo-V2.6-Pro-UltraSpeed use official overseas real-time API prices. MiMo-V2.5 and MiMo-V2.5-Pro remain listed at unchanged prices but are scheduled for deprecation on `2026-10-21 10:00 Beijing time`; they are retained until then. Domestic pricing is noted in the CSV. Cache writing is limited-time free; Batch and web search charges are excluded. The Xiaomi pricing page was updated `2026-09-22`.
 - The retained Kimi K3, K2.6, K2.7 Code, and K2.7 Code HighSpeed values came from earlier official per-model pricing pages and support automatic context caching. Kimi K3 has a `1,048,576` token context window; the K2.x models have `262,144` tokens. The current Kimi overview specifies separate K3 cache-write charges for 5-minute and 1-hour TTLs; those charges are excluded from this token-price comparison. Promotions and vouchers are excluded from token unit prices.
