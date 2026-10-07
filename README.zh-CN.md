@@ -2,9 +2,9 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-生成日期：2026-10-07
+生成日期：2026-10-08
 
-所有价格统一为人民币约价 / 1M tokens。主表统一采用海外 API 美元价格，按 `1 USD = 6.7038 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`：Xiaomi MiMo-V2.5 与 MiMo-V2.6-Flash 并列缓存命中和输出基准（美元 0.0028 和 0.28），GPT-6 Luna（短上下文）为输入基准（美元 0.10）。
+所有价格统一为人民币约价 / 1M tokens。主表统一采用海外 API 美元价格，按 `1 USD = 6.7038 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`：Xiaomi MiMo-V2.5 与 MiMo-V2.6-Flash 并列缓存命中和输出基准（美元 0.0028 和 0.28），GPT-6 Luna（短上下文）与 Claude Haiku 5.5（短上下文）并列输入基准（美元 0.10）。
 
 | 提供方 | 模型 | 命中倍率 | 输入缓存命中 | 未命中倍率 | 输入缓存未命中 | 输出倍率 | 输出 | 价格口径 |
 |---|---|---:|---:|---:|---:|---:|---:|---|
@@ -55,6 +55,7 @@
 | Google | Gemini 3.7 Flash | 26.79x | ¥0.50 | 7.50x | ¥5.03 | 13.39x | ¥25.14 | Standard paid tier promotional price through 2026-12-31 |
 | Google | Gemini 3.8 Flash | 26.79x | ¥0.50 | 7.50x | ¥5.03 | 13.39x | ¥25.14 | Standard paid tier introductory price through 2026-12-31 |
 | Z.AI | GLM-5.3-FlashX | 26.79x | ¥0.50 | 3.70x | ¥2.48 | 4.46x | ¥8.38 | Standard API |
+| Anthropic | Claude Haiku 5.5（长上下文） | 17.86x | ¥0.34 | 5.00x | ¥3.35 | 8.93x | ¥16.76 | Standard Claude API global routing >100K input tokens |
 | DeepSeek | DeepSeek V4 Pro (peak) | 15.71x | ¥0.29 | 13.20x | ¥8.85 | 14.14x | ¥26.55 | Standard API peak |
 | OpenAI | GPT-5.6 Luna（长上下文） | 14.29x | ¥0.27 | 4.00x | ¥2.68 | 6.43x | ¥12.07 | Standard API >272K input tokens |
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Pro-UltraSpeed | 12.86x | ¥0.24 | 43.50x | ¥29.16 | 31.07x | ¥58.32 | Overseas real-time API |
@@ -66,6 +67,7 @@
 | OpenAI | GPT-5.4 Nano | 7.14x | ¥0.13 | 2.00x | ¥1.34 | 4.46x | ¥8.38 | Standard API short context |
 | OpenAI | GPT-5.6 Luna（短上下文） | 7.14x | ¥0.13 | 2.00x | ¥1.34 | 4.29x | ¥8.04 | Standard API <=272K input tokens |
 | OpenAI | GPT-6 Luna（短上下文） | 3.57x | ¥0.07 | 1.00x | ¥0.67 | 1.79x | ¥3.35 | Standard API <=272K input tokens |
+| Anthropic | Claude Haiku 5.5（短上下文） | 3.57x | ¥0.07 | 1.00x | ¥0.67 | 1.79x | ¥3.35 | Standard Claude API global routing <=100K input tokens |
 | DeepSeek | DeepSeek V4.1 Flash (peak) | 2.14x | ¥0.04 | 3.00x | ¥2.01 | 4.29x | ¥8.04 | Standard API peak |
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Pro | 1.29x | ¥0.02 | 4.35x | ¥2.92 | 3.11x | ¥5.83 | Overseas real-time API |
 | Xiaomi MiMo | Xiaomi MiMo-V2.5-Pro | 1.29x | ¥0.02 | 4.35x | ¥2.92 | 3.11x | ¥5.83 | Overseas API V2.5 reduced price |
@@ -74,6 +76,8 @@
 | Xiaomi MiMo | Xiaomi MiMo-V2.5 | 1.00x | ¥0.02 | 1.40x | ¥0.94 | 1.00x | ¥1.88 | Overseas API V2.5 reduced price |
 
 ## 重要说明
+
+- 2026-10-08 重新核查全部八家厂商：新增 Claude Haiku 5.5（API ID `claude-haiku-5-5`），按 100K 输入 tokens 阈值拆成两行。短上下文（<=100K）的缓存命中/输入/输出价为 USD `0.01/0.10/0.50`，长上下文（>100K）为 USD `0.05/0.50/2.50` / 1M tokens；与 GPT-6 Luna 短上下文并列输入价格基准。现覆盖 50 个模型、66 条价格记录；已有美元单价、倍率及 USD/CNY 6.7038 均未变化。四条 Kimi 记录和 GLM-5-Turbo 仍标为 unverified，保留此前数值。Haiku 5.5 支持 1M 上下文、128K 最大输出并使用新版 tokenizer；缓存写入、Batch、fast mode 和 US-only inference 加价不纳入主表。
 
 - 2026-10-07 重新核查全部八家厂商：未发现符合纳入条件的新模型或已核实的 token 单价变化。仍覆盖 49 个模型、64 条价格记录；美元单价及倍率不变。人民币约价按 USD/CNY 6.7038 重算（美联储 H.10 于 2026-10-05 发布的 2026-10-02 数据）。四条 Kimi 记录和 GLM-5-Turbo 仍标记为 unverified，保留此前数值。
 
@@ -132,6 +136,7 @@
 - OpenAI gpt-6.1-sol: https://developers.openai.com/api/docs/models/gpt-6.1-sol
 - OpenAI gpt-6-sol: https://developers.openai.com/api/docs/models/gpt-6-sol
 - OpenAI gpt-6-luna: https://developers.openai.com/api/docs/models/gpt-6-luna
+- Claude Haiku 5.5: https://platform.claude.com/docs/en/models/haiku-5-5/overview
 - Claude Sonnet 5.5: https://platform.claude.com/docs/en/models/sonnet-5-5/overview
 - Claude Opus 5.5: https://platform.claude.com/docs/en/models/opus-5-5/overview
 - Anthropic pricing: https://platform.claude.com/docs/en/about-claude/pricing

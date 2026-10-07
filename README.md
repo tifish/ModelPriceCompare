@@ -2,9 +2,9 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-Generated: 2026-10-07
+Generated: 2026-10-08
 
-All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`: Xiaomi MiMo-V2.5 and MiMo-V2.6-Flash share the cache-hit and output baselines (USD 0.0028 and 0.28), while GPT-6 Luna (short context) is the input baseline (USD 0.10).
+All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`: Xiaomi MiMo-V2.5 and MiMo-V2.6-Flash share the cache-hit and output baselines (USD 0.0028 and 0.28), while GPT-6 Luna (short context) and Claude Haiku 5.5 (short context) share the input baseline (USD 0.10).
 
 | Provider | Model | Hit x | Input cache hit | Miss x | Input cache miss | Output x | Output | Basis |
 |---|---|---:|---:|---:|---:|---:|---:|---|
@@ -55,6 +55,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Google | Gemini 3.7 Flash | 26.79x | $0.075 | 7.50x | $0.75 | 13.39x | $3.75 | Standard paid tier promotional price through 2026-12-31 |
 | Google | Gemini 3.8 Flash | 26.79x | $0.075 | 7.50x | $0.75 | 13.39x | $3.75 | Standard paid tier introductory price through 2026-12-31 |
 | Z.AI | GLM-5.3-FlashX | 26.79x | $0.075 | 3.70x | $0.37 | 4.46x | $1.25 | Standard API |
+| Anthropic | Claude Haiku 5.5 (long context) | 17.86x | $0.05 | 5.00x | $0.5 | 8.93x | $2.5 | Standard Claude API global routing >100K input tokens |
 | DeepSeek | DeepSeek V4 Pro (peak) | 15.71x | $0.044 | 13.20x | $1.32 | 14.14x | $3.96 | Standard API peak |
 | OpenAI | GPT-5.6 Luna (long context) | 14.29x | $0.04 | 4.00x | $0.4 | 6.43x | $1.8 | Standard API >272K input tokens |
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Pro-UltraSpeed | 12.86x | $0.036 | 43.50x | $4.35 | 31.07x | $8.7 | Overseas real-time API |
@@ -66,6 +67,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | OpenAI | GPT-5.4 Nano | 7.14x | $0.02 | 2.00x | $0.2 | 4.46x | $1.25 | Standard API short context |
 | OpenAI | GPT-5.6 Luna (short context) | 7.14x | $0.02 | 2.00x | $0.2 | 4.29x | $1.2 | Standard API <=272K input tokens |
 | OpenAI | GPT-6 Luna (short context) | 3.57x | $0.01 | 1.00x | $0.1 | 1.79x | $0.5 | Standard API <=272K input tokens |
+| Anthropic | Claude Haiku 5.5 (short context) | 3.57x | $0.01 | 1.00x | $0.1 | 1.79x | $0.5 | Standard Claude API global routing <=100K input tokens |
 | DeepSeek | DeepSeek V4.1 Flash (peak) | 2.14x | $0.006 | 3.00x | $0.3 | 4.29x | $1.2 | Standard API peak |
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Pro | 1.29x | $0.0036 | 4.35x | $0.435 | 3.11x | $0.87 | Overseas real-time API |
 | Xiaomi MiMo | Xiaomi MiMo-V2.5-Pro | 1.29x | $0.0036 | 4.35x | $0.435 | 3.11x | $0.87 | Overseas API V2.5 reduced price |
@@ -74,6 +76,8 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Xiaomi MiMo | Xiaomi MiMo-V2.5 | 1.00x | $0.0028 | 1.40x | $0.14 | 1.00x | $0.28 | Overseas API V2.5 reduced price |
 
 ## Important Notes
+
+- Rechecked all eight providers on 2026-10-08: added Claude Haiku 5.5 (API ID `claude-haiku-5-5`) as two rows split at 100K input tokens. Cache-hit/input/output prices are USD `0.01/0.10/0.50` for prompts <=100K and `0.05/0.50/2.50` for prompts >100K per 1M tokens. Its short-context input price ties GPT-6 Luna as the input baseline. The report now covers 50 models and 66 price rows; existing USD prices, multipliers, and USD/CNY 6.7038 are unchanged. Four Kimi rows and GLM-5-Turbo remain unverified with previous values retained. Haiku 5.5 supports 1M context and 128K max output and uses the newer tokenizer; cache writes, Batch, fast mode, and US-only inference uplift are excluded.
 
 - Rechecked all eight providers on 2026-10-07: no qualifying new models or verified token-price changes. Coverage remains 49 models and 64 price rows; USD prices and multipliers are unchanged. Recalculated CNY amounts at USD/CNY 6.7038 (Federal Reserve H.10 observation for 2026-10-02, published 2026-10-05). Four Kimi rows and GLM-5-Turbo remain unverified and retain previous values.
 
@@ -132,6 +136,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 - OpenAI gpt-6.1-sol: https://developers.openai.com/api/docs/models/gpt-6.1-sol
 - OpenAI gpt-6-sol: https://developers.openai.com/api/docs/models/gpt-6-sol
 - OpenAI gpt-6-luna: https://developers.openai.com/api/docs/models/gpt-6-luna
+- Claude Haiku 5.5: https://platform.claude.com/docs/en/models/haiku-5-5/overview
 - Claude Sonnet 5.5: https://platform.claude.com/docs/en/models/sonnet-5-5/overview
 - Claude Opus 5.5: https://platform.claude.com/docs/en/models/opus-5-5/overview
 - Anthropic pricing: https://platform.claude.com/docs/en/about-claude/pricing
