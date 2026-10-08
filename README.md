@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-Generated: 2026-10-08
+Generated: 2026-10-09
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`: Xiaomi MiMo-V2.5 and MiMo-V2.6-Flash share the cache-hit and output baselines (USD 0.0028 and 0.28), while GPT-6 Luna (short context) and Claude Haiku 5.5 (short context) share the input baseline (USD 0.10).
 
@@ -76,6 +76,8 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Xiaomi MiMo | Xiaomi MiMo-V2.5 | 1.00x | $0.0028 | 1.40x | $0.14 | 1.00x | $0.28 | Overseas API V2.5 reduced price |
 
 ## Important Notes
+
+- Rechecked all eight providers on 2026-10-09: no qualifying new models or verified token-price changes. Coverage remains 50 models and 66 price rows; USD prices, multipliers, and the USD/CNY reference rate of 6.7038 are unchanged. The browser-rendered Kimi and DeepSeek pricing pages confirm their retained prices. GLM-5-Turbo remains absent from the official Z.AI pricing table and retains its previous values marked `unverified`. Newly listed image/audio/video models remain excluded.
 
 - Follow-up verification of all eight providers on 2026-10-08: Claude Sonnet 5.5 cache reads are now USD `0.10` per 1M tokens, down from the previously recorded `0.20`; input/output remain USD `2/10`. Updated its cache-hit multiplier to `35.71x`, CNY amount to `0.67`, and table position. The browser-rendered Kimi pricing overview confirms all four retained Kimi prices, so their `unverified` labels have been removed and source links point to the overview. Only GLM-5-Turbo remains unverified. No qualifying new models were found; coverage remains 50 models and 66 price rows, with unchanged baselines and USD/CNY 6.7038. Newly listed image/audio/video models remain excluded.
 
