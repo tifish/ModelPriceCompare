@@ -1,6 +1,6 @@
 # 模型 Token 价格比较（人民币）
 
-[English](README.md) | [中文](README.zh-CN.md)
+[English](README.md) | [中文](README.zh-CN.md) | 网页版：[tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/README.zh-CN.html)
 
 生成日期：2026-10-14
 
