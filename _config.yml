@@ -1,0 +1,5 @@
+title: Model Token Price Comparison
+description: LLM API token prices normalized to USD per 1M tokens, verified against official provider pricing pages.
+exclude:
+  - skills/
+  - models.txt
