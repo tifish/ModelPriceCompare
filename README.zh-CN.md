@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | 交互式网页（可排序、按提供方筛选）：[tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-生成日期：2026-10-16
+生成日期：2026-10-17
 
 所有价格统一为人民币约价 / 1M tokens。主表统一采用海外 API 美元价格，按 `1 USD = 6.6920 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`：Xiaomi MiMo-V2.5 与 MiMo-V2.6-Flash 并列缓存命中和输出基准（美元 0.0028 和 0.28），GPT-6 Luna（短上下文）与 Claude Haiku 5.5（短上下文）并列输入基准（美元 0.10）。
 
@@ -76,6 +76,8 @@
 
 ## 重要说明
 
+- 2026-10-17 重新核查全部八家厂商：未发现符合收录条件的新模型或已核实的 token 单价变化。仍覆盖 49 个模型、65 条价格记录；美元单价、倍率与 USD/CNY `6.6920`（美联储 H.10 最新一期，2026-10-13 发布）均不变。Kimi 官方价格总览确认保留的四个价格。DeepSeek 价格页新列出 Search 与 Fetch 工具费用（各为每 1,000 次成功请求 USD `0.75`），属于工具费用，不计入本表。小米价格页仍只列 V2.6 价格；MiMo-V2.5 与 MiMo-V2.5-Pro 请求已自动路由至 V2.6，模型 ID 将于 `2026-10-21 10:00 UTC+8` 失效，因此两行保留至该时间。GLM-5-Turbo 仍未出现在 Z.AI 官方价格表中，沿用此前数值并标记为 `unverified`。图像/音频/视频/live/TTS 模型以及低于 4.5 的 Grok 版本继续排除。
+
 - 2026-10-16 重新核查全部八家厂商：未发现符合收录条件的新模型或已核实的 token 单价变化。仍覆盖 49 个模型、65 条价格记录；美元单价、倍率与 USD/CNY `6.6920`（美联储 H.10 最新一期，2026-10-13 发布）均不变。Kimi 官方价格总览确认保留的四个价格。Gemini 价格页新列出的 Gemini Robotics ER 2 Preview（专用具身推理模型）和 Gemini Embedding 2（embeddings）不纳入。小米价格页仍只列 V2.6 价格；MiMo-V2.5 与 MiMo-V2.5-Pro 请求已自动路由至 V2.6，模型 ID 将于 `2026-10-21 10:00 UTC+8` 失效，在此之前保留两行。GLM-5-Turbo 仍未出现在 Z.AI 官方价格表中，保留旧值并标记为 `unverified`。图像/音频/视频/live/TTS 模型及低于 4.5 的 Grok 版本继续排除。
 
 - 2026-10-15 重新核查全部八家厂商：新增 Gemini 4 Argon（API ID `gemini-4-argon`），这是 Google 新发布的稳定版旗舰推理模型。当前 Standard 缓存命中/输入/输出为每 1M tokens USD `0.10/2/10` 的推出价，有效至 `2026-11-30`；自 `2026-12-01` 起为 USD `0.20/4/20`。该模型采用与输出共享的 `1,048,576` tokens 统一上下文窗口（默认输出上限 `65,536`，long decode 最高 `1,048,576`），仅支持隐式缓存。现覆盖 49 个模型、65 条价格记录。未发现其他符合收录条件的新模型或已核实的 token 单价变化；原有美元单价与倍率基准不变。人民币约价按 USD/CNY `6.6920` 重算（美联储 H.10 于 2026-10-13 发布的 2026-10-09 数据）。小米价格页仍只列 V2.6 价格；MiMo-V2.5 与 MiMo-V2.5-Pro 请求已自动路由至 V2.6，模型 ID 将于 `2026-10-21 10:00 UTC+8` 失效，在此之前保留两行。GLM-5-Turbo 仍未出现在 Z.AI 官方价格表中，保留旧值并标记为 `unverified`。图像/音频/视频/live/TTS 模型及低于 4.5 的 Grok 版本继续排除。
@@ -124,7 +126,7 @@
 - 汇率采用近似值 `1 USD = 6.6920 CNY`。该汇率取自 Federal Reserve H.10 current release 中 `2026-10-09` 的 CHINA, P.R. YUAN 数据，发布时间为 `2026-10-13`；实际账单以服务商结算币种和付款时汇率为准。
 - DeepSeek V4.1 Flash 使用官方 ID `deepseek-flash`。低谷缓存命中/输入/输出为 USD `0.003/0.15/0.60`，高峰为 `0.006/0.30/1.20` / 1M tokens。旧 `deepseek-v4-flash` 和 `deepseek-v4-flash-vision-exp` 已退役，其别名请求由 V4.1 Flash 服务并按新价计费。当前官方价格表仍列有 V4 Pro，单价保持不变。官方当前高峰时段为周一至周五 UTC `01:00-04:00`、`06:00-10:00`，中国公共假日除外；其余时间、周末及中国公共假日全天均按低谷价计费。
 - Xiaomi MiMo-V2.6-Flash、MiMo-V2.6-Pro 和 MiMo-V2.6-Pro-UltraSpeed 使用官方海外实时 API 价格。MiMo-V2.5 和 MiMo-V2.5-Pro 仍列于官方价格表且价格未变，但已公告将于北京时间 `2026-10-21 10:00` 退役；自北京时间 `2026-10-14 18:00` 起请求将自动路由至 V2.6。在模型 ID 失效前本表仍保留。国内价格已写入 CSV 备注；缓存写入当前限时免费，Batch 和联网搜索费用未纳入。小米价格页更新时间为 `2026-10-08`。
-- Kimi K3、K2.6、K2.7 Code 和 K2.7 Code HighSpeed 数据已于 2026-10-16 通过官方价格总览核实，支持自动上下文缓存。Kimi K3 的上下文窗口为 `1,048,576` tokens；K2.x 模型为 `262,144` tokens。当前 Kimi 总览说明 K3 缓存写入按 5 分钟和 1 小时 TTL 分别计费；这部分费用不计入本表。促销和代金券不折入 token 单价。
+- Kimi K3、K2.6、K2.7 Code 和 K2.7 Code HighSpeed 数据已于 2026-10-17 通过官方价格总览核实，支持自动上下文缓存。Kimi K3 的上下文窗口为 `1,048,576` tokens；K2.x 模型为 `262,144` tokens。当前 Kimi 总览说明 K3 缓存写入按 5 分钟和 1 小时 TTL 分别计费；这部分费用不计入本表。促销和代金券不折入 token 单价。
 - Gemini 4 Argon 使用官方 `gemini-4-argon` 付费 Standard 价格：缓存命中/输入/输出在 `2026-11-30` 前为 USD `0.10/2/10`，自 `2026-12-01` 起为 USD `0.20/4/20`。该模型仅支持隐式缓存，因此不涉及显式缓存存储费用。
 - Gemini 3.1 Flash-Lite、Gemini 3.5 Flash-Lite、Gemini 3.6 Flash 和 Gemini 3.8 Flash 使用官方付费 Standard 价格。Gemini 3.6 Flash 与 Gemini 3.8 Flash 当前共享每 1M tokens USD `0.75/0.075/3.75` 的输入/缓存命中/输出价，有效至 `2026-12-31`；自 `2027-01-01` 起恢复为 USD `1.50/0.15/7.50`。Gemini 3.1 Pro 使用官方 `gemini-3.1-pro-preview` 付费 Standard 档，并按 `200K` prompt tokens 阈值拆成两行。Gemini 的缓存存储、Batch、Flex、Priority、Google Search、Maps grounding、live、TTS 与图像生成计费均未折入主表。
 - OpenAI GPT-5.4、GPT-5.5、GPT-5.6 和 GPT-6 使用直接 API Standard 价格。主模型按 `272K` 输入 tokens 阈值拆成短上下文和长上下文行；GPT-5.4 Mini 与 Nano 只列官方短上下文 Standard 价格。GPT-6 Sol 和 Luna 超出该阈值时，整个请求按 2 倍输入/缓存价和 1.5 倍输出价计费。GPT-5.6 Sol 当前 Standard 促销价至少持续至 `2026-11-21`。缓存写入、Batch、Flex、Fast mode 未纳入主表；可用区域处理另加 `10%`，GPT-6 Sol/Luna 的欧盟数据驻留支持 Standard、Fast、Flex 和 Batch；GPT-6.1 Sol 的美国及欧盟数据驻留支持 Fast 和 Ultrafast。
