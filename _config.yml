@@ -4,3 +4,5 @@ exclude:
   - skills/
   - models.txt
   - scripts/
+  - README.md
+  - README.zh-CN.md
