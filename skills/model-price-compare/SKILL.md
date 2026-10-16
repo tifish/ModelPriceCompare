@@ -32,8 +32,9 @@ description: 使用官方价格页面比较当前 LLM API token 价格。适用�
    - `README.md`：需要以项目 readme 发布时的默认英文报告
    - `README.zh-CN.md`：需要双语 readme 时的简体中文版本；在两个 readme 顶部附近放语言切换链接
    - `model_price_comparison.csv`：便于电子表格使用的数据
+   - `index.html`：由 `python scripts/build_html.py` 从 CSV 生成的交互式网页（表头点击排序、按提供方开关筛选、USD/CNY 与中英文切换）；每次更新 CSV 或 README 后都要重新生成，不要手工编辑
    - 不再维护独立的 `model_price_comparison*.md`，避免和 README 内容重复；可读报告以双语 README 为准
-10. 本仓库通过 GitHub Pages 从 `main` 分支根目录发布到 https://tifish.github.io/ModelPriceCompare/ （`README.md` 渲染为首页，`README.zh-CN.md` 为中文页，`_config.yml` 控制站点标题和排除项）。更新报告后 push 到 `main` 即自动发布；推送后确认最新一次 Pages 构建成功。
+10. 本仓库通过 GitHub Pages 从 `main` 分支根目录发布到 https://tifish.github.io/ModelPriceCompare/ （`index.html` 为交互式首页，`README.md` 与 `README.zh-CN.md` 分别发布为 `README.html` 与 `README.zh-CN.html`，`_config.yml` 控制站点标题和排除项）。更新报告后 push 到 `main` 即自动发布；推送后确认最新一次 Pages 构建成功。
 
 ## 来源规则
 

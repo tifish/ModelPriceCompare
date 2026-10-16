@@ -3,3 +3,4 @@ description: LLM API token prices normalized to USD per 1M tokens, verified agai
 exclude:
   - skills/
   - models.txt
+  - scripts/

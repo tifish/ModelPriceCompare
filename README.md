@@ -1,6 +1,6 @@
 # Model Token Price Comparison
 
-[English](README.md) | [中文](README.zh-CN.md) | Web page: [tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
+[English](README.md) | [中文](README.zh-CN.md) | Interactive web page (sortable, provider filters): [tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
 Generated: 2026-10-16
 
