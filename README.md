@@ -2,9 +2,9 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | Interactive web page (sortable, provider filters): [tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-Generated: 2026-10-21
+Generated: 2026-10-22
 
-All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`: Xiaomi MiMo-V2.5 and MiMo-V2.6-Flash share the cache-hit and output baselines (USD 0.0028 and 0.28), while GPT-6 Luna (short context) and Claude Haiku 5.5 (short context) share the input baseline (USD 0.10).
+All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`: Xiaomi MiMo-V2.6-Flash sets the cache-hit and output baselines (USD 0.0028 and 0.28), while GPT-6 Luna (short context) and Claude Haiku 5.5 (short context) share the input baseline (USD 0.10).
 
 | Provider | Model | Hit x | Input cache hit | Miss x | Input cache miss | Output x | Output | Basis |
 |---|---|---:|---:|---:|---:|---:|---:|---|
@@ -54,6 +54,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Google | Gemini 3.6 Flash | 26.79x | $0.075 | 7.50x | $0.75 | 13.39x | $3.75 | Standard paid tier promotional price through 2026-12-31 |
 | Google | Gemini 3.8 Flash | 26.79x | $0.075 | 7.50x | $0.75 | 13.39x | $3.75 | Standard paid tier introductory price through 2026-12-31 |
 | Z.AI | GLM-5.3-FlashX | 26.79x | $0.075 | 3.70x | $0.37 | 4.46x | $1.25 | Standard API |
+| Z.AI | GLM-5.3-FlashX-Legal | 26.79x | $0.075 | 3.70x | $0.37 | 4.46x | $1.25 | Standard API |
 | Anthropic | Claude Haiku 5.5 (long context) | 17.86x | $0.05 | 5.00x | $0.5 | 8.93x | $2.5 | Standard Claude API global routing >100K input tokens |
 | DeepSeek | DeepSeek V4 Pro (peak) | 15.71x | $0.044 | 13.20x | $1.32 | 14.14x | $3.96 | Standard API peak |
 | OpenAI | GPT-5.6 Luna (long context) | 14.29x | $0.04 | 4.00x | $0.4 | 6.43x | $1.8 | Standard API >272K input tokens |
@@ -69,12 +70,12 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Anthropic | Claude Haiku 5.5 (short context) | 3.57x | $0.01 | 1.00x | $0.1 | 1.79x | $0.5 | Standard Claude API global routing <=100K input tokens |
 | DeepSeek | DeepSeek V4.1 Flash (peak) | 2.14x | $0.006 | 3.00x | $0.3 | 4.29x | $1.2 | Standard API peak |
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Pro | 1.29x | $0.0036 | 4.35x | $0.435 | 3.11x | $0.87 | Overseas real-time API |
-| Xiaomi MiMo | Xiaomi MiMo-V2.5-Pro | 1.29x | $0.0036 | 4.35x | $0.435 | 3.11x | $0.87 | Overseas API V2.5 reduced price |
 | DeepSeek | DeepSeek V4.1 Flash (off-peak) | 1.07x | $0.003 | 1.50x | $0.15 | 2.14x | $0.6 | Standard API off-peak |
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | $0.0028 | 1.40x | $0.14 | 1.00x | $0.28 | Overseas real-time API |
-| Xiaomi MiMo | Xiaomi MiMo-V2.5 | 1.00x | $0.0028 | 1.40x | $0.14 | 1.00x | $0.28 | Overseas API V2.5 reduced price |
 
 ## Important Notes
+
+- Rechecked all eight providers on 2026-10-22: added GLM-5.3-FlashX-Legal (API ID `glm-5.3-flashx-legal`) at cache-hit/input/output USD `0.075/0.37/1.25` per 1M tokens, confirmed by the official pricing table and model guide. Removed Xiaomi MiMo-V2.5 and MiMo-V2.5-Pro, officially deprecated on `2026-10-21 10:00 UTC+8`. Coverage is now 48 models and 64 price rows. Retained token prices and multiplier baselines are unchanged; MiMo-V2.6-Flash is now the sole cache-hit/output baseline. USD/CNY remains `6.6861` (Federal Reserve H.10, released 2026-10-19). Fully loaded Kimi and expanded OpenAI short/long-context tables confirm existing prices. GLM-5-Turbo remains absent from official pricing and retains previous values marked `unverified`. Existing exclusions remain in effect.
 
 - Rechecked all eight providers on 2026-10-21 before 10:00 UTC+8: no qualifying new models or verified token-price changes; coverage remains 49 models and 65 price rows. Recalculated CNY amounts at USD/CNY `6.6861` using the Federal Reserve H.10 observation for 2026-10-16, published 2026-10-19. USD prices and multipliers are unchanged. The fully loaded Kimi overview and expanded OpenAI short/long-context tables confirm retained prices. MiMo-V2.5 and MiMo-V2.5-Pro remain available until `2026-10-21 10:00 UTC+8` and are retained at the V2.6 routing prices until that cutoff. GLM-5-Turbo still has no official pricing row and remains `unverified`. Newly listed gpt-rosalind-discovery is a specialized life-sciences model outside this comparison; image/audio/video/live/TTS and other existing exclusions remain unchanged.
 
@@ -133,7 +134,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 - Excluded discovered entries: OpenAI chat-latest and Daybreak aliases, gpt-5.3-codex below the OpenAI version floor, OpenAI gpt-5.4-pro and gpt-5.5-pro without cache prices, the specialized OpenAI gpt-5.6-cyber and specialized gpt-rosalind-research/discovery models, OpenAI image/audio/video/transcription/deep-research/tool rows, deprecated or retired Claude rows, Claude Mythos Preview invitation-only row without a separate pricing-table entry, retired DeepSeek V4 Flash Vision Exp alias, Z.AI free/text rows without cached-input prices, Z.AI vision/image/audio/video/tool/agent rows, Gemini Omni Flash and Gemini Omni Flash Preview without a comparable cache-hit text price, Gemini 3 Flash Preview below the Gemini version floor, the specialized Gemini Robotics ER 2 Preview and Streaming Preview models, Gemini Embedding 2, Gemini live/audio/TTS/image-generation models, Kimi Moonshot V1 rows without cache-hit prices, Kimi promotions and vouchers, deprecated Xiaomi MiMo legacy names, and image/audio/video/tool-only pricing.
 - USD/CNY reference rate for the Chinese README is `1 USD = 6.6861 CNY`, from the Federal Reserve H.10 observation for `2026-10-16`, published `2026-10-19`.
 - DeepSeek V4.1 Flash uses `deepseek-flash`: cache-hit/input/output USD `0.003/0.15/0.60` off-peak and `0.006/0.30/1.20` peak per 1M tokens. It currently serves snapshot `DeepSeek-V4.1-Flash-1017`. Retired `deepseek-v4-flash` and `deepseek-v4-flash-vision-exp` aliases now use this model and price. The current official pricing table still lists V4 Pro with unchanged rates. Current peak hours are Monday-Friday `01:00-04:00` and `06:00-10:00 UTC`, excluding Chinese public holidays; all other hours, including weekends and Chinese public holidays in full, are off-peak.
-- Xiaomi MiMo-V2.6-Flash, MiMo-V2.6-Pro, and MiMo-V2.6-Pro-UltraSpeed use official overseas real-time API prices. MiMo-V2.5 and MiMo-V2.5-Pro remain listed at unchanged prices but are scheduled for deprecation on `2026-10-21 10:00 Beijing time`; requests auto-route to V2.6 from `2026-10-14 18:00 UTC+8`. They are retained until the IDs become invalid. Domestic pricing is noted in the CSV. Cache writing is limited-time free; Batch and web search charges are excluded. The Xiaomi pricing page was updated `2026-10-08`.
+- Xiaomi MiMo-V2.6-Flash, MiMo-V2.6-Pro, and MiMo-V2.6-Pro-UltraSpeed use official overseas real-time API prices. MiMo-V2.5 and MiMo-V2.5-Pro were deprecated on `2026-10-21 10:00 Beijing time` and have been removed. Domestic pricing is noted in the CSV. Cache writing is limited-time free; Batch and web search charges are excluded. The Xiaomi pricing page was updated `2026-10-21`.
 - The Kimi K3, K2.6, K2.7 Code, and K2.7 Code HighSpeed values were verified in the official pricing overview on 2026-10-21 and support automatic context caching. Kimi K3 has a `1,048,576` token context window; the K2.x models have `262,144` tokens. The current Kimi overview specifies separate K3 cache-write charges for 5-minute and 1-hour TTLs; those charges are excluded from this token-price comparison. Promotions and vouchers are excluded from token unit prices.
 - Gemini 4 Argon uses the official `gemini-4-argon` Standard paid price: USD `0.10/2/10` cache-hit/input/output through `2026-11-30`, then USD `0.20/4/20` from `2026-12-01`. It supports implicit caching only, so no explicit cache storage price applies.
 - Gemini 3.1 Flash-Lite, Gemini 3.5 Flash-Lite, Gemini 3.6 Flash, and Gemini 3.8 Flash use official Standard paid prices. Gemini 3.6 Flash and Gemini 3.8 Flash currently share an input/cache-hit/output price of USD `0.75/0.075/3.75` through `2026-12-31`; the regular USD `1.50/0.15/7.50` price starts `2027-01-01`. Gemini 3.1 Pro uses the official `gemini-3.1-pro-preview` paid Standard tier, split into separate rows for prompts up to `200K` tokens and prompts over `200K` tokens. Gemini cache storage, Batch, Flex, Priority, Google Search, Maps grounding, live, TTS, and image-generation charges are excluded.
@@ -170,7 +171,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 - Anthropic pricing: https://platform.claude.com/docs/en/about-claude/pricing
 - DeepSeek pricing: https://api-docs.deepseek.com/quick_start/pricing/
 - Z.AI pricing: https://docs.z.ai/guides/overview/pricing
-- GLM-5.3-Flash/FlashX model IDs: https://docs.z.ai/guides/llm/glm-5.3-flash
+- GLM-5.3-Flash/FlashX/FlashX-Legal model IDs: https://docs.z.ai/guides/vlm/glm-5.3-flash
 - Kimi K3 pricing: https://platform.kimi.ai/docs/pricing/chat-k3
 - Kimi K2.6 pricing: https://platform.kimi.ai/docs/pricing/chat-k26
 - Kimi K2.7 Code pricing: https://platform.kimi.ai/docs/pricing/chat-k27-code
