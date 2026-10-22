@@ -1,7 +1,6 @@
 DeepSeek V4.1 Flash
 GPT-5.4
 GPT-5.4 Mini
-GPT-5.4 Nano
 GPT-5.5
 GPT-5.6 Luna
 GPT-5.6 Terra
