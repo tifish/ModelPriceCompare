@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | Interactive web page (sortable, provider filters): [tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-Generated: 2026-10-23
+Generated: 2026-10-24
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`: Xiaomi MiMo-V2.6-Flash sets the cache-hit and output baselines (USD 0.0028 and 0.28), while GPT-6 Luna (short context) and Claude Haiku 5.5 (short context) share the input baseline (USD 0.10).
 
@@ -28,7 +28,6 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | OpenAI | GPT-5.6 Sol (short context) | 142.86x | $0.4 | 40.00x | $4 | 71.43x | $20 | Standard API promotional price <=272K input tokens |
 | OpenAI | GPT-5.6 Terra (long context) | 142.86x | $0.4 | 40.00x | $4 | 64.29x | $18 | Standard API >272K input tokens |
 | xAI | Grok 4.5 (short context) | 107.14x | $0.3 | 20.00x | $2 | 21.43x | $6 | Standard global API <200K input tokens |
-| Moonshot AI / Kimi | Kimi K3 | 107.14x | $0.3 | 30.00x | $3 | 53.57x | $15 | Standard API |
 | Z.AI | GLM-5.3 | 92.86x | $0.26 | 14.00x | $1.4 | 15.71x | $4.4 | Standard API |
 | OpenAI | GPT-5.4 (short context) | 89.29x | $0.25 | 25.00x | $2.5 | 53.57x | $15 | Standard API <=272K input tokens |
 | Anthropic | Claude Fable 5.1 | 89.29x | $0.25 | 100.00x | $10 | 178.57x | $50 | Standard Claude API global routing |
@@ -38,6 +37,8 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Anthropic | Claude Sonnet 5 | 71.43x | $0.2 | 20.00x | $2 | 35.71x | $10 | Standard Claude API global routing |
 | OpenAI | GPT-5.6 Terra (short context) | 71.43x | $0.2 | 20.00x | $2 | 42.86x | $12 | Standard API <=272K input tokens |
 | OpenAI | GPT-6.1 Sol (long context) | 71.43x | $0.2 | 40.00x | $4 | 53.57x | $15 | Standard API >272K input tokens |
+| Moonshot AI / Kimi | Kimi K3.1 Pro | 71.43x | $0.2 | 20.00x | $2 | 35.71x | $10 | Standard API |
+| Moonshot AI / Kimi | Kimi K3.1 Pro Highspeed | 71.43x | $0.2 | 40.00x | $4 | 71.43x | $20 | Standard API |
 | Anthropic | Claude Sonnet 5.5 | 35.71x | $0.1 | 20.00x | $2 | 35.71x | $10 | Standard Claude API global routing |
 | OpenAI | GPT-6.1 Sol (short context) | 35.71x | $0.1 | 20.00x | $2 | 35.71x | $10 | Standard API <=272K input tokens |
 | Google | Gemini 4 Argon | 35.71x | $0.1 | 20.00x | $2 | 35.71x | $10 | Standard paid tier introductory price through 2026-11-30 |
@@ -59,7 +60,9 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 
 ## Important Notes
 
-- Current inclusion policy (updated 2026-10-22): OpenAI, Anthropic, and xAI retain their existing scope (GPT-5.4+, Claude 4.7+, Grok 4.5+). All other providers include only their latest series: DeepSeek V4.1, GLM-5.3, Gemini 4, Kimi K3, and Xiaomi MiMo V2.6, including eligible variants within each series. Older series are excluded even if still available. Coverage is now 34 models and 48 price rows. Retained prices, multiplier baselines, and USD/CNY are unchanged. This policy supersedes the historical coverage notes below.
+- Current inclusion policy (updated 2026-10-24): OpenAI, Anthropic, and xAI retain their existing scope (GPT-5.4+, Claude 4.7+, Grok 4.5+). All other providers include only their latest series: DeepSeek V4.1, GLM-5.3, Gemini 4, Kimi K3.1, and Xiaomi MiMo V2.6, including eligible variants within each series. Older series are excluded even if still available. Coverage is now 35 models and 49 price rows. Retained prices, multiplier baselines, and USD/CNY are unchanged. This policy supersedes the historical coverage notes below.
+
+- Rechecked all eight providers on 2026-10-24: added Kimi K3.1 Pro and Kimi K3.1 Pro Highspeed (API IDs `kimi-k3.1-pro` and `kimi-k3.1-pro-highspeed`) at cache-hit/input/output USD `0.20/2/10` and `0.20/4/20` per 1M tokens, confirmed by the browser-rendered official pricing overview and model guide. Removed Kimi K3 under the latest-series policy: the official guide identifies K3.1 as a new series. Coverage is now 35 models and 49 price rows. Other retained token prices, multiplier baselines, and USD/CNY `6.6861` (Federal Reserve H.10, released 2026-10-19) are unchanged. Expanded OpenAI short/long-context tables and the Claude pricing table confirm retained prices. Other exclusions remain in effect.
 
 - Rechecked all eight providers on 2026-10-23: no qualifying new models or token-price changes. Removed GPT-5.4 Nano under the deprecated-model exclusion rule: OpenAI marked it deprecated on 2026-10-01 and schedules API shutdown for 2027-04-01 (recommended replacement: GPT-6 Luna). Coverage is now 34 models and 48 price rows. Fully loaded Kimi and expanded OpenAI short/long-context tables confirm retained prices. Multiplier baselines and USD/CNY `6.6861` (Federal Reserve H.10, released 2026-10-19) are unchanged. Latest-series scope and other exclusions remain in effect.
 
@@ -122,7 +125,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 - USD/CNY reference rate for the Chinese README is `1 USD = 6.6861 CNY`, from the Federal Reserve H.10 observation for `2026-10-16`, published `2026-10-19`.
 - DeepSeek V4.1 Flash uses `deepseek-flash`: cache-hit/input/output USD `0.003/0.15/0.60` off-peak and `0.006/0.30/1.20` peak per 1M tokens. It currently serves snapshot `DeepSeek-V4.1-Flash-1017`. Retired `deepseek-v4-flash` and `deepseek-v4-flash-vision-exp` aliases now use this model and price. V4 Pro is excluded under the latest-series policy. Current peak hours are Monday-Friday `01:00-04:00` and `06:00-10:00 UTC`, excluding Chinese public holidays; all other hours, including weekends and Chinese public holidays in full, are off-peak.
 - Xiaomi MiMo-V2.6-Flash, MiMo-V2.6-Pro, and MiMo-V2.6-Pro-UltraSpeed use official overseas real-time API prices. MiMo-V2.5 and MiMo-V2.5-Pro were deprecated on `2026-10-21 10:00 Beijing time` and have been removed. Domestic pricing is noted in the CSV. Cache writing is limited-time free; Batch and web search charges are excluded. The Xiaomi pricing page was updated `2026-10-21`.
-- Kimi K3 uses the official pricing overview verified on 2026-10-23 and supports automatic context caching with a `1,048,576` token context window. Cache-write charges for 5-minute and 1-hour TTLs, promotions, and vouchers are excluded. K2.x models are excluded under the latest-series policy.
+- Kimi K3.1 Pro and Pro Highspeed use the official pricing overview verified on 2026-10-24. Both support automatic caching and a `1,048,576` token context window. Cache writes (5-minute/1-hour TTL) cost USD `2/4` for Pro and `4/8` for Highspeed per 1M tokens and are excluded, as are promotions and vouchers. API access requires a successful top-up (minimum USD 1). K3 and K2.x are excluded under the latest-series policy.
 - Gemini 4 Argon uses the official `gemini-4-argon` Standard paid price: USD `0.10/2/10` cache-hit/input/output through `2026-11-30`, then USD `0.20/4/20` from `2026-12-01`. It supports implicit caching only, so no explicit cache storage price applies.
 - OpenAI GPT-5.4, GPT-5.5, GPT-5.6, and GPT-6 use direct Standard pricing. Base rows are split into short-context and long-context rows at the `272K` input-token threshold; GPT-5.4 Mini lists only short-context Standard pricing. GPT-6 Sol and Luna charge 2x input/cache and 1.5x output above that threshold for the full request. GPT-5.6 Sol's current promotional Standard price is available at least through `2026-11-21`. Cache writes, Batch, Flex, and Fast mode variants are excluded. Regional processing adds a `10%` uplift where available; GPT-6 Sol/Luna EU data residency supports Standard, Fast, Flex, and Batch processing. GPT-6.1 Sol supports US and EU data residency including Fast and Ultrafast modes.
 - Claude Opus 5.5 was released on `2026-09-22` with API ID `claude-opus-5-5`. Standard cache-hit/input/output prices are USD `0.20/4/20` per 1M tokens, with a `1M` context window and `128K` max output. Cache reads are 0.05x base input; cache writes, Batch, fast mode, and US-only inference uplift are excluded.
@@ -159,6 +162,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 - DeepSeek pricing: https://api-docs.deepseek.com/quick_start/pricing/
 - Z.AI pricing: https://docs.z.ai/guides/overview/pricing
 - GLM-5.3-Flash/FlashX/FlashX-Legal model IDs: https://docs.z.ai/guides/vlm/glm-5.3-flash
+- Kimi K3.1 Pro / Highspeed model guide: https://platform.kimi.ai/docs/guide/kimi-k3-1-pro-quickstart
 - Kimi K3 pricing: https://platform.kimi.ai/docs/pricing/chat-k3
 - Kimi K2.6 pricing: https://platform.kimi.ai/docs/pricing/chat-k26
 - Kimi K2.7 Code pricing: https://platform.kimi.ai/docs/pricing/chat-k27-code
