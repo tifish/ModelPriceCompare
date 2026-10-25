@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | Interactive web page (sortable, provider filters): [tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-Generated: 2026-10-25
+Generated: 2026-10-26
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`: Xiaomi MiMo-V2.6-Flash sets the cache-hit and output baselines (USD 0.0028 and 0.28), while GPT-6 Luna (short context) and Claude Haiku 5.5 (short context) share the input baseline (USD 0.10).
 
@@ -61,6 +61,8 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 ## Important Notes
 
 - Current inclusion policy (updated 2026-10-24): OpenAI, Anthropic, and xAI retain their existing scope (GPT-5.4+, Claude 4.7+, Grok 4.5+). All other providers include only their latest series: DeepSeek V4.1, GLM-5.3, Gemini 4, Kimi K3.1, and Xiaomi MiMo V2.6, including eligible variants within each series. Older series are excluded even if still available. Coverage is now 35 models and 49 price rows. Retained prices, multiplier baselines, and USD/CNY are unchanged. This policy supersedes the historical coverage notes below.
+
+- Rechecked all eight providers on 2026-10-26: no qualifying new models or token-price changes. Coverage remains 35 models and 49 price rows. The fully loaded Kimi pricing overview and expanded OpenAI Standard short/long-context tables confirm retained prices; the other six official pricing pages also match existing records. USD/CNY remains `6.6861` (latest available Federal Reserve H.10 release dated 2026-10-19, observation dated 2026-10-16). Multiplier baselines, latest-series scope, deprecated-model exclusions, and other exclusions remain unchanged.
 
 - Rechecked all eight providers on 2026-10-25: no qualifying new models or token-price changes. Coverage remains 35 models and 49 price rows. The fully loaded Kimi pricing overview and expanded OpenAI Standard short/long-context tables confirm retained prices; the other six official pricing pages also match existing records. USD/CNY remains `6.6861` (Federal Reserve H.10, released 2026-10-19, observation dated 2026-10-16). Multiplier baselines, latest-series scope, deprecated-model exclusions, and other exclusions remain unchanged.
 
