@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | Interactive web page (sortable, provider filters): [tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-Generated: 2026-10-26
+Generated: 2026-10-27
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`: Xiaomi MiMo-V2.6-Flash sets the cache-hit and output baselines (USD 0.0028 and 0.28), while GPT-6 Luna (short context) and Claude Haiku 5.5 (short context) share the input baseline (USD 0.10).
 
@@ -42,10 +42,12 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Anthropic | Claude Sonnet 5.5 | 35.71x | $0.1 | 20.00x | $2 | 35.71x | $10 | Standard Claude API global routing |
 | OpenAI | GPT-6.1 Sol (short context) | 35.71x | $0.1 | 20.00x | $2 | 35.71x | $10 | Standard API <=272K input tokens |
 | Google | Gemini 4 Argon | 35.71x | $0.1 | 20.00x | $2 | 35.71x | $10 | Standard paid tier introductory price through 2026-11-30 |
+| OpenAI | GPT-6.1 Terra (long context) | 35.71x | $0.1 | 20.00x | $2 | 26.79x | $7.5 | Standard API >272K input tokens |
 | OpenAI | GPT-5.4 Mini | 26.79x | $0.075 | 7.50x | $0.75 | 16.07x | $4.5 | Standard API short context |
 | Z.AI | GLM-5.3-FlashX | 26.79x | $0.075 | 3.70x | $0.37 | 4.46x | $1.25 | Standard API |
 | Z.AI | GLM-5.3-FlashX-Legal | 26.79x | $0.075 | 3.70x | $0.37 | 4.46x | $1.25 | Standard API |
 | Anthropic | Claude Haiku 5.5 (long context) | 17.86x | $0.05 | 5.00x | $0.5 | 8.93x | $2.5 | Standard Claude API global routing >100K input tokens |
+| OpenAI | GPT-6.1 Terra (short context) | 17.86x | $0.05 | 10.00x | $1 | 17.86x | $5 | Standard API <=272K input tokens |
 | OpenAI | GPT-5.6 Luna (long context) | 14.29x | $0.04 | 4.00x | $0.4 | 6.43x | $1.8 | Standard API >272K input tokens |
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Pro-UltraSpeed | 12.86x | $0.036 | 43.50x | $4.35 | 31.07x | $8.7 | Overseas real-time API |
 | Z.AI | GLM-5.3-Flash | 10.71x | $0.03 | 1.50x | $0.15 | 1.79x | $0.5 | Standard API list price |
@@ -60,7 +62,9 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 
 ## Important Notes
 
-- Current inclusion policy (updated 2026-10-24): OpenAI, Anthropic, and xAI retain their existing scope (GPT-5.4+, Claude 4.7+, Grok 4.5+). All other providers include only their latest series: DeepSeek V4.1, GLM-5.3, Gemini 4, Kimi K3.1, and Xiaomi MiMo V2.6, including eligible variants within each series. Older series are excluded even if still available. Coverage is now 35 models and 49 price rows. Retained prices, multiplier baselines, and USD/CNY are unchanged. This policy supersedes the historical coverage notes below.
+- Rechecked all eight providers on 2026-10-27: added GPT-6.1 Terra (API ID `gpt-6.1-terra`), with Standard cache-hit/input/output USD `0.05/1/5` for up to 272K input tokens and `0.10/2/7.5` above that threshold per 1M tokens. Coverage is now 36 models and 51 price rows. Existing token prices and multiplier baselines are unchanged. OpenAI pricing Markdown includes the complete Standard short/long-context tables; Kimi prices were verified from the official page's embedded table data after browser snapshot timeouts. USD/CNY remains `6.6861` (latest available Federal Reserve H.10 release dated 2026-10-19, observation dated 2026-10-16). Latest-series scope and existing exclusions remain unchanged.
+
+- Current inclusion policy (updated 2026-10-24): OpenAI, Anthropic, and xAI retain their existing scope (GPT-5.4+, Claude 4.7+, Grok 4.5+). All other providers include only their latest series: DeepSeek V4.1, GLM-5.3, Gemini 4, Kimi K3.1, and Xiaomi MiMo V2.6, including eligible variants within each series. Older series are excluded even if still available. Coverage is now 36 models and 51 price rows. Retained prices, multiplier baselines, and USD/CNY are unchanged. This policy supersedes the historical coverage notes below.
 
 - Rechecked all eight providers on 2026-10-26: no qualifying new models or token-price changes. Coverage remains 35 models and 49 price rows. The fully loaded Kimi pricing overview and expanded OpenAI Standard short/long-context tables confirm retained prices; the other six official pricing pages also match existing records. USD/CNY remains `6.6861` (latest available Federal Reserve H.10 release dated 2026-10-19, observation dated 2026-10-16). Multiplier baselines, latest-series scope, deprecated-model exclusions, and other exclusions remain unchanged.
 
@@ -157,6 +161,8 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 - OpenAI gpt-5.6-terra: https://developers.openai.com/api/docs/models/gpt-5.6-terra
 - OpenAI gpt-5.6-sol: https://developers.openai.com/api/docs/models/gpt-5.6-sol
 - OpenAI gpt-6.1-sol: https://developers.openai.com/api/docs/models/gpt-6.1-sol
+- OpenAI gpt-6.1-terra: https://developers.openai.com/api/docs/models/gpt-6.1-terra
+- OpenAI pricing Markdown: https://developers.openai.com/api/docs/pricing.md
 - OpenAI gpt-6-sol: https://developers.openai.com/api/docs/models/gpt-6-sol
 - OpenAI gpt-6-luna: https://developers.openai.com/api/docs/models/gpt-6-luna
 - Claude Haiku 5.5: https://platform.claude.com/docs/en/models/haiku-5-5/overview

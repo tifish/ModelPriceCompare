@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | 交互式网页（可排序、按提供方筛选）：[tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-生成日期：2026-10-26
+生成日期：2026-10-27
 
 所有价格统一为人民币约价 / 1M tokens。主表统一采用海外 API 美元价格，按 `1 USD = 6.6861 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`：Xiaomi MiMo-V2.6-Flash 为缓存命中和输出基准（美元 0.0028 和 0.28），GPT-6 Luna（短上下文）与 Claude Haiku 5.5（短上下文）并列输入基准（美元 0.10）。
 
@@ -42,10 +42,12 @@
 | Anthropic | Claude Sonnet 5.5 | 35.71x | ¥0.67 | 20.00x | ¥13.37 | 35.71x | ¥66.86 | Standard Claude API global routing |
 | OpenAI | GPT-6.1 Sol（短上下文） | 35.71x | ¥0.67 | 20.00x | ¥13.37 | 35.71x | ¥66.86 | Standard API <=272K input tokens |
 | Google | Gemini 4 Argon | 35.71x | ¥0.67 | 20.00x | ¥13.37 | 35.71x | ¥66.86 | Standard paid tier introductory price through 2026-11-30 |
+| OpenAI | GPT-6.1 Terra（长上下文） | 35.71x | ¥0.67 | 20.00x | ¥13.37 | 26.79x | ¥50.15 | Standard API >272K input tokens |
 | OpenAI | GPT-5.4 Mini | 26.79x | ¥0.50 | 7.50x | ¥5.01 | 16.07x | ¥30.09 | Standard API short context |
 | Z.AI | GLM-5.3-FlashX | 26.79x | ¥0.50 | 3.70x | ¥2.47 | 4.46x | ¥8.36 | Standard API |
 | Z.AI | GLM-5.3-FlashX-Legal | 26.79x | ¥0.50 | 3.70x | ¥2.47 | 4.46x | ¥8.36 | Standard API |
 | Anthropic | Claude Haiku 5.5（长上下文） | 17.86x | ¥0.33 | 5.00x | ¥3.34 | 8.93x | ¥16.72 | Standard Claude API global routing >100K input tokens |
+| OpenAI | GPT-6.1 Terra（短上下文） | 17.86x | ¥0.33 | 10.00x | ¥6.69 | 17.86x | ¥33.43 | Standard API <=272K input tokens |
 | OpenAI | GPT-5.6 Luna（长上下文） | 14.29x | ¥0.27 | 4.00x | ¥2.67 | 6.43x | ¥12.03 | Standard API >272K input tokens |
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Pro-UltraSpeed | 12.86x | ¥0.24 | 43.50x | ¥29.08 | 31.07x | ¥58.17 | Overseas real-time API |
 | Z.AI | GLM-5.3-Flash | 10.71x | ¥0.20 | 1.50x | ¥1.00 | 1.79x | ¥3.34 | Standard API list price |
@@ -60,7 +62,9 @@
 
 ## 重要说明
 
-- 当前收录规则（2026-10-24 更新）：OpenAI、Anthropic、xAI 保持既有范围（GPT-5.4+、Claude 4.7+、Grok 4.5+）；其他厂商仅收录最新系列：DeepSeek V4.1、GLM-5.3、Gemini 4、Kimi K3.1、小米 MiMo V2.6，包含系列内符合条件的变体。旧系列即使仍可调用也不再收录。现覆盖 35 个模型、49 条价格记录，保留价格、倍率基准和 USD/CNY 均不变。本规则优先于下方历史更新记录。
+- 2026-10-27 重新核查全部八家厂商：新增 GPT-6.1 Terra（API ID `gpt-6.1-terra`），每 1M tokens 的 Standard 缓存命中/输入/输出为 USD `0.05/1/5`（输入不超过 272K）和 `0.10/2/7.5`（输入超过 272K）。现覆盖 36 个模型、51 条价格记录。原有 token 单价和倍率基准不变。OpenAI 官方价格 Markdown 包含完整 Standard 长短上下文表；浏览器快照超时后，已从 Kimi 官方页面内嵌表格数据核实价格。USD/CNY 仍为 `6.6861`（当前最新可用的美联储 H.10 发布日期为 2026-10-19，数据日期为 2026-10-16）。最新系列范围及既有排除项保持不变。
+
+- 当前收录规则（2026-10-24 更新）：OpenAI、Anthropic、xAI 保持既有范围（GPT-5.4+、Claude 4.7+、Grok 4.5+）；其他厂商仅收录最新系列：DeepSeek V4.1、GLM-5.3、Gemini 4、Kimi K3.1、小米 MiMo V2.6，包含系列内符合条件的变体。旧系列即使仍可调用也不再收录。现覆盖 36 个模型、51 条价格记录，保留价格、倍率基准和 USD/CNY 均不变。本规则优先于下方历史更新记录。
 
 - 2026-10-26 重新核查全部八家厂商：未发现符合收录条件的新模型或 token 单价变化，仍覆盖 35 个模型、49 条价格记录。完整加载的 Kimi 价格总览与展开后的 OpenAI Standard 长短上下文表确认保留价格，其余六家官方价格页也与现有记录一致。USD/CNY 仍为 `6.6861`（当前最新可用的美联储 H.10 发布日期为 2026-10-19，数据日期为 2026-10-16）。倍率基准、最新系列范围、已弃用模型排除规则及其他排除项均不变。
 
@@ -157,6 +161,8 @@
 - OpenAI gpt-5.6-terra: https://developers.openai.com/api/docs/models/gpt-5.6-terra
 - OpenAI gpt-5.6-sol: https://developers.openai.com/api/docs/models/gpt-5.6-sol
 - OpenAI gpt-6.1-sol: https://developers.openai.com/api/docs/models/gpt-6.1-sol
+- OpenAI gpt-6.1-terra: https://developers.openai.com/api/docs/models/gpt-6.1-terra
+- OpenAI pricing Markdown: https://developers.openai.com/api/docs/pricing.md
 - OpenAI gpt-6-sol: https://developers.openai.com/api/docs/models/gpt-6-sol
 - OpenAI gpt-6-luna: https://developers.openai.com/api/docs/models/gpt-6-luna
 - Claude Haiku 5.5: https://platform.claude.com/docs/en/models/haiku-5-5/overview
