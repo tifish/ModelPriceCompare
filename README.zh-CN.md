@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | 交互式网页（可排序、按提供方筛选）：[tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-生成日期：2026-10-28
+生成日期：2026-10-29
 
 所有价格统一为人民币约价 / 1M tokens。主表统一采用海外 API 美元价格，按 `1 USD = 6.6702 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`：Xiaomi MiMo-V2.6-Flash 为缓存命中和输出基准（美元 0.0028 和 0.28），GPT-6 Luna（短上下文）与 Claude Haiku 5.5（短上下文）并列输入基准（美元 0.10）。
 
@@ -61,6 +61,8 @@
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | ¥0.02 | 1.40x | ¥0.93 | 1.00x | ¥1.87 | Overseas real-time API |
 
 ## 重要说明
+
+- 2026-10-29 已重新核验全部八家厂商：没有符合收录条件的新模型，也没有模型 token 价格变化；仍为 36 个模型、51 条价格记录。OpenAI Standard 长短上下文 Markdown 表格及 Kimi 页面内嵌价格表确认现有价格。美元兑人民币仍为 `6.6702`（美联储 H.10 于 2026-10-26 发布，观测日期为 2026-10-23）。最新系列范围和排除项不变；Kimi K2 退役公告涉及已排除的旧系列。首次 Markdown 读取、Kimi HTTP 请求和本地终端编码曾出现错误，随后通过替代读取方式和 UTF-8 输出完成核验。
 
 - 于 2026-10-28 复核全部八家厂商：无符合条件的新模型或 token 单价变化，仍为 36 个模型、51 条价格记录。OpenAI Standard 长短上下文 Markdown 表格和 Kimi 内嵌价格表均确认现有费率。美元兑人民币汇率更新为 `6.6702`（Federal Reserve H.10 发布于 2026-10-26，观测日期为 2026-10-23），并重新计算人民币约价。最新系列范围及排除项不变。初次 Markdown 抓取及 Kimi HTTP 请求出现错误，已通过替代直接抓取方式完成核验。
 
