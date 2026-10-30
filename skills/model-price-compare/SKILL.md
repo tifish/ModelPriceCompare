@@ -36,6 +36,10 @@ description: 使用官方价格页面比较当前 LLM API token 价格。适用�
    - 不再维护独立的 `model_price_comparison*.md`，避免和 README 内容重复；可读报告以双语 README 为准
 10. 本仓库通过 GitHub Pages 从 `main` 分支根目录发布到 https://tifish.github.io/ModelPriceCompare/ （`index.html` 为交互式首页，`README.md` 与 `README.zh-CN.md` 通过 `report-en.md`、`report-zh.md` 引入并分别发布为 `README.html` 与 `README.zh-CN.html`（两个 README 本身在 `_config.yml` 中排除，避免 Pages 发布原始 markdown），`_config.yml` 控制站点标题和排除项）。更新报告后 push 到 `main` 即自动发布；推送后确认最新一次 Pages 构建成功。
 
+## 可靠读取与校验
+
+维护本仓库时，先阅读 [可靠更新流程](references/reliable-updates.md)，使用仓库 `scripts/` 中的固定脚本，避免每次临时重写读取、日期更新和表格校验逻辑。遇到新故障，确认原因并将适用的修复与回归检查固化到脚本或本技能，再完成任务；不可把抓取失败当作无价格变化。
+
 ## 来源规则
 
 - 优先使用官方厂商文档。第三方来源只能用于发现官方页面，不要把第三方页面作为价格依据引用。
