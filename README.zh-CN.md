@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | 交互式网页（可排序、按提供方筛选）：[tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-生成日期：2026-10-30
+生成日期：2026-10-31
 
 所有价格统一为人民币约价 / 1M tokens。主表统一采用海外 API 美元价格，按 `1 USD = 6.6702 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`：Xiaomi MiMo-V2.6-Flash 为缓存命中和输出基准（美元 0.0028 和 0.28），GPT-6 Luna（短上下文）与 Claude Haiku 5.5（短上下文）并列输入基准（美元 0.10）。
 
@@ -61,6 +61,8 @@
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | ¥0.02 | 1.40x | ¥0.93 | 1.00x | ¥1.87 | Overseas real-time API |
 
 ## 重要说明
+
+- 2026-10-31 重新核验全部八家厂商：未发现符合收录规则的新模型或 token 单价变化，仍覆盖 36 个模型、51 条价格记录。OpenAI Standard 长短上下文 Markdown 表格及 Kimi 页面内嵌价格表确认现有价格。美元兑人民币仍为 `6.6702`（美联储 H.10 于 2026-10-26 发布，观测日期为 2026-10-23）。最新系列范围与排除规则不变；Kimi K2 访问限制和 xAI 图像、语音更新不属于保留模型范围。本次来源读取与核验均无错误。
 
 - 2026-10-30 重新核验全部八家厂商：无符合收录条件的新增模型或 token 价格变化，仍覆盖 36 个模型、51 条价格记录。OpenAI Standard 长短上下文 Markdown 表格及 Kimi 页面内嵌价格表确认现有价格。美元兑人民币仍为 `6.6702`（美联储 H.10 于 2026-10-26 发布，观测日期为 2026-10-23）。最新系列范围及排除规则不变；Gemini 3.8 Flash 不属于最新 Gemini 4 系列，xAI 图像及语音更新不在本表范围内。首次 OpenAI Markdown 抓取及本地终端编码出现错误，改用直接请求和 UTF-8 输出后已完成核验。
 

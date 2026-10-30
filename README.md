@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | Interactive web page (sortable, provider filters): [tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-Generated: 2026-10-30
+Generated: 2026-10-31
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`: Xiaomi MiMo-V2.6-Flash sets the cache-hit and output baselines (USD 0.0028 and 0.28), while GPT-6 Luna (short context) and Claude Haiku 5.5 (short context) share the input baseline (USD 0.10).
 
@@ -61,6 +61,8 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | $0.0028 | 1.40x | $0.14 | 1.00x | $0.28 | Overseas real-time API |
 
 ## Important Notes
+
+- Rechecked all eight providers on 2026-10-31: no qualifying new models or token-price changes; coverage remains 36 models and 51 price rows. OpenAI Standard short/long-context Markdown tables and Kimi embedded pricing tables confirm existing rates. USD/CNY remains `6.6702` (Federal Reserve H.10 released 2026-10-26, observation dated 2026-10-23). Latest-series scope and exclusions are unchanged; Kimi K2 access restrictions and xAI image/voice updates are outside the retained model scope. All source retrievals and verification completed without errors.
 
 - Rechecked all eight providers on 2026-10-30: no qualifying new models or token-price changes; coverage remains 36 models and 51 price rows. OpenAI Standard short/long-context Markdown tables and Kimi embedded pricing tables confirm existing rates. USD/CNY remains `6.6702` (Federal Reserve H.10 released 2026-10-26, observation dated 2026-10-23). Latest-series scope and exclusions are unchanged; Gemini 3.8 Flash is outside the latest Gemini 4 series, and xAI image/voice updates are outside this comparison. The initial OpenAI Markdown fetch and local console encoding encountered errors; direct retrieval and UTF-8 output completed verification successfully.
 
