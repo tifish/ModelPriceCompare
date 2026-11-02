@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | Interactive web page (sortable, provider filters): [tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-Generated: 2026-11-02
+Generated: 2026-11-03
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`: Xiaomi MiMo-V2.6-Flash sets the cache-hit and output baselines (USD 0.0028 and 0.28), while GPT-6 Luna (short context) and Claude Haiku 5.5 (short context) share the input baseline (USD 0.10).
 
@@ -61,6 +61,8 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | $0.0028 | 1.40x | $0.14 | 1.00x | $0.28 | Overseas real-time API |
 
 ## Important Notes
+
+- Rechecked all eight providers on 2026-11-03: no qualifying new models or token-price changes; coverage remains 36 models and 51 price rows. OpenAI Standard short/long-context tables and Kimi embedded columns/rows confirm existing rates. Latest-series scope and exclusions are unchanged: restricted Rosalind models, the Astra legal configuration, Gemini 3.8 and image/audio/video models remain excluded. USD/CNY remains `6.6702` (Federal Reserve H.10 current release dated 2026-10-26, observation dated 2026-10-23). All source retrievals and verification completed without errors.
 
 - Rechecked all eight providers on 2026-11-02: retained token prices are unchanged, with 36 models and 51 price rows. OpenAI Standard short/long-context tables and Kimi embedded columns/rows confirm existing rates. No qualifying new standalone models were confirmed: gpt-6-rosalind is restricted life-sciences research, and gpt-6-astra-law is listed as a legal model configuration, without a separate entry in the official model catalog. Both are excluded from this report. DeepSeek Search/Fetch billing from November 1 and OpenAI FedRAMP uplift are excluded non-token or regional charges. USD/CNY remains `6.6702` (Federal Reserve H.10 released 2026-10-26, observation dated 2026-10-23). A guessed legal-configuration detail URL returned 404; verification continued through the official pricing table and documentation/model indexes. The link-discovery rule is now recorded in the reliable update workflow; this run is not eligible for automatic settle.
 
