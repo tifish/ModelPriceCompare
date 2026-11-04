@@ -1,6 +1,7 @@
 """Regression checks for recovered source and artifact failures (no live network)."""
 
 import shutil
+import subprocess
 import tempfile
 import unittest
 from email.message import Message
@@ -52,6 +53,23 @@ class ReliableUpdatesTests(unittest.TestCase):
         updated = update_report(raw, '2026-10-30', 'Checked')
         self.assertEqual(updated, raw.replace(b'2026-10-29', b'2026-10-30').replace(b'## Important Notes\r\n', b'## Important Notes\r\n\n- Checked\n'))
         self.assertEqual(update_report(updated, '2026-10-30', 'Checked'), updated)
+
+    def test_git_crlf_and_real_trailing_spaces(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            def git(*args):
+                return subprocess.run(['git', '-C', str(root), *args], capture_output=True)
+            self.assertEqual(git('init').returncode, 0)
+            shutil.copyfile(ROOT / '.gitattributes', root / '.gitattributes')
+            for name in ['README.md', 'model_price_comparison.csv']:
+                p = root / name
+                p.write_bytes(b'old\r\n')
+                self.assertEqual(git('-c', 'core.autocrlf=false', 'add', name).returncode, 0)
+                p.write_bytes(b'updated\r\n')
+                self.assertEqual(git('diff', '--check', '--', name).returncode, 0)
+                p.write_bytes(b'updated \r\n')
+                self.assertNotEqual(git('diff', '--check', '--', name).returncode, 0)
+                p.write_bytes(b'old\r\n')
 
     def test_separator_is_not_a_price_row(self):
         self.assertEqual(table_rows('| A | B |\n|---|---:|\n| one | two |\n'), [['one', 'two']])

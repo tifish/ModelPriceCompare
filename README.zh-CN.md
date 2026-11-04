@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | 交互式网页（可排序、按提供方筛选）：[tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-生成日期：2026-11-04
+生成日期：2026-11-05
 
 所有价格统一为人民币约价 / 1M tokens。主表统一采用海外 API 美元价格，按 `1 USD = 6.6538 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`：Xiaomi MiMo-V2.6-Flash 为缓存命中和输出基准（美元 0.0028 和 0.28），GPT-6 Luna（短上下文）与 Claude Haiku 5.5（短上下文）并列输入基准（美元 0.10）。
 
@@ -61,6 +61,8 @@
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | ¥0.02 | 1.40x | ¥0.93 | 1.00x | ¥1.86 | Overseas real-time API |
 
 ## 重要说明
+
+- 2026-11-05 重新核验全部八家厂商：没有符合收录条件的新模型，token 单价没有变化，仍为 36 个模型、51 条价格记录。OpenAI Standard 长短上下文表及 Kimi 内嵌价格表的列和数据均确认现有费率。按官方价格页将 GPT-5.6 Sol 促销期限备注更新至 2026-11-30。最新系列范围和排除项不变。美元兑人民币维持 6.6538（美联储 H.10 于 2026-11-02 发布，观测日期为 2026-10-30）。所有来源读取均无错误。 本地空白校验首次将 CSV 的 CRLF 换行误报为行尾空白，已补充 CSV Git 属性并保留真正行尾空格检查。本次不自动 settle。
 
 - 2026-11-04 重新核验全部八家厂商：未发现符合收录条件的新模型或 token 价格变化，仍覆盖 36 个模型、51 条价格记录。OpenAI Standard 长短上下文表及 Kimi 内嵌表格的列和数据均确认现有价格。最新系列范围及排除项不变。USD/CNY 更新为 `6.6538`（美联储 H.10 于 2026-11-02 发布，观测日期为 2026-10-30），并重新计算人民币约价。本次官方来源读取均无错误；本地空白校验首次将历史 CRLF 换行判为行尾空白，已通过 README 专用 Git 属性修复识别并保留真正行尾空格检查。本次不自动 settle。
 
@@ -149,7 +151,7 @@
 - Xiaomi MiMo-V2.6-Flash、MiMo-V2.6-Pro 和 MiMo-V2.6-Pro-UltraSpeed 使用官方海外实时 API 价格。MiMo-V2.5 和 MiMo-V2.5-Pro 已于北京时间 `2026-10-21 10:00` 正式下线并从本表移除。国内价格已写入 CSV 备注；缓存写入当前限时免费，Batch 和联网搜索费用未纳入。小米价格页更新时间为 `2026-10-21`。
 - Kimi K3.1 Pro 和 Pro Highspeed 价格已于 2026-10-24 通过官方价格总览核实，均支持自动缓存和 `1,048,576` tokens 上下文。5 分钟/1 小时 TTL 缓存写入费用分别为 Pro USD `2/4`、Highspeed USD `4/8` / 1M tokens，不计入主表，促销和代金券亦排除。API 访问需要成功充值（最低 USD 1）。K3 和 K2.x 按最新系列规则排除。
 - Gemini 4 Argon 使用官方 `gemini-4-argon` 付费 Standard 价格：缓存命中/输入/输出在 `2026-11-30` 前为 USD `0.10/2/10`，自 `2026-12-01` 起为 USD `0.20/4/20`。该模型仅支持隐式缓存，因此不涉及显式缓存存储费用。
-- OpenAI GPT-5.4、GPT-5.5、GPT-5.6 和 GPT-6 使用直接 API Standard 价格。主模型按 `272K` 输入 tokens 阈值拆成短上下文和长上下文行；GPT-5.4 Mini 只列官方短上下文 Standard 价格。GPT-6 Sol 和 Luna 超出该阈值时，整个请求按 2 倍输入/缓存价和 1.5 倍输出价计费。GPT-5.6 Sol 当前 Standard 促销价至少持续至 `2026-11-21`。缓存写入、Batch、Flex、Fast mode 未纳入主表；可用区域处理另加 `10%`，GPT-6 Sol/Luna 的欧盟数据驻留支持 Standard、Fast、Flex 和 Batch；GPT-6.1 Sol 的美国及欧盟数据驻留支持 Fast 和 Ultrafast。
+- OpenAI GPT-5.4、GPT-5.5、GPT-5.6 和 GPT-6 使用直接 API Standard 价格。主模型按 `272K` 输入 tokens 阈值拆成短上下文和长上下文行；GPT-5.4 Mini 只列官方短上下文 Standard 价格。GPT-6 Sol 和 Luna 超出该阈值时，整个请求按 2 倍输入/缓存价和 1.5 倍输出价计费。GPT-5.6 Sol 当前 Standard 促销价至少持续至 `2026-11-30`。缓存写入、Batch、Flex、Fast mode 未纳入主表；可用区域处理另加 `10%`，GPT-6 Sol/Luna 的欧盟数据驻留支持 Standard、Fast、Flex 和 Batch；GPT-6.1 Sol 的美国及欧盟数据驻留支持 Fast 和 Ultrafast。
 - Claude Opus 5.5 于 `2026-09-22` 发布，官方 API ID 为 `claude-opus-5-5`。标准缓存命中/输入/输出价为每 1M tokens USD `0.20/4/20`，上下文窗口为 `1M` tokens，最大输出为 `128K` tokens。缓存读取为基础输入价的 0.05 倍；缓存写入、Batch、fast mode 和 US-only inference 加价未纳入。
 - Anthropic Claude 使用标准 Claude API 全球路由价格。Claude Opus 5 已公开可用，官方 API ID 为 `claude-opus-5`，上下文窗口为 `1M` tokens，最大输出为 `128K` tokens。Claude Sonnet 5 的首发价（每 1M tokens 输入 USD 2、缓存命中 USD 0.20、输出 USD 10）现已成为标准价；Anthropic 已取消原定于 `2026-09-01` 的涨价。Claude Fable 5 和 Fable 5.1 已公开可用；Claude Mythos 5 和 Mythos 5.1 是 Project Glasswing limited availability。缓存写入、US-only inference、云市场价格和 fast mode premium 未折入主表。Opus 4.7 及更新 Opus、Claude Fable 5、Claude Mythos 5 和 Claude Sonnet 5 使用新版 tokenizer。
 - GLM-5.3-Flash 的 50% 促销已于 `2026-09-09 24:00 UTC+8` 结束；当前缓存命中/输入/输出常规价为 USD `0.03/0.15/0.50` / 1M tokens。

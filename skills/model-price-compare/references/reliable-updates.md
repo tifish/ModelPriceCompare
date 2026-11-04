@@ -26,6 +26,6 @@
 
 ## 后续故障
 
-README 历史内容混用 LF/CRLF；`.gitattributes` 对 `README*.md` 启用 `cr-at-eol`，让 `git diff --check` 正确识别 CRLF，同时保留真正行尾空格等检查。不要为消除 CR 误报重写全部历史换行。修改此规则时用原有混合换行 diff 验证通过，并临时在新增行末插入空格确认检查仍会失败，随后恢复。
+README 历史内容混用 LF/CRLF；`.gitattributes` 对 `README*.md` 和 `model_price_comparison.csv` 启用 `cr-at-eol`，让 `git diff --check` 正确识别 CRLF，同时保留真正行尾空格等检查。不要为消除 CR 误报重写全部历史换行。修改此规则时用原有 README 混合换行及 CSV CRLF 的 diff 验证通过，并临时在新增行末插入空格确认检查仍会失败，随后恢复。
 
 对本流程新出现的问题，修复当前运行后更新最接近根因的脚本或规则，补充有意义的回归场景。不要在报告中不断堆积操作技巧而不更新工具。汇报时区分已恢复错误、未解决问题和实际模型价格变化；自动 settle 继续遵循仓库 AGENTS.md。
