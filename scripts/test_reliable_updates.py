@@ -71,6 +71,14 @@ class ReliableUpdatesTests(unittest.TestCase):
                 self.assertNotEqual(git('diff', '--check', '--', name).returncode, 0)
                 p.write_bytes(b'old\r\n')
 
+    def test_verification_note_encoding_damage(self):
+        raw = '生成日期：2026-11-05\r\n## 重要说明\r\n'.encode('utf-8')
+        for note in ['2026-11-07 ????? token ???', '核验\ufffd失败', 'Checked prices']:
+            with self.assertRaises(ValueError):
+                update_report(raw, '2026-11-07', note, chinese=True)
+        updated = update_report(raw, '2026-11-07', '已核验价格，无变化。', chinese=True)
+        self.assertIn('已核验价格，无变化。'.encode('utf-8'), updated)
+
     def test_separator_is_not_a_price_row(self):
         self.assertEqual(table_rows('| A | B |\n|---|---:|\n| one | two |\n'), [['one', 'two']])
 

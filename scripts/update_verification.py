@@ -22,6 +22,10 @@ def update_report(raw, date, note, chinese=False):
     note = note.strip()
     if not note or "\n" in note or "\r" in note:
         raise ValueError("Supply one nonempty paragraph per note")
+    if "\ufffd" in note or re.search(r"\?{3,}", note):
+        raise ValueError("Verification note contains encoding damage; use UTF-8 file input")
+    if chinese and not re.search(r"[\u4e00-\u9fff]", note):
+        raise ValueError("Chinese verification note must contain Chinese text")
     if not note.startswith("- "):
         note = "- " + note
     text = re.sub(pattern, prefix + date, text, count=1)

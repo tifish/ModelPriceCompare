@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | Interactive web page (sortable, provider filters): [tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-Generated: 2026-11-05
+Generated: 2026-11-07
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`: Xiaomi MiMo-V2.6-Flash sets the cache-hit and output baselines (USD 0.0028 and 0.28), while GPT-6 Luna (short context) and Claude Haiku 5.5 (short context) share the input baseline (USD 0.10).
 
@@ -61,6 +61,8 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | $0.0028 | 1.40x | $0.14 | 1.00x | $0.28 | Overseas real-time API |
 
 ## Important Notes
+
+- Rechecked all eight providers on 2026-11-07: no qualifying new models or token-price changes; coverage remains 36 models and 51 price rows. OpenAI Standard short/long-context tables, Kimi embedded pricing columns/rows, and Gemini Standard pricing confirm existing rates. Latest-series scope and exclusions are unchanged; new image/audio models and specialized cyber models remain outside scope. USD/CNY remains 6.6538 (Federal Reserve H.10 released 2026-11-02, observation dated 2026-10-30). Local PowerShell profile/encoding, the Windows Python alias, an unsupported Markdown response, a missing SSH proxy executable, and an unset Git author identity caused errors; verified fallback paths restored source retrieval and repository connectivity. Recovery rules are recorded in the reliable update workflow, and verification notes now reject encoding damage. This run is not eligible for automatic settle.
 
 - Rechecked all eight providers on 2026-11-05: no qualifying new models or token-price changes; coverage remains 36 models and 51 price rows. OpenAI Standard short/long-context tables and Kimi embedded pricing columns/rows confirm existing rates. Updated the GPT-5.6 Sol promotional-period note to November 30, 2026, as listed on the official pricing page. Latest-series scope and exclusions are unchanged. USD/CNY remains 6.6538 (Federal Reserve H.10 released 2026-11-02, observation dated 2026-10-30). All source retrievals completed without errors. The local whitespace check initially rejected CSV CRLF line endings; the CSV Git attribute now recognizes CRLF while retaining trailing-space checks. This run is not eligible for automatic settle.
 

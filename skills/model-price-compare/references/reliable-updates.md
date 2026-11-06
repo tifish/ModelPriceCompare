@@ -2,10 +2,18 @@
 
 以下命令从仓库根目录运行。Python 统一使用 `python -X utf8`，文件显式读写 UTF-8；不要依赖 Windows 默认 GBK，也不要把网页全文直接输出到默认编码终端。
 
+## Windows 环境预检
+
+- PowerShell 工具调用使用 `login: false`（外部启动使用 `-NoProfile`），避免用户 profile 被执行策略拦截。读取中文时显式指定 `Get-Content -Encoding utf8`，输出前设置 `$OutputEncoding = [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new()`。不修改机器执行策略。
+- 先检查解释器路径和版本。`WindowsApps/python.exe` 可能只是商店占位程序，不能当作可用 Python。优先检查 `py -3`；不可用时定位本机已有 Python，验证版本及标准库后用该解释器的绝对路径运行本文命令（PowerShell 使用 `&`）。不把机器专属路径写入共享脚本，不为此改全局 PATH 或自动安装环境。
+- 提交前先用 `git ls-remote origin refs/heads/main` 检查连接。若 SSH 明确报代理程序不存在，检查 `~/.ssh/config` 中 ProxyCommand 的目标路径。仅在确认直接连接可用后，可用仓库局部 `git config --local core.sshCommand 'ssh -o ProxyCommand=none -o BatchMode=yes -o ConnectTimeout=15'` 固化备用路径；不改全局 SSH 配置。保持主机密钥验证。直连仍失败时报告阻塞，不盲目重试 push。
+- 提交前检查 `git var GIT_AUTHOR_IDENT`。身份未配置时，核对仓库近期提交；在已有上下文明确支持且身份一致时，仅在仓库局部设置 `user.name` 和 `user.email`，不修改全局配置，不把用户邮箱写进共享脚本。身份有歧义则询问用户，不编造。
+
 ## 官方来源读取
 
 - 新发现条目的详情链接必须从官方价格页、模型目录或文档索引中取得，不要按模型 ID 拼接 URL。OpenAI 可从 `https://developers.openai.com/api/docs/llms.txt` 找到模型目录；目录当前为 `https://developers.openai.com/api/docs/models/all.md`。价格页中的 model configuration 不一定有独立模型详情页（例如 `gpt-6-astra-law`）；需区分配置与独立 API 模型。遇到 404 不重复请求同一地址，改查官方索引及价格表；若仍不能确认收录资格，记录排除原因或待核实事项，不将该条目算作已核验的新模型。404 仍属于本次错误，不能自动 settle。
 - OpenAI 完整 Standard 长短上下文表优先直接读取 `https://developers.openai.com/api/docs/pricing.md`。网页工具不支持 `text/markdown`，不要先用它打开 `.md` 再等待失败。使用 `python -X utf8 scripts/fetch_official.py URL --output PATH` 保存到临时目录。
+- Gemini 价格入口 `https://ai.google.dev/gemini-api/docs/pricing` 也可能返回 Markdown，并重定向到 `https://aistudio.google.com/docs/pricing`；优先用同一抓取脚本读取，核对最终官方域名及 Standard 表。网页工具的 unsupported content-type 不是价格核验成功；直接抓取成功后仍需保留本次错误记录。
 - Kimi 价格概览 `https://platform.kimi.ai/docs/pricing/chat` 的正文提取可能漏掉价格表。用同一脚本获取 HTML，检查内嵌 `DocTable` 的 `columns`、`groups` 和 `rows`；逐列辨认 input、output、cached input、cache writes，不能将缓存写入列误当缓存命中列。只读取数据，不执行网页中的 JavaScript。结构变化时重新检查官方模型文档，不盲用旧解析结果。
 - DeepSeek 使用带结尾斜杠的 `https://api-docs.deepseek.com/quick_start/pricing/`；无斜杠页面曾返回入门内容。HTTP 成功不代表取得价格表，必须核对页面标题、模型和实际价格字段。
 - 读取脚本仅对超时、连接错误和指定临时 HTTP 错误进行最多三次 GET 请求，30 秒超时，间隔 1、2 秒。永久 HTTP 错误立即失败；成功后的元数据保留已发生的重试错误。
