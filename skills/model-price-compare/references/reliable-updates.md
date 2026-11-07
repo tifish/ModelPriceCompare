@@ -8,6 +8,7 @@
 - 先检查解释器路径和版本。`WindowsApps/python.exe` 可能只是商店占位程序，不能当作可用 Python。优先检查 `py -3`；不可用时定位本机已有 Python，验证版本及标准库后用该解释器的绝对路径运行本文命令（PowerShell 使用 `&`）。不把机器专属路径写入共享脚本，不为此改全局 PATH 或自动安装环境。
 - 提交前先用 `git ls-remote origin refs/heads/main` 检查连接。若 SSH 明确报代理程序不存在，检查 `~/.ssh/config` 中 ProxyCommand 的目标路径。仅在确认直接连接可用后，可用仓库局部 `git config --local core.sshCommand 'ssh -o ProxyCommand=none -o BatchMode=yes -o ConnectTimeout=15'` 固化备用路径；不改全局 SSH 配置。保持主机密钥验证。直连仍失败时报告阻塞，不盲目重试 push。
 - 提交前检查 `git var GIT_AUTHOR_IDENT`。身份未配置时，核对仓库近期提交；在已有上下文明确支持且身份一致时，仅在仓库局部设置 `user.name` 和 `user.email`，不修改全局配置，不把用户邮箱写进共享脚本。身份有歧义则询问用户，不编造。
+- `py`、`gh` 都是可选工具，先用 `Get-Command py,gh -ErrorAction SilentlyContinue` 检测。没有 `py` 时，检测 `Get-Command python,python3 -ErrorAction SilentlyContinue` 的非 WindowsApps 路径并验证标准库。没有 `gh` 时，公开仓库的 Pages 状态可通过 `fetch_official.py` 读取 GitHub 官方 API：`https://api.github.com/repos/tifish/ModelPriceCompare/actions/runs?head_sha=SHA&per_page=10`，从相同 SHA 的 Pages run 获取 jobs URL，再核对 build、deploy 均成功。也可核对 `/pages/builds/latest` 的 `commit` 和 `status`。状态未完成时进行有界查询；API 限流或无权限时明确报告，不能把上一次部署成功当成本次成功。无需为公开只读查询安装 CLI 或索取凭据。
 
 ## 官方来源读取
 
