@@ -12,6 +12,8 @@
 
 ## 官方来源读取
 
+- 多来源抓取使用 `python -X utf8 scripts/fetch_sources.py OUTPUT_DIR name=https://official-url ...`，避免在 PowerShell 的 `python -c` 参数中嵌套字符串或函数定义（Windows 参数传递可能移除引号并导致 SyntaxError）。需要临时解析逻辑时也先写 UTF-8 脚本再执行。批量命令有任一来源失败即返回非零；逐项核对元数据和重试记录后才能使用结果。Windows 下 `rg` 的文件通配符使用 `rg PATTERN DIRECTORY -g '*.txt'`，不将通配符拼进文件路径。
+
 - 新发现条目的详情链接必须从官方价格页、模型目录或文档索引中取得，不要按模型 ID 拼接 URL。OpenAI 可从 `https://developers.openai.com/api/docs/llms.txt` 找到模型目录；目录当前为 `https://developers.openai.com/api/docs/models/all.md`。价格页中的 model configuration 不一定有独立模型详情页（例如 `gpt-6-astra-law`）；需区分配置与独立 API 模型。遇到 404 不重复请求同一地址，改查官方索引及价格表；若仍不能确认收录资格，记录排除原因或待核实事项，不将该条目算作已核验的新模型。404 仍属于本次错误，不能自动 settle。
 - OpenAI 完整 Standard 长短上下文表优先直接读取 `https://developers.openai.com/api/docs/pricing.md`。网页工具不支持 `text/markdown`，不要先用它打开 `.md` 再等待失败。使用 `python -X utf8 scripts/fetch_official.py URL --output PATH` 保存到临时目录。
 - Gemini 价格入口 `https://ai.google.dev/gemini-api/docs/pricing` 也可能返回 Markdown，并重定向到 `https://aistudio.google.com/docs/pricing`；优先用同一抓取脚本读取，核对最终官方域名及 Standard 表。网页工具的 unsupported content-type 不是价格核验成功；直接抓取成功后仍需保留本次错误记录。

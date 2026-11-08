@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | 交互式网页（可排序、按提供方筛选）：[tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-生成日期：2026-11-08
+生成日期：2026-11-09
 
 所有价格统一为人民币约价 / 1M tokens。主表统一采用海外 API 美元价格，按 `1 USD = 6.6538 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`：Xiaomi MiMo-V2.6-Flash 为缓存命中和输出基准（美元 0.0028 和 0.28），GPT-6 Luna（短上下文）与 Claude Haiku 5.5（短上下文）并列输入基准（美元 0.10）。
 
@@ -61,6 +61,8 @@
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | ¥0.02 | 1.40x | ¥0.93 | 1.00x | ¥1.86 | Overseas real-time API |
 
 ## 重要说明
+
+- 2026-11-09 已重新核验全部八家厂商：没有符合收录条件的新模型，token 价格无变化，仍覆盖 36 个模型、51 条价格记录。OpenAI Standard 长短上下文价格表及模型目录、Claude 全球价格、DeepSeek 峰谷价格、Z.AI、Gemini Standard 价格、Kimi 内嵌价格表的列和行、小米海外实时 API 价格及 xAI 全球上下文分层均确认现有价格。最新系列范围和排除项不变；图像和音频模型、受限科研模型、专项网络安全模型及渠道专属 Fast 版本继续排除。USD/CNY 仍为 6.6538（美联储 H.10 于 2026-11-02 发布，观测日期为 2026-10-30）。所有官方来源均首次抓取成功。本地 PowerShell 参数引号及 Windows rg 通配符路径曾导致错误；批量抓取已固化到 scripts/fetch_sources.py，增加 Unicode 和失败状态回归检查，可靠更新流程也已记录脚本文件执行及 rg glob 用法。本次不符合自动 settle 条件。
 
 - 2026-11-08 重新核验全部八家厂商：没有新增符合条件的模型，也没有 token 价格变化，仍为 36 个模型、51 行价格。OpenAI Standard 长短上下文表、Claude 全球路由价格、DeepSeek 峰谷价、Z.AI、Gemini Standard 价格、Kimi 内嵌价格表各列及数据行、小米海外实时 API 价格和 xAI 全球端点上下文分层均确认现有价格。最新系列范围及排除项不变。美元兑人民币仍为 6.6538（美联储 H.10 于 2026-11-02 发布，观测日期为 2026-10-30）。全部官方来源均首次抓取成功。本地 PowerShell profile 执行、缺少 py/gh 命令及管道编码导致错误，已通过无 profile 执行、已安装的 Python、GitHub 公开 API 和直接写入 UTF-8 文件恢复流程。首次读取保护、可选工具检测与备用路径及中文文件写入规则已固化到 AGENTS.md 和可靠更新流程。本次不符合自动 settle 条件。
 

@@ -7,6 +7,8 @@ import unittest
 from email.message import Message
 from pathlib import Path
 from unittest.mock import Mock
+from unittest.mock import patch
+import fetch_sources
 from urllib.error import HTTPError, URLError
 
 from fetch_official import fetch
@@ -15,6 +17,18 @@ from validate_reports import ROOT, table_rows, validate
 
 
 class ReliableUpdatesTests(unittest.TestCase):
+    def test_batch_fetch_preserves_unicode_and_reports_failure(self):
+        with tempfile.TemporaryDirectory() as directory:
+            arguments = ['fetch_sources.py', directory, 'good=https://example.org/good', 'bad=https://example.org/bad']
+            def retrieve(url):
+                if url.endswith('/bad'):
+                    raise RuntimeError('source unavailable')
+                return '价格 🎉', dict(url=url, attempts=1, errors=[])
+            with patch('sys.argv', arguments), patch('fetch_sources.fetch', side_effect=retrieve), patch('builtins.print'):
+                self.assertEqual(fetch_sources.main(), 1)
+            self.assertEqual((Path(directory) / 'good.txt').read_text(encoding='utf-8'), '价格 🎉')
+            self.assertFalse((Path(directory) / 'bad.txt').exists())
+
     def response(self, text):
         response = Mock()
         response.headers = Message()
