@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | Interactive web page (sortable, provider filters): [tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-Generated: 2026-11-09
+Generated: 2026-11-10
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`: Xiaomi MiMo-V2.6-Flash sets the cache-hit and output baselines (USD 0.0028 and 0.28), while GPT-6 Luna (short context) and Claude Haiku 5.5 (short context) share the input baseline (USD 0.10).
 
@@ -39,6 +39,8 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | OpenAI | GPT-6.1 Sol (long context) | 71.43x | $0.2 | 40.00x | $4 | 53.57x | $15 | Standard API >272K input tokens |
 | Moonshot AI / Kimi | Kimi K3.1 Pro | 71.43x | $0.2 | 20.00x | $2 | 35.71x | $10 | Standard API |
 | Moonshot AI / Kimi | Kimi K3.1 Pro Highspeed | 71.43x | $0.2 | 40.00x | $4 | 71.43x | $20 | Standard API |
+| Anthropic | Claude Fable 5.2 | 71.43x | $0.2 | 80.00x | $8 | 142.86x | $40 | Standard Claude API global routing |
+| Anthropic | Claude Mythos 5.2 | 71.43x | $0.2 | 80.00x | $8 | 142.86x | $40 | Standard Claude API global routing limited availability |
 | Anthropic | Claude Sonnet 5.5 | 35.71x | $0.1 | 20.00x | $2 | 35.71x | $10 | Standard Claude API global routing |
 | OpenAI | GPT-6.1 Sol (short context) | 35.71x | $0.1 | 20.00x | $2 | 35.71x | $10 | Standard API <=272K input tokens |
 | Google | Gemini 4 Argon | 35.71x | $0.1 | 20.00x | $2 | 35.71x | $10 | Standard paid tier introductory price through 2026-11-30 |
@@ -61,6 +63,8 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | $0.0028 | 1.40x | $0.14 | 1.00x | $0.28 | Overseas real-time API |
 
 ## Important Notes
+
+- Rechecked all eight providers on 2026-11-10: added Claude Fable 5.2 and Claude Mythos 5.2 (API IDs claude-fable-5-2 and claude-mythos-5-2), released 2026-11-09, at Standard cache-hit/input/output USD 0.20/8/40 per 1M tokens. Both have 1M context and 128K max output; Mythos 5.2 is limited to organizations verified through Anthropic verification programs. Cache writes (5m/1h) are USD 10/16 per 1M tokens and are excluded, as are Batch and fast mode. Existing token prices, multiplier baselines, latest-series scope and exclusions remain unchanged. Coverage is now 38 models and 53 price rows. OpenAI full Standard tables/catalog and Kimi embedded columns/rows were checked. USD/CNY remains 6.6538 (Federal Reserve H.10 released 2026-11-02, observation dated 2026-10-30). All official fetches succeeded on the first attempt. A local shell-embedded parser command failed due to PowerShell quoting; scripts/inspect_sources.py now provides file-based HTML inspection and source diffs with regression coverage. This run is not eligible for automatic settle.
 
 - Rechecked all eight providers on 2026-11-09: no qualifying new models or token-price changes; coverage remains 36 models and 51 price rows. OpenAI Standard short/long-context tables and model catalog, Claude global pricing, DeepSeek peak/off-peak rates, Z.AI, Gemini Standard pricing, Kimi embedded pricing columns/rows, Xiaomi overseas real-time rates, and xAI global context tiers confirm existing rates. Latest-series scope and exclusions are unchanged; image/audio models, restricted research models, specialized cyber models, and channel-only Fast variants remain excluded. USD/CNY remains 6.6538 (Federal Reserve H.10 released 2026-11-02, observation dated 2026-10-30). All official source fetches succeeded on the first attempt. Local PowerShell argument quoting and a Windows rg wildcard path caused errors; batch retrieval is now implemented in scripts/fetch_sources.py with a Unicode/failure regression check, and the reliable update workflow records script-file execution and rg glob usage. This run is not eligible for automatic settle.
 
@@ -187,6 +191,8 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 - OpenAI pricing Markdown: https://developers.openai.com/api/docs/pricing.md
 - OpenAI gpt-6-sol: https://developers.openai.com/api/docs/models/gpt-6-sol
 - OpenAI gpt-6-luna: https://developers.openai.com/api/docs/models/gpt-6-luna
+- Claude Fable 5.2: https://platform.claude.com/docs/en/models/fable-5-2/overview
+- Claude Mythos 5.2: https://platform.claude.com/docs/en/models/mythos-5-2/overview
 - Claude Haiku 5.5: https://platform.claude.com/docs/en/models/haiku-5-5/overview
 - Claude Sonnet 5.5: https://platform.claude.com/docs/en/models/sonnet-5-5/overview
 - Claude Opus 5.5: https://platform.claude.com/docs/en/models/opus-5-5/overview

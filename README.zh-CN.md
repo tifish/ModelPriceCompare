@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | 交互式网页（可排序、按提供方筛选）：[tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-生成日期：2026-11-09
+生成日期：2026-11-10
 
 所有价格统一为人民币约价 / 1M tokens。主表统一采用海外 API 美元价格，按 `1 USD = 6.6538 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`：Xiaomi MiMo-V2.6-Flash 为缓存命中和输出基准（美元 0.0028 和 0.28），GPT-6 Luna（短上下文）与 Claude Haiku 5.5（短上下文）并列输入基准（美元 0.10）。
 
@@ -39,6 +39,8 @@
 | OpenAI | GPT-6.1 Sol（长上下文） | 71.43x | ¥1.33 | 40.00x | ¥26.62 | 53.57x | ¥99.81 | Standard API >272K input tokens |
 | Moonshot AI / Kimi | Kimi K3.1 Pro | 71.43x | ¥1.33 | 20.00x | ¥13.31 | 35.71x | ¥66.54 | Standard API |
 | Moonshot AI / Kimi | Kimi K3.1 Pro Highspeed | 71.43x | ¥1.33 | 40.00x | ¥26.62 | 71.43x | ¥133.08 | Standard API |
+| Anthropic | Claude Fable 5.2 | 71.43x | ¥1.33 | 80.00x | ¥53.23 | 142.86x | ¥266.15 | Standard Claude API global routing |
+| Anthropic | Claude Mythos 5.2 | 71.43x | ¥1.33 | 80.00x | ¥53.23 | 142.86x | ¥266.15 | Standard Claude API global routing limited availability |
 | Anthropic | Claude Sonnet 5.5 | 35.71x | ¥0.67 | 20.00x | ¥13.31 | 35.71x | ¥66.54 | Standard Claude API global routing |
 | OpenAI | GPT-6.1 Sol（短上下文） | 35.71x | ¥0.67 | 20.00x | ¥13.31 | 35.71x | ¥66.54 | Standard API <=272K input tokens |
 | Google | Gemini 4 Argon | 35.71x | ¥0.67 | 20.00x | ¥13.31 | 35.71x | ¥66.54 | Standard paid tier introductory price through 2026-11-30 |
@@ -61,6 +63,8 @@
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | ¥0.02 | 1.40x | ¥0.93 | 1.00x | ¥1.86 | Overseas real-time API |
 
 ## 重要说明
+
+- 2026-11-10 重新核验全部八家厂商：新增 2026-11-09 发布的 Claude Fable 5.2 和 Claude Mythos 5.2（API ID：claude-fable-5-2、claude-mythos-5-2），Standard 缓存命中／输入／输出价格均为每 1M tokens USD 0.20/8/40。两者上下文均为 1M、最大输出均为 128K；Mythos 5.2 仅向通过 Anthropic 验证计划的组织开放。5 分钟／1 小时缓存写入价为每 1M tokens USD 10/16，不计入主表，Batch 和 fast mode 亦排除。既有 token 价格、倍率基准、最新系列范围和排除项不变；现共 38 个模型、53 行价格。已核对 OpenAI 完整 Standard 表和模型目录、Kimi 内嵌价格表列及数据。USD/CNY 仍为 6.6538（美联储 H.10 发布日期 2026-11-02，观测日期 2026-10-30）。全部官方抓取首次成功。本地一次内嵌解析命令因 PowerShell 引号处理失败；已将 HTML 检查和来源差异比较固化到 scripts/inspect_sources.py，并补充回归检查。本次不符合自动 settle 条件。
 
 - 2026-11-09 已重新核验全部八家厂商：没有符合收录条件的新模型，token 价格无变化，仍覆盖 36 个模型、51 条价格记录。OpenAI Standard 长短上下文价格表及模型目录、Claude 全球价格、DeepSeek 峰谷价格、Z.AI、Gemini Standard 价格、Kimi 内嵌价格表的列和行、小米海外实时 API 价格及 xAI 全球上下文分层均确认现有价格。最新系列范围和排除项不变；图像和音频模型、受限科研模型、专项网络安全模型及渠道专属 Fast 版本继续排除。USD/CNY 仍为 6.6538（美联储 H.10 于 2026-11-02 发布，观测日期为 2026-10-30）。所有官方来源均首次抓取成功。本地 PowerShell 参数引号及 Windows rg 通配符路径曾导致错误；批量抓取已固化到 scripts/fetch_sources.py，增加 Unicode 和失败状态回归检查，可靠更新流程也已记录脚本文件执行及 rg glob 用法。本次不符合自动 settle 条件。
 
@@ -187,6 +191,8 @@
 - OpenAI pricing Markdown: https://developers.openai.com/api/docs/pricing.md
 - OpenAI gpt-6-sol: https://developers.openai.com/api/docs/models/gpt-6-sol
 - OpenAI gpt-6-luna: https://developers.openai.com/api/docs/models/gpt-6-luna
+- Claude Fable 5.2: https://platform.claude.com/docs/en/models/fable-5-2/overview
+- Claude Mythos 5.2: https://platform.claude.com/docs/en/models/mythos-5-2/overview
 - Claude Haiku 5.5: https://platform.claude.com/docs/en/models/haiku-5-5/overview
 - Claude Sonnet 5.5: https://platform.claude.com/docs/en/models/sonnet-5-5/overview
 - Claude Opus 5.5: https://platform.claude.com/docs/en/models/opus-5-5/overview
