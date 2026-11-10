@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | Interactive web page (sortable, provider filters): [tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-Generated: 2026-11-10
+Generated: 2026-11-11
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`: Xiaomi MiMo-V2.6-Flash sets the cache-hit and output baselines (USD 0.0028 and 0.28), while GPT-6 Luna (short context) and Claude Haiku 5.5 (short context) share the input baseline (USD 0.10).
 
@@ -45,6 +45,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | OpenAI | GPT-6.1 Sol (short context) | 35.71x | $0.1 | 20.00x | $2 | 35.71x | $10 | Standard API <=272K input tokens |
 | Google | Gemini 4 Argon | 35.71x | $0.1 | 20.00x | $2 | 35.71x | $10 | Standard paid tier introductory price through 2026-11-30 |
 | OpenAI | GPT-6.1 Terra (long context) | 35.71x | $0.1 | 20.00x | $2 | 26.79x | $7.5 | Standard API >272K input tokens |
+| Google | Gemini 4 Carbon | 35.71x | $0.1 | 20.00x | $2 | 35.71x | $10 | Standard paid tier introductory price through 2026-11-30 |
 | OpenAI | GPT-5.4 Mini | 26.79x | $0.075 | 7.50x | $0.75 | 16.07x | $4.5 | Standard API short context |
 | Z.AI | GLM-5.3-FlashX | 26.79x | $0.075 | 3.70x | $0.37 | 4.46x | $1.25 | Standard API |
 | Z.AI | GLM-5.3-FlashX-Legal | 26.79x | $0.075 | 3.70x | $0.37 | 4.46x | $1.25 | Standard API |
@@ -63,6 +64,8 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | $0.0028 | 1.40x | $0.14 | 1.00x | $0.28 | Overseas real-time API |
 
 ## Important Notes
+
+- Rechecked all eight providers on 2026-11-11: added stable Gemini 4 Carbon (API ID gemini-4-carbon), confirmed in the official model catalog and model page. Standard cache-hit/input/output prices are USD 0.10/2/10 per 1M tokens through 2026-11-30, rising to USD 0.20/4/20 on 2026-12-01. Its unified context window is 1,048,576 tokens; output defaults to 65,536 tokens, with up to 1,048,576 through long decode. Only implicit caching is supported; Batch, Flex, Priority and tool charges are excluded. Existing model token prices and multiplier baselines are unchanged. Coverage is now 39 models and 54 price rows. Checked full OpenAI Standard tables, Claude global pricing, DeepSeek peak/off-peak rates, Z.AI, Gemini Standard, Kimi embedded columns and rows, MiMo overseas real-time rates and xAI global context tiers. Updated USD/CNY to 6.6760 (Federal Reserve H.10 released 2026-11-09, observation 2026-11-06). All official fetches succeeded on the first attempt. Local validation caught a same-price row ordering mismatch; the new synchronization script also needed CRLF support, and diff checking caught a CRLF-only new model line. Fixed these issues; scripts/sync_report_tables.py and regression tests now preserve CSV ordering and report line endings. This run is not eligible for automatic settle due to the new model and recovered local errors.
 
 - Rechecked all eight providers on 2026-11-10: added Claude Fable 5.2 and Claude Mythos 5.2 (API IDs claude-fable-5-2 and claude-mythos-5-2), released 2026-11-09, at Standard cache-hit/input/output USD 0.20/8/40 per 1M tokens. Both have 1M context and 128K max output; Mythos 5.2 is limited to organizations verified through Anthropic verification programs. Cache writes (5m/1h) are USD 10/16 per 1M tokens and are excluded, as are Batch and fast mode. Existing token prices, multiplier baselines, latest-series scope and exclusions remain unchanged. Coverage is now 38 models and 53 price rows. OpenAI full Standard tables/catalog and Kimi embedded columns/rows were checked. USD/CNY remains 6.6538 (Federal Reserve H.10 released 2026-11-02, observation dated 2026-10-30). All official fetches succeeded on the first attempt. A local shell-embedded parser command failed due to PowerShell quoting; scripts/inspect_sources.py now provides file-based HTML inspection and source diffs with regression coverage. This run is not eligible for automatic settle.
 
@@ -214,3 +217,5 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 - Gemini 3.7 Flash (deprecated): https://ai.google.dev/gemini-api/docs/models/gemini-3.7-flash
 - Claude models overview: https://platform.claude.com/docs/en/about-claude/models/overview
 - USD/CNY reference: https://www.federalreserve.gov/releases/h10/current/
+
+- Gemini 4 Carbon: https://ai.google.dev/gemini-api/docs/models/gemini-4-carbon

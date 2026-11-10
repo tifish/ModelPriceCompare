@@ -36,3 +36,4 @@ GLM-5.3-FlashX-Legal
 GPT-6.1 Terra
 Claude Fable 5.2
 Claude Mythos 5.2
+Gemini 4 Carbon

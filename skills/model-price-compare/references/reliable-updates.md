@@ -32,7 +32,7 @@
    `python -X utf8 scripts/update_verification.py --date YYYY-MM-DD --en-note EN_PATH --zh-note ZH_PATH`
 
    脚本保留原有文件的混合 LF/CRLF，避免仅改日期却重写整篇报告；同一段说明重复执行不会再次插入。它只记录核验结果，不负责核验价格。
-2. 有实际价格变动时同步模型列表、CSV 和双语价格表。随后运行 `python -X utf8 scripts/build_html.py`。
+2. 有实际价格变动时同步模型列表、CSV 和双语价格表。新增行后运行 `python -X utf8 scripts/sync_report_tables.py`，以 CSV 顺序同步双语表格及价格，避免手工插入行破坏同价条目的稳定排序；此脚本要求报告已有各模型行，缺失会失败，不会猜测翻译。随后运行 `python -X utf8 scripts/build_html.py`。
 3. 运行 `python -X utf8 scripts/validate_reports.py` 和 `git diff --check`。固定校验覆盖模型清单、非负价格、分类倍率、排序、双语表格所有价格和人民币换算、日期及网页内嵌数据。表头和分隔行按结构剔除，预期数据行数来自 CSV，不硬编码 51、52 或 53。
 4. 修改上述脚本后运行 `python -X utf8 -m unittest discover -s scripts -p "test_*.py"`。如需比较 Git 历史文本，先分别解码并统一 CRLF/LF；用字节相等判断文本数据变化会误报。
 5. 校验失败必须定位为产物错误还是检查逻辑错误，修正后重跑相关检查。价格一致性检查不能替代实时来源核验。提交前检查 diff 只包含预期改动；push 后核对远端提交及同一 SHA 的 Pages build/deploy 结果。
