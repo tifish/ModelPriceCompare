@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | Interactive web page (sortable, provider filters): [tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-Generated: 2026-11-11
+Generated: 2026-11-12
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`: Xiaomi MiMo-V2.6-Flash sets the cache-hit and output baselines (USD 0.0028 and 0.28), while GPT-6 Luna (short context) and Claude Haiku 5.5 (short context) share the input baseline (USD 0.10).
 
@@ -64,6 +64,8 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | $0.0028 | 1.40x | $0.14 | 1.00x | $0.28 | Overseas real-time API |
 
 ## Important Notes
+
+- Rechecked all eight providers on 2026-11-12: no qualifying new models or token-price changes; coverage remains 39 models and 54 price rows. Verified OpenAI full Standard short/long-context tables and model catalog, Claude global pricing, DeepSeek peak/off-peak rates, Z.AI latest-series pricing, Gemini Standard pricing, Kimi embedded pricing columns and rows, MiMo overseas real-time rates, and xAI global context tiers. Claude documentation wording changed without changing applicable rates. Latest-series scope, exclusions and promotional periods remain unchanged. USD/CNY remains 6.6760 (Federal Reserve H.10 released 2026-11-09, observation 2026-11-06). All official fetches succeeded on the first attempt.
 
 - Rechecked all eight providers on 2026-11-11: added stable Gemini 4 Carbon (API ID gemini-4-carbon), confirmed in the official model catalog and model page. Standard cache-hit/input/output prices are USD 0.10/2/10 per 1M tokens through 2026-11-30, rising to USD 0.20/4/20 on 2026-12-01. Its unified context window is 1,048,576 tokens; output defaults to 65,536 tokens, with up to 1,048,576 through long decode. Only implicit caching is supported; Batch, Flex, Priority and tool charges are excluded. Existing model token prices and multiplier baselines are unchanged. Coverage is now 39 models and 54 price rows. Checked full OpenAI Standard tables, Claude global pricing, DeepSeek peak/off-peak rates, Z.AI, Gemini Standard, Kimi embedded columns and rows, MiMo overseas real-time rates and xAI global context tiers. Updated USD/CNY to 6.6760 (Federal Reserve H.10 released 2026-11-09, observation 2026-11-06). All official fetches succeeded on the first attempt. Local validation caught a same-price row ordering mismatch; the new synchronization script also needed CRLF support, and diff checking caught a CRLF-only new model line. Fixed these issues; scripts/sync_report_tables.py and regression tests now preserve CSV ordering and report line endings. This run is not eligible for automatic settle due to the new model and recovered local errors.
 

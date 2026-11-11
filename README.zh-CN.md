@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | 交互式网页（可排序、按提供方筛选）：[tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-生成日期：2026-11-11
+生成日期：2026-11-12
 
 所有价格统一为人民币约价 / 1M tokens。主表统一采用海外 API 美元价格，按 `1 USD = 6.6760 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`：Xiaomi MiMo-V2.6-Flash 为缓存命中和输出基准（美元 0.0028 和 0.28），GPT-6 Luna（短上下文）与 Claude Haiku 5.5（短上下文）并列输入基准（美元 0.10）。
 
@@ -64,6 +64,8 @@
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | ¥0.02 | 1.40x | ¥0.93 | 1.00x | ¥1.87 | Overseas real-time API |
 
 ## 重要说明
+
+- 2026-11-12 重新核验全部八家厂商：没有符合收录条件的新模型或 token 价格变化，仍覆盖 39 个模型、54 行价格。已核对 OpenAI 完整 Standard 长短上下文表及模型目录、Claude 全球标准价格、DeepSeek 高峰与非高峰费率、Z.AI 最新系列价格、Gemini Standard 价格、Kimi 内嵌价格表的列与行、MiMo 海外实时费率及 xAI 全球上下文分层价格。Claude 文档措辞有所调整，适用费率未变。最新系列范围、排除项及促销有效期不变。USD/CNY 维持 6.6760（美联储 H.10 于 2026-11-09 发布，观测日期为 2026-11-06）。所有官方来源均首次抓取成功。
 
 - 2026-11-11 重新核验全部八家厂商：新增稳定版 Gemini 4 Carbon（API ID：gemini-4-carbon），已通过官方模型目录和模型页确认。Standard 缓存命中／输入／输出价为每百万 tokens USD 0.10/2/10，有效至 2026-11-30；2026-12-01 起为 USD 0.20/4/20。统一上下文窗口为 1,048,576 tokens，默认最大输出 65,536 tokens，long decode 最高可达 1,048,576。仅支持隐式缓存；Batch、Flex、Priority 和工具费用排除。既有模型 token 价格及倍率基准不变，现共 39 个模型、54 行价格。已核对 OpenAI 完整 Standard 表、Claude 全球价格、DeepSeek 峰谷价格、Z.AI、Gemini Standard、Kimi 内嵌表列及数据、小米海外实时价格与 xAI 全球上下文分层。USD/CNY 更新为 6.6760（美联储 H.10 发布日期 2026-11-09，观测日期 2026-11-06）。全部官方抓取首次成功。本地校验发现同价行排序不一致；新增同步脚本随后补充 CRLF 支持，diff 检查也发现新增模型行混入 CRLF。均已修正，scripts/sync_report_tables.py 及回归检查已固化 CSV 顺序同步和报告换行保留。因新增模型及已恢复的本地错误，本次不自动 settle。
 
