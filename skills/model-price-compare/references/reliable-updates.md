@@ -25,6 +25,8 @@
 
 ## 报告更新与验证
 
+历史快照文件名可能不同（例如 `anthropic`/`claude`、`catalog`/`openai-models`、`fed`/`fx`）。先列出上一目录的文件，再用 `inspect_sources.py --previous-name CURRENT=OLD` 显式映射；工具会报告缺失快照，不能将未比较的来源称为无变化。直接读取历史文件前先确认其存在。工具同时比较原始全文、HTML 表格和 Kimi DocTable 片段，避免可读文本漏掉内嵌价格。
+
 抓取后可运行 `python -X utf8 scripts/inspect_sources.py OUTPUT_DIR --previous PREVIOUS_DIR`，生成可读 `.clean` 文本、来源差异和模型详情链接。此前即使是 `python -c` 中的正则引号也曾触发 PowerShell 解析错误；HTML、正则和差异解析统一使用脚本文件，不再把复杂解析嵌入 shell 参数。脚本跳过 script/style 和超长 hydration 文本，不执行网页代码；它只辅助检查，不能替代对原始内嵌价格表（如 Kimi DocTable）的核验，也不能把忽略的内容视为无变化。
 
 1. 完成在线价格核验后，将中英文核验说明各写入一个 UTF-8 临时文本文件（单段），再运行：

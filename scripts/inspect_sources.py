@@ -7,6 +7,7 @@ Embedded pricing data still needs separate inspection in the original source.
 
 import argparse
 import difflib
+import re
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -46,14 +47,27 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('source_dir', type=Path)
     parser.add_argument('--previous', type=Path)
+    parser.add_argument('--previous-name', action='append', default=[], metavar='CURRENT=OLD',
+                        help='Map renamed source snapshots explicitly')
     args = parser.parse_args()
+    names = dict(item.split('=', 1) for item in args.previous_name)
     for path in sorted(args.source_dir.glob('*.txt')):
         text, links = readable(path.read_text(encoding='utf-8'))
         path.with_suffix('.clean').write_text(text, encoding='utf-8')
         print('\nSOURCE', path.stem)
-        if args.previous and (args.previous / path.name).exists():
-            old, _ = readable((args.previous / path.name).read_text(encoding='utf-8'))
+        previous = args.previous / (names.get(path.stem, path.stem) + '.txt') if args.previous else None
+        if previous and previous.exists():
+            raw = path.read_text(encoding='utf-8')
+            old_raw = previous.read_text(encoding='utf-8')
+            print('Full source unchanged:', old_raw == raw)
+            print('HTML tables unchanged:', re.findall(r'<table\b.*?</table>', old_raw, re.S) == re.findall(r'<table\b.*?</table>', raw, re.S))
+            if 'DocTable' in raw:
+                chunks = lambda s: [s[max(0, m.start()-50):m.start()+6500] for m in re.finditer('DocTable', s)]
+                print('Embedded DocTable sections unchanged:', chunks(old_raw) == chunks(raw))
+            old, _ = readable(old_raw)
             print(''.join(difflib.unified_diff(old.splitlines(True), text.splitlines(True), n=2)))
+        elif previous:
+            print('NO PREVIOUS SNAPSHOT:', previous, '(not verified unchanged)')
         for link in sorted(links):
             if any(term in link for term in ('5-2', '5.2', 'models/overview')):
                 print('MODEL LINK', link)
