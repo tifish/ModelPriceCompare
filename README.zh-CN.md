@@ -2,68 +2,74 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | 交互式网页（可排序、按提供方筛选）：[tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-生成日期：2026-11-17
+生成日期：2026-11-18
 
-所有价格统一为人民币约价 / 1M tokens。主表统一采用海外 API 美元价格，按 `1 USD = 6.6760 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`：Xiaomi MiMo-V2.6-Flash 为缓存命中和输出基准（美元 0.0028 和 0.28），GPT-6 Luna（短上下文）与 Claude Haiku 5.5（短上下文）并列输入基准（美元 0.10）。
+所有价格统一为人民币约价 / 1M tokens。主表统一采用海外 API 美元价格，按 `1 USD = 6.6710 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`：Xiaomi MiMo-V2.6-Flash 为缓存命中和输出基准（美元 0.0028 和 0.28），GPT-6 Luna（短上下文）与 Claude Haiku 5.5（短上下文）并列输入基准（美元 0.10）。
 
 | 提供方 | 模型 | 命中倍率 | 输入缓存命中 | 未命中倍率 | 输入缓存未命中 | 输出倍率 | 输出 | 价格口径 |
 |---|---|---:|---:|---:|---:|---:|---:|---|
-| OpenAI | GPT-6 Astra（长上下文） | 714.29x | ¥13.35 | 200.00x | ¥133.52 | 267.86x | ¥500.70 | Standard API >272K input tokens |
-| xAI | Grok 4.7（长上下文） | 357.14x | ¥6.68 | 40.00x | ¥26.70 | 42.86x | ¥80.11 | Standard global API >=200K input tokens |
-| xAI | Grok 4.6（长上下文） | 357.14x | ¥6.68 | 40.00x | ¥26.70 | 42.86x | ¥80.11 | Standard global API >=200K input tokens |
-| Anthropic | Claude Fable 5 | 357.14x | ¥6.68 | 100.00x | ¥66.76 | 178.57x | ¥333.80 | Standard Claude API global routing |
-| Anthropic | Claude Mythos 5 | 357.14x | ¥6.68 | 100.00x | ¥66.76 | 178.57x | ¥333.80 | Standard Claude API global routing limited availability |
-| OpenAI | GPT-5.5（长上下文） | 357.14x | ¥6.68 | 100.00x | ¥66.76 | 160.71x | ¥300.42 | Standard API >272K input tokens |
-| OpenAI | GPT-6 Astra（短上下文） | 357.14x | ¥6.68 | 100.00x | ¥66.76 | 178.57x | ¥333.80 | Standard API <=272K input tokens |
-| OpenAI | GPT-5.6 Sol（长上下文） | 285.71x | ¥5.34 | 80.00x | ¥53.41 | 107.14x | ¥200.28 | Standard API promotional price >272K input tokens |
-| xAI | Grok 4.5（长上下文） | 214.29x | ¥4.01 | 40.00x | ¥26.70 | 42.86x | ¥80.11 | Standard global API >=200K input tokens |
-| xAI | Grok 4.7（短上下文） | 178.57x | ¥3.34 | 20.00x | ¥13.35 | 21.43x | ¥40.06 | Standard global API <200K input tokens |
-| xAI | Grok 4.6（短上下文） | 178.57x | ¥3.34 | 20.00x | ¥13.35 | 21.43x | ¥40.06 | Standard global API <200K input tokens |
-| Anthropic | Claude Opus 4.7 | 178.57x | ¥3.34 | 50.00x | ¥33.38 | 89.29x | ¥166.90 | Standard Claude API global routing |
-| Anthropic | Claude Opus 4.8 | 178.57x | ¥3.34 | 50.00x | ¥33.38 | 89.29x | ¥166.90 | Standard Claude API global routing |
-| Anthropic | Claude Opus 5 | 178.57x | ¥3.34 | 50.00x | ¥33.38 | 89.29x | ¥166.90 | Standard Claude API global routing |
-| OpenAI | GPT-5.4（长上下文） | 178.57x | ¥3.34 | 50.00x | ¥33.38 | 80.36x | ¥150.21 | Standard API >272K input tokens |
-| OpenAI | GPT-5.5（短上下文） | 178.57x | ¥3.34 | 50.00x | ¥33.38 | 107.14x | ¥200.28 | Standard API <=272K input tokens |
-| OpenAI | GPT-6 Sol（长上下文） | 142.86x | ¥2.67 | 40.00x | ¥26.70 | 53.57x | ¥100.14 | Standard API >272K input tokens |
-| OpenAI | GPT-5.6 Sol（短上下文） | 142.86x | ¥2.67 | 40.00x | ¥26.70 | 71.43x | ¥133.52 | Standard API promotional price <=272K input tokens |
-| OpenAI | GPT-5.6 Terra（长上下文） | 142.86x | ¥2.67 | 40.00x | ¥26.70 | 64.29x | ¥120.17 | Standard API >272K input tokens |
-| xAI | Grok 4.5（短上下文） | 107.14x | ¥2.00 | 20.00x | ¥13.35 | 21.43x | ¥40.06 | Standard global API <200K input tokens |
-| Z.AI | GLM-5.3 | 92.86x | ¥1.74 | 14.00x | ¥9.35 | 15.71x | ¥29.37 | Standard API |
-| OpenAI | GPT-5.4（短上下文） | 89.29x | ¥1.67 | 25.00x | ¥16.69 | 53.57x | ¥100.14 | Standard API <=272K input tokens |
-| Anthropic | Claude Fable 5.1 | 89.29x | ¥1.67 | 100.00x | ¥66.76 | 178.57x | ¥333.80 | Standard Claude API global routing |
-| Anthropic | Claude Mythos 5.1 | 89.29x | ¥1.67 | 100.00x | ¥66.76 | 178.57x | ¥333.80 | Standard Claude API global routing |
-| Anthropic | Claude Opus 5.5 | 71.43x | ¥1.34 | 40.00x | ¥26.70 | 71.43x | ¥133.52 | Standard Claude API global routing |
-| OpenAI | GPT-6 Sol（短上下文） | 71.43x | ¥1.34 | 20.00x | ¥13.35 | 35.71x | ¥66.76 | Standard API <=272K input tokens |
-| Anthropic | Claude Sonnet 5 | 71.43x | ¥1.34 | 20.00x | ¥13.35 | 35.71x | ¥66.76 | Standard Claude API global routing |
-| OpenAI | GPT-5.6 Terra（短上下文） | 71.43x | ¥1.34 | 20.00x | ¥13.35 | 42.86x | ¥80.11 | Standard API <=272K input tokens |
-| OpenAI | GPT-6.1 Sol（长上下文） | 71.43x | ¥1.34 | 40.00x | ¥26.70 | 53.57x | ¥100.14 | Standard API >272K input tokens |
-| Moonshot AI / Kimi | Kimi K3.1 Pro | 71.43x | ¥1.34 | 20.00x | ¥13.35 | 35.71x | ¥66.76 | Standard API |
-| Moonshot AI / Kimi | Kimi K3.1 Pro Highspeed | 71.43x | ¥1.34 | 40.00x | ¥26.70 | 71.43x | ¥133.52 | Standard API |
-| Anthropic | Claude Fable 5.2 | 71.43x | ¥1.34 | 80.00x | ¥53.41 | 142.86x | ¥267.04 | Standard Claude API global routing |
-| Anthropic | Claude Mythos 5.2 | 71.43x | ¥1.34 | 80.00x | ¥53.41 | 142.86x | ¥267.04 | Standard Claude API global routing limited availability |
-| Anthropic | Claude Sonnet 5.5 | 35.71x | ¥0.67 | 20.00x | ¥13.35 | 35.71x | ¥66.76 | Standard Claude API global routing |
-| OpenAI | GPT-6.1 Sol（短上下文） | 35.71x | ¥0.67 | 20.00x | ¥13.35 | 35.71x | ¥66.76 | Standard API <=272K input tokens |
-| Google | Gemini 4 Argon | 35.71x | ¥0.67 | 20.00x | ¥13.35 | 35.71x | ¥66.76 | Standard paid tier introductory price through 2026-11-30 |
-| OpenAI | GPT-6.1 Terra（长上下文） | 35.71x | ¥0.67 | 20.00x | ¥13.35 | 26.79x | ¥50.07 | Standard API >272K input tokens |
-| Google | Gemini 4 Carbon | 35.71x | ¥0.67 | 20.00x | ¥13.35 | 35.71x | ¥66.76 | Standard paid tier introductory price through 2026-11-30 |
-| OpenAI | GPT-5.4 Mini | 26.79x | ¥0.50 | 7.50x | ¥5.01 | 16.07x | ¥30.04 | Standard API short context |
-| Z.AI | GLM-5.3-FlashX | 26.79x | ¥0.50 | 3.70x | ¥2.47 | 4.46x | ¥8.35 | Standard API |
-| Z.AI | GLM-5.3-FlashX-Legal | 26.79x | ¥0.50 | 3.70x | ¥2.47 | 4.46x | ¥8.35 | Standard API |
-| Anthropic | Claude Haiku 5.5（长上下文） | 17.86x | ¥0.33 | 5.00x | ¥3.34 | 8.93x | ¥16.69 | Standard Claude API global routing >100K input tokens |
-| OpenAI | GPT-6.1 Terra（短上下文） | 17.86x | ¥0.33 | 10.00x | ¥6.68 | 17.86x | ¥33.38 | Standard API <=272K input tokens |
-| OpenAI | GPT-5.6 Luna（长上下文） | 14.29x | ¥0.27 | 4.00x | ¥2.67 | 6.43x | ¥12.02 | Standard API >272K input tokens |
-| Xiaomi MiMo | Xiaomi MiMo-V2.6-Pro-UltraSpeed | 12.86x | ¥0.24 | 43.50x | ¥29.04 | 31.07x | ¥58.08 | Overseas real-time API |
+| OpenAI | GPT-6 Astra（长上下文） | 714.29x | ¥13.34 | 200.00x | ¥133.42 | 267.86x | ¥500.33 | Standard API >272K input tokens |
+| xAI | Grok 4.7（长上下文） | 357.14x | ¥6.67 | 40.00x | ¥26.68 | 42.86x | ¥80.05 | Standard global API >=200K input tokens |
+| xAI | Grok 4.6（长上下文） | 357.14x | ¥6.67 | 40.00x | ¥26.68 | 42.86x | ¥80.05 | Standard global API >=200K input tokens |
+| Anthropic | Claude Fable 5 | 357.14x | ¥6.67 | 100.00x | ¥66.71 | 178.57x | ¥333.55 | Standard Claude API global routing |
+| Anthropic | Claude Mythos 5 | 357.14x | ¥6.67 | 100.00x | ¥66.71 | 178.57x | ¥333.55 | Standard Claude API global routing limited availability |
+| OpenAI | GPT-5.5（长上下文） | 357.14x | ¥6.67 | 100.00x | ¥66.71 | 160.71x | ¥300.20 | Standard API >272K input tokens |
+| OpenAI | GPT-6 Astra（短上下文） | 357.14x | ¥6.67 | 100.00x | ¥66.71 | 178.57x | ¥333.55 | Standard API <=272K input tokens |
+| OpenAI | GPT-5.6 Sol（长上下文） | 285.71x | ¥5.34 | 80.00x | ¥53.37 | 107.14x | ¥200.13 | Standard API promotional price >272K input tokens |
+| OpenAI | GPT-6.2 Astra（长上下文） | 285.71x | ¥5.34 | 160.00x | ¥106.74 | 214.29x | ¥400.26 | Standard API >272K input tokens |
+| xAI | Grok 4.5（长上下文） | 214.29x | ¥4.00 | 40.00x | ¥26.68 | 42.86x | ¥80.05 | Standard global API >=200K input tokens |
+| xAI | Grok 4.7（短上下文） | 178.57x | ¥3.34 | 20.00x | ¥13.34 | 21.43x | ¥40.03 | Standard global API <200K input tokens |
+| xAI | Grok 4.6（短上下文） | 178.57x | ¥3.34 | 20.00x | ¥13.34 | 21.43x | ¥40.03 | Standard global API <200K input tokens |
+| Anthropic | Claude Opus 4.7 | 178.57x | ¥3.34 | 50.00x | ¥33.36 | 89.29x | ¥166.78 | Standard Claude API global routing |
+| Anthropic | Claude Opus 4.8 | 178.57x | ¥3.34 | 50.00x | ¥33.36 | 89.29x | ¥166.78 | Standard Claude API global routing |
+| Anthropic | Claude Opus 5 | 178.57x | ¥3.34 | 50.00x | ¥33.36 | 89.29x | ¥166.78 | Standard Claude API global routing |
+| OpenAI | GPT-5.4（长上下文） | 178.57x | ¥3.34 | 50.00x | ¥33.36 | 80.36x | ¥150.10 | Standard API >272K input tokens |
+| OpenAI | GPT-5.5（短上下文） | 178.57x | ¥3.34 | 50.00x | ¥33.36 | 107.14x | ¥200.13 | Standard API <=272K input tokens |
+| OpenAI | GPT-6 Sol（长上下文） | 142.86x | ¥2.67 | 40.00x | ¥26.68 | 53.57x | ¥100.07 | Standard API >272K input tokens |
+| OpenAI | GPT-5.6 Sol（短上下文） | 142.86x | ¥2.67 | 40.00x | ¥26.68 | 71.43x | ¥133.42 | Standard API promotional price <=272K input tokens |
+| OpenAI | GPT-5.6 Terra（长上下文） | 142.86x | ¥2.67 | 40.00x | ¥26.68 | 64.29x | ¥120.08 | Standard API >272K input tokens |
+| OpenAI | GPT-6.2 Astra（短上下文） | 142.86x | ¥2.67 | 80.00x | ¥53.37 | 142.86x | ¥266.84 | Standard API <=272K input tokens |
+| xAI | Grok 4.5（短上下文） | 107.14x | ¥2.00 | 20.00x | ¥13.34 | 21.43x | ¥40.03 | Standard global API <200K input tokens |
+| Z.AI | GLM-5.3 | 92.86x | ¥1.73 | 14.00x | ¥9.34 | 15.71x | ¥29.35 | Standard API |
+| OpenAI | GPT-5.4（短上下文） | 89.29x | ¥1.67 | 25.00x | ¥16.68 | 53.57x | ¥100.07 | Standard API <=272K input tokens |
+| Anthropic | Claude Fable 5.1 | 89.29x | ¥1.67 | 100.00x | ¥66.71 | 178.57x | ¥333.55 | Standard Claude API global routing |
+| Anthropic | Claude Mythos 5.1 | 89.29x | ¥1.67 | 100.00x | ¥66.71 | 178.57x | ¥333.55 | Standard Claude API global routing |
+| Anthropic | Claude Opus 5.5 | 71.43x | ¥1.33 | 40.00x | ¥26.68 | 71.43x | ¥133.42 | Standard Claude API global routing |
+| OpenAI | GPT-6 Sol（短上下文） | 71.43x | ¥1.33 | 20.00x | ¥13.34 | 35.71x | ¥66.71 | Standard API <=272K input tokens |
+| Anthropic | Claude Sonnet 5 | 71.43x | ¥1.33 | 20.00x | ¥13.34 | 35.71x | ¥66.71 | Standard Claude API global routing |
+| OpenAI | GPT-5.6 Terra（短上下文） | 71.43x | ¥1.33 | 20.00x | ¥13.34 | 42.86x | ¥80.05 | Standard API <=272K input tokens |
+| OpenAI | GPT-6.1 Sol（长上下文） | 71.43x | ¥1.33 | 40.00x | ¥26.68 | 53.57x | ¥100.07 | Standard API >272K input tokens |
+| Moonshot AI / Kimi | Kimi K3.1 Pro | 71.43x | ¥1.33 | 20.00x | ¥13.34 | 35.71x | ¥66.71 | Standard API |
+| Moonshot AI / Kimi | Kimi K3.1 Pro Highspeed | 71.43x | ¥1.33 | 40.00x | ¥26.68 | 71.43x | ¥133.42 | Standard API |
+| Anthropic | Claude Fable 5.2 | 71.43x | ¥1.33 | 80.00x | ¥53.37 | 142.86x | ¥266.84 | Standard Claude API global routing |
+| Anthropic | Claude Mythos 5.2 | 71.43x | ¥1.33 | 80.00x | ¥53.37 | 142.86x | ¥266.84 | Standard Claude API global routing limited availability |
+| OpenAI | GPT-6.2 Sol（长上下文） | 71.43x | ¥1.33 | 40.00x | ¥26.68 | 53.57x | ¥100.07 | Standard API >272K input tokens |
+| Anthropic | Claude Sonnet 5.5 | 35.71x | ¥0.67 | 20.00x | ¥13.34 | 35.71x | ¥66.71 | Standard Claude API global routing |
+| OpenAI | GPT-6.1 Sol（短上下文） | 35.71x | ¥0.67 | 20.00x | ¥13.34 | 35.71x | ¥66.71 | Standard API <=272K input tokens |
+| Google | Gemini 4 Argon | 35.71x | ¥0.67 | 20.00x | ¥13.34 | 35.71x | ¥66.71 | Standard paid tier introductory price through 2026-11-30 |
+| OpenAI | GPT-6.1 Terra（长上下文） | 35.71x | ¥0.67 | 20.00x | ¥13.34 | 26.79x | ¥50.03 | Standard API >272K input tokens |
+| Google | Gemini 4 Carbon | 35.71x | ¥0.67 | 20.00x | ¥13.34 | 35.71x | ¥66.71 | Standard paid tier introductory price through 2026-11-30 |
+| OpenAI | GPT-6.2 Sol（短上下文） | 35.71x | ¥0.67 | 20.00x | ¥13.34 | 35.71x | ¥66.71 | Standard API <=272K input tokens |
+| OpenAI | GPT-5.4 Mini | 26.79x | ¥0.50 | 7.50x | ¥5.00 | 16.07x | ¥30.02 | Standard API short context |
+| Z.AI | GLM-5.3-FlashX | 26.79x | ¥0.50 | 3.70x | ¥2.47 | 4.46x | ¥8.34 | Standard API |
+| Z.AI | GLM-5.3-FlashX-Legal | 26.79x | ¥0.50 | 3.70x | ¥2.47 | 4.46x | ¥8.34 | Standard API |
+| Anthropic | Claude Haiku 5.5（长上下文） | 17.86x | ¥0.33 | 5.00x | ¥3.34 | 8.93x | ¥16.68 | Standard Claude API global routing >100K input tokens |
+| OpenAI | GPT-6.1 Terra（短上下文） | 17.86x | ¥0.33 | 10.00x | ¥6.67 | 17.86x | ¥33.36 | Standard API <=272K input tokens |
+| OpenAI | GPT-5.6 Luna（长上下文） | 14.29x | ¥0.27 | 4.00x | ¥2.67 | 6.43x | ¥12.01 | Standard API >272K input tokens |
+| Xiaomi MiMo | Xiaomi MiMo-V2.6-Pro-UltraSpeed | 12.86x | ¥0.24 | 43.50x | ¥29.02 | 31.07x | ¥58.04 | Overseas real-time API |
 | Z.AI | GLM-5.3-Flash | 10.71x | ¥0.20 | 1.50x | ¥1.00 | 1.79x | ¥3.34 | Standard API list price |
-| OpenAI | GPT-6 Luna（长上下文） | 7.14x | ¥0.13 | 2.00x | ¥1.34 | 2.68x | ¥5.01 | Standard API >272K input tokens |
-| OpenAI | GPT-5.6 Luna（短上下文） | 7.14x | ¥0.13 | 2.00x | ¥1.34 | 4.29x | ¥8.01 | Standard API <=272K input tokens |
+| OpenAI | GPT-6 Luna（长上下文） | 7.14x | ¥0.13 | 2.00x | ¥1.33 | 2.68x | ¥5.00 | Standard API >272K input tokens |
+| OpenAI | GPT-5.6 Luna（短上下文） | 7.14x | ¥0.13 | 2.00x | ¥1.33 | 4.29x | ¥8.01 | Standard API <=272K input tokens |
 | OpenAI | GPT-6 Luna（短上下文） | 3.57x | ¥0.07 | 1.00x | ¥0.67 | 1.79x | ¥3.34 | Standard API <=272K input tokens |
 | Anthropic | Claude Haiku 5.5（短上下文） | 3.57x | ¥0.07 | 1.00x | ¥0.67 | 1.79x | ¥3.34 | Standard Claude API global routing <=100K input tokens |
 | DeepSeek | DeepSeek V4.1 Flash (peak) | 2.14x | ¥0.04 | 3.00x | ¥2.00 | 4.29x | ¥8.01 | Standard API peak |
-| Xiaomi MiMo | Xiaomi MiMo-V2.6-Pro | 1.29x | ¥0.02 | 4.35x | ¥2.90 | 3.11x | ¥5.81 | Overseas real-time API |
-| DeepSeek | DeepSeek V4.1 Flash (off-peak) | 1.07x | ¥0.02 | 1.50x | ¥1.00 | 2.14x | ¥4.01 | Standard API off-peak |
+| Xiaomi MiMo | Xiaomi MiMo-V2.6-Pro | 1.29x | ¥0.02 | 4.35x | ¥2.90 | 3.11x | ¥5.80 | Overseas real-time API |
+| DeepSeek | DeepSeek V4.1 Flash (off-peak) | 1.07x | ¥0.02 | 1.50x | ¥1.00 | 2.14x | ¥4.00 | Standard API off-peak |
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | ¥0.02 | 1.40x | ¥0.93 | 1.00x | ¥1.87 | Overseas real-time API |
 
 ## 重要说明
+
+- 2026-11-18 重新核验全部八家厂商：新增 GPT-6.2 Astra 和 GPT-6.2 Sol，已通过官方目录、模型页和 Standard 价格表确认。每百万 tokens 的缓存命中／输入／输出美元价格，短上下文分别为 0.40/8/40 和 0.10/2/10；超过 272K 输入 tokens 时分别为 0.80/16/60 和 0.20/4/15，适用于完整请求。两者上下文均为 1,050,000，最大输入 922,000，最大输出 128,000 tokens。缓存写入、Batch、Fast、Ultrafast 和后台完成窗口折扣均排除。法律配置及受限 Rosalind 科研模型继续不纳入，包括其新公布的优惠价格。既有模型 token 价格和倍率基准不变，现共 41 个模型、58 行价格。已核对 Claude 全球价格与目录、DeepSeek 峰谷费率、Z.AI 最新系列、Gemini Standard 与目录、Kimi 内嵌 DocTable 列和数据行、MiMo 海外价格、xAI 全球上下文分层与目录。USD/CNY 更新为 6.6710（美联储 H.10 发布日期 2026-11-16，观测日期 2026-11-13）。所有官方来源均首次抓取成功。因新增模型，本次不自动 settle。
 
 - 2026-11-17 重新核验全部八家厂商：没有符合收录条件的新模型或 token 价格变化，仍为 39 个模型、54 行价格。已核对 OpenAI Standard 完整表与目录、Claude 全球价格、DeepSeek 峰谷价格、Z.AI 最新系列、Gemini Standard、Kimi 内嵌 DocTable 各列与数据行、MiMo 海外价格及 xAI 全球上下文分层。适用的 HTML 价格表均未变化，最新系列范围、排除项和优惠期限不变。美元兑人民币仍为 6.6760（美联储 H.10 于 2026-11-09 发布，观测日期为 2026-11-06）。所有官方抓取均首次成功。本地读取历史汇率快照时因文件实际名为 fed 而非 fx 失败，已使用正确快照完成核验；scripts/inspect_sources.py 已固化来源名称映射、缺失快照提示和原始表格/内嵌片段比较，并增加回归测试。本次因发生过已恢复的本地错误，不自动 settle。
 
@@ -171,7 +177,7 @@
 
 - 于 2026-09-23 复核官方来源：新增 GPT-6 Sol、GPT-6 Luna、Claude Opus 5.5 和 Xiaomi MiMo-V2.6-Flash/Pro/Pro-UltraSpeed，当时共 44 个模型、55 条价格记录，随后另行加入 xAI。原有 47 行美元单价未变。输入倍率按 GPT-6 Luna 短上下文输入价 USD 0.10 重新计算，人民币约价按 `1 USD = 6.6975 CNY` 更新。Kimi 模型专属链接均跳转至不含价格表的总览页，GLM-5-Turbo 未出现在当前 Z.AI 价格表中；这五行保留旧值并标为 `unverified`（待核验）。
 - 已排除的发现项：OpenAI chat-latest 与 Daybreak 别名、低于 OpenAI 版本下限的 gpt-5.3-codex、缺少缓存价格的 OpenAI gpt-5.4-pro 和 gpt-5.5-pro、专用网络安全模型 gpt-5.6-cyber 和专用生命科学模型 gpt-rosalind-research/discovery、OpenAI 图像/音频/视频/转录/deep research/工具行、已废弃或退役 Claude 行、没有单独价格表行的邀请制 Claude Mythos Preview、已退役的 DeepSeek V4 Flash Vision Exp 别名、Z.AI 免费或缺少缓存命中价格的文本行、Z.AI 视觉/图像/音频/视频/工具/agent 行、缺少可比缓存命中文本价格的 Gemini Omni Flash 与 Gemini Omni Flash Preview、低于 Gemini 版本下限的 Gemini 3 Flash Preview、专用具身推理模型 Gemini Robotics ER 2 Preview 与 Streaming Preview、Gemini Embedding 2、Gemini live/audio/TTS/图像生成模型、缺少缓存命中价格的 Kimi Moonshot V1 行、Kimi 促销和代金券、已退役的小米 MiMo V2 旧模型名，以及仅图像/音频/视频/工具计费项。
-- 汇率采用近似值 `1 USD = 6.6760 CNY`。该汇率取自 Federal Reserve H.10 current release 中 `2026-10-30` 的 CHINA, P.R. YUAN 数据，发布时间为 `2026-11-02`；实际账单以服务商结算币种和付款时汇率为准。
+- 汇率采用近似值 `1 USD = 6.6710 CNY`。该汇率取自 Federal Reserve H.10 current release 中 `2026-11-13` 的 CHINA, P.R. YUAN 数据，发布时间为 `2026-11-16`；实际账单以服务商结算币种和付款时汇率为准。
 - DeepSeek V4.1 Flash 使用官方 ID `deepseek-flash`。低谷缓存命中/输入/输出为 USD `0.003/0.15/0.60`，高峰为 `0.006/0.30/1.20` / 1M tokens。当前由快照 `DeepSeek-V4.1-Flash-1017` 提供服务。旧 `deepseek-v4-flash` 和 `deepseek-v4-flash-vision-exp` 已退役，其别名请求由 V4.1 Flash 服务并按新价计费。V4 Pro 按最新系列规则排除。官方当前高峰时段为周一至周五 UTC `01:00-04:00`、`06:00-10:00`，中国公共假日除外；其余时间、周末及中国公共假日全天均按低谷价计费。
 - Xiaomi MiMo-V2.6-Flash、MiMo-V2.6-Pro 和 MiMo-V2.6-Pro-UltraSpeed 使用官方海外实时 API 价格。MiMo-V2.5 和 MiMo-V2.5-Pro 已于北京时间 `2026-10-21 10:00` 正式下线并从本表移除。国内价格已写入 CSV 备注；缓存写入当前限时免费，Batch 和联网搜索费用未纳入。小米价格页更新时间为 `2026-10-21`。
 - Kimi K3.1 Pro 和 Pro Highspeed 价格已于 2026-10-24 通过官方价格总览核实，均支持自动缓存和 `1,048,576` tokens 上下文。5 分钟/1 小时 TTL 缓存写入费用分别为 Pro USD `2/4`、Highspeed USD `4/8` / 1M tokens，不计入主表，促销和代金券亦排除。API 访问需要成功充值（最低 USD 1）。K3 和 K2.x 按最新系列规则排除。
@@ -232,3 +238,6 @@
 - Kimi K3.1 Pro / Highspeed model guide: https://platform.kimi.ai/docs/guide/kimi-k3-1-pro-quickstart
 
 - Gemini 4 Carbon: https://ai.google.dev/gemini-api/docs/models/gemini-4-carbon
+
+- GPT-6.2 Astra: https://developers.openai.com/api/docs/models/gpt-6.2-astra
+- GPT-6.2 Sol: https://developers.openai.com/api/docs/models/gpt-6.2-sol

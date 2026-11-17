@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | Interactive web page (sortable, provider filters): [tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-Generated: 2026-11-17
+Generated: 2026-11-18
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`: Xiaomi MiMo-V2.6-Flash sets the cache-hit and output baselines (USD 0.0028 and 0.28), while GPT-6 Luna (short context) and Claude Haiku 5.5 (short context) share the input baseline (USD 0.10).
 
@@ -16,6 +16,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | OpenAI | GPT-5.5 (long context) | 357.14x | $1 | 100.00x | $10 | 160.71x | $45 | Standard API >272K input tokens |
 | OpenAI | GPT-6 Astra (short context) | 357.14x | $1 | 100.00x | $10 | 178.57x | $50 | Standard API <=272K input tokens |
 | OpenAI | GPT-5.6 Sol (long context) | 285.71x | $0.8 | 80.00x | $8 | 107.14x | $30 | Standard API promotional price >272K input tokens |
+| OpenAI | GPT-6.2 Astra (long context) | 285.71x | $0.8 | 160.00x | $16 | 214.29x | $60 | Standard API >272K input tokens |
 | xAI | Grok 4.5 (long context) | 214.29x | $0.6 | 40.00x | $4 | 42.86x | $12 | Standard global API >=200K input tokens |
 | xAI | Grok 4.7 (short context) | 178.57x | $0.5 | 20.00x | $2 | 21.43x | $6 | Standard global API <200K input tokens |
 | xAI | Grok 4.6 (short context) | 178.57x | $0.5 | 20.00x | $2 | 21.43x | $6 | Standard global API <200K input tokens |
@@ -27,6 +28,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | OpenAI | GPT-6 Sol (long context) | 142.86x | $0.4 | 40.00x | $4 | 53.57x | $15 | Standard API >272K input tokens |
 | OpenAI | GPT-5.6 Sol (short context) | 142.86x | $0.4 | 40.00x | $4 | 71.43x | $20 | Standard API promotional price <=272K input tokens |
 | OpenAI | GPT-5.6 Terra (long context) | 142.86x | $0.4 | 40.00x | $4 | 64.29x | $18 | Standard API >272K input tokens |
+| OpenAI | GPT-6.2 Astra (short context) | 142.86x | $0.4 | 80.00x | $8 | 142.86x | $40 | Standard API <=272K input tokens |
 | xAI | Grok 4.5 (short context) | 107.14x | $0.3 | 20.00x | $2 | 21.43x | $6 | Standard global API <200K input tokens |
 | Z.AI | GLM-5.3 | 92.86x | $0.26 | 14.00x | $1.4 | 15.71x | $4.4 | Standard API |
 | OpenAI | GPT-5.4 (short context) | 89.29x | $0.25 | 25.00x | $2.5 | 53.57x | $15 | Standard API <=272K input tokens |
@@ -41,11 +43,13 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Moonshot AI / Kimi | Kimi K3.1 Pro Highspeed | 71.43x | $0.2 | 40.00x | $4 | 71.43x | $20 | Standard API |
 | Anthropic | Claude Fable 5.2 | 71.43x | $0.2 | 80.00x | $8 | 142.86x | $40 | Standard Claude API global routing |
 | Anthropic | Claude Mythos 5.2 | 71.43x | $0.2 | 80.00x | $8 | 142.86x | $40 | Standard Claude API global routing limited availability |
+| OpenAI | GPT-6.2 Sol (long context) | 71.43x | $0.2 | 40.00x | $4 | 53.57x | $15 | Standard API >272K input tokens |
 | Anthropic | Claude Sonnet 5.5 | 35.71x | $0.1 | 20.00x | $2 | 35.71x | $10 | Standard Claude API global routing |
 | OpenAI | GPT-6.1 Sol (short context) | 35.71x | $0.1 | 20.00x | $2 | 35.71x | $10 | Standard API <=272K input tokens |
 | Google | Gemini 4 Argon | 35.71x | $0.1 | 20.00x | $2 | 35.71x | $10 | Standard paid tier introductory price through 2026-11-30 |
 | OpenAI | GPT-6.1 Terra (long context) | 35.71x | $0.1 | 20.00x | $2 | 26.79x | $7.5 | Standard API >272K input tokens |
 | Google | Gemini 4 Carbon | 35.71x | $0.1 | 20.00x | $2 | 35.71x | $10 | Standard paid tier introductory price through 2026-11-30 |
+| OpenAI | GPT-6.2 Sol (short context) | 35.71x | $0.1 | 20.00x | $2 | 35.71x | $10 | Standard API <=272K input tokens |
 | OpenAI | GPT-5.4 Mini | 26.79x | $0.075 | 7.50x | $0.75 | 16.07x | $4.5 | Standard API short context |
 | Z.AI | GLM-5.3-FlashX | 26.79x | $0.075 | 3.70x | $0.37 | 4.46x | $1.25 | Standard API |
 | Z.AI | GLM-5.3-FlashX-Legal | 26.79x | $0.075 | 3.70x | $0.37 | 4.46x | $1.25 | Standard API |
@@ -64,6 +68,8 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | $0.0028 | 1.40x | $0.14 | 1.00x | $0.28 | Overseas real-time API |
 
 ## Important Notes
+
+- Rechecked all eight providers on 2026-11-18: added GPT-6.2 Astra and GPT-6.2 Sol, confirmed by the official catalog, model pages and Standard pricing table. Cache-hit/input/output USD per 1M tokens are 0.40/8/40 and 0.10/2/10 for short context, and 0.80/16/60 and 0.20/4/15 above 272K input tokens. Both support 1,050,000 context, 922,000 maximum input and 128,000 maximum output tokens; long-context rates apply to the full request. Cache writes, Batch, Fast, Ultrafast and discounted background completion windows are excluded. Legal configurations and restricted Rosalind research models remain outside scope, including their newly published promotional rates. Existing model token prices and multiplier baselines are unchanged; coverage is now 41 models and 58 price rows. Verified Claude global prices and catalog, DeepSeek peak/off-peak rates, Z.AI latest series, Gemini Standard prices and catalog, Kimi embedded DocTable columns/rows, MiMo overseas prices and xAI global context tiers/catalog. Updated USD/CNY to 6.6710 (Federal Reserve H.10 released 2026-11-16, observation 2026-11-13). All official fetches succeeded on the first attempt. New models prevent automatic settle.
 
 - Rechecked all eight providers on 2026-11-17: no qualifying new models or token-price changes; coverage remains 39 models and 54 price rows. Verified OpenAI Standard tables and catalog, Claude global prices, DeepSeek peak/off-peak rates, Z.AI latest-series prices, Gemini Standard pricing, Kimi embedded DocTable columns and rows, MiMo overseas rates and xAI global context tiers. All applicable HTML price tables are unchanged; latest-series scope, exclusions and promotional periods remain unchanged. USD/CNY remains 6.6760 (Federal Reserve H.10 released 2026-11-09, observation 2026-11-06). All official fetches succeeded on the first attempt. A local read failed because the historical exchange-rate snapshot was named fed rather than fx; verification was completed using the correct snapshot. scripts/inspect_sources.py now supports explicit source-name mappings, reports missing snapshots and compares raw tables/embedded sections, with regression coverage. This run is not eligible for automatic settle due to the recovered local error.
 
@@ -231,3 +237,6 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 - USD/CNY reference: https://www.federalreserve.gov/releases/h10/current/
 
 - Gemini 4 Carbon: https://ai.google.dev/gemini-api/docs/models/gemini-4-carbon
+
+- GPT-6.2 Astra: https://developers.openai.com/api/docs/models/gpt-6.2-astra
+- GPT-6.2 Sol: https://developers.openai.com/api/docs/models/gpt-6.2-sol
