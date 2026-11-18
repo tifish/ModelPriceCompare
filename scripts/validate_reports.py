@@ -30,6 +30,17 @@ def normalize_model(model):
     return model.replace("（短上下文）", " (short context)").replace("（长上下文）", " (long context)")
 
 
+def validate_fx_notes(en, zh, rate):
+    en_note = re.search(r'(?m)^- USD/CNY reference rate for the Chinese README is .*$', en)
+    zh_note = re.search(r'(?m)^- 汇率采用近似值 .*$', zh)
+    require(en_note is not None and zh_note is not None, 'Missing permanent FX note')
+    for note in (en_note[0], zh_note[0]):
+        require(Decimal(re.search(r'1 USD = ([\d.]+) CNY', note)[1]) == rate,
+                'Permanent FX note rate is stale')
+    require(re.findall(r'\d{4}-\d{2}-\d{2}', en_note[0]) ==
+            re.findall(r'\d{4}-\d{2}-\d{2}', zh_note[0]), 'Permanent FX source dates differ')
+
+
 def validate(root=ROOT):
     with (root / "model_price_comparison.csv").open(encoding="utf-8-sig", newline="") as source:
         rows = list(csv.DictReader(source))
@@ -51,6 +62,7 @@ def validate(root=ROOT):
     date = re.search(r"Generated: (\d{4}-\d{2}-\d{2})", en)[1]
     require(re.search(r"生成日期：(\d{4}-\d{2}-\d{2})", zh)[1] == date, "Report dates differ")
     rate = Decimal(re.search(r"1 USD = ([\d.]+) CNY", zh)[1])
+    validate_fx_notes(en, zh, rate)
     for report, currency_rate in [(en, Decimal(1)), (zh, rate)]:
         table = table_rows(report)
         require(len(table) == len(rows), "Report/CSV row counts differ")
