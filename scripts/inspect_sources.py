@@ -18,20 +18,30 @@ class SourceText(HTMLParser):
         self.parts = []
         self.links = set()
         self.skip = 0
+        self.in_pre = False
 
     def handle_starttag(self, tag, attrs):
         if tag in ('script', 'style'):
             self.skip += 1
+        if tag == 'pre':
+            self.in_pre = True
         if tag == 'a':
             self.links.update(value for key, value in attrs if key == 'href' and value)
 
     def handle_endtag(self, tag):
         if tag in ('script', 'style'):
             self.skip = max(0, self.skip - 1)
+        if tag == 'pre':
+            self.in_pre = False
 
     def handle_data(self, data):
-        if not self.skip and data.strip():
-            self.parts.append(data.strip())
+        # Google AI Studio serves complete Markdown documents in a single <pre>.
+        # Other oversized text nodes may be hydration data, kept in the raw file.
+        if self.skip:
+            return
+        data = data.strip()
+        if data and (self.in_pre or len(data) < 1500):
+            self.parts.append(data)
 
 
 def readable(text):
@@ -39,8 +49,7 @@ def readable(text):
         return text, set()
     parser = SourceText()
     parser.feed(text)
-    # Hydration payloads can appear outside script tags; retain them in the raw file.
-    return '\n'.join(part for part in parser.parts if len(part) < 1500), parser.links
+    return '\n'.join(parser.parts), parser.links
 
 
 def main():
@@ -60,7 +69,10 @@ def main():
             raw = path.read_text(encoding='utf-8')
             old_raw = previous.read_text(encoding='utf-8')
             print('Full source unchanged:', old_raw == raw)
-            print('HTML tables unchanged:', re.findall(r'<table\b.*?</table>', old_raw, re.S) == re.findall(r'<table\b.*?</table>', raw, re.S))
+            old_tables = re.findall(r'<table\b.*?</table>', old_raw, re.S)
+            tables = re.findall(r'<table\b.*?</table>', raw, re.S)
+            if old_tables or tables:
+                print('HTML tables unchanged:', old_tables == tables)
             if 'DocTable' in raw:
                 chunks = lambda s: [s[max(0, m.start()-50):m.start()+6500] for m in re.finditer('DocTable', s)]
                 print('Embedded DocTable sections unchanged:', chunks(old_raw) == chunks(raw))

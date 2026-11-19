@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | Interactive web page (sortable, provider filters): [tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-Generated: 2026-11-19
+Generated: 2026-11-20
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`: Xiaomi MiMo-V2.6-Flash sets the cache-hit and output baselines (USD 0.0028 and 0.28), while GPT-6 Luna (short context) and Claude Haiku 5.5 (short context) share the input baseline (USD 0.10).
 
@@ -44,6 +44,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Anthropic | Claude Fable 5.2 | 71.43x | $0.2 | 80.00x | $8 | 142.86x | $40 | Standard Claude API global routing |
 | Anthropic | Claude Mythos 5.2 | 71.43x | $0.2 | 80.00x | $8 | 142.86x | $40 | Standard Claude API global routing limited availability |
 | OpenAI | GPT-6.2 Sol (long context) | 71.43x | $0.2 | 40.00x | $4 | 53.57x | $15 | Standard API >272K input tokens |
+| Google | Gemini 4 Neon | 53.57x | $0.15 | 30.00x | $3 | 53.57x | $15 | Standard paid tier |
 | Anthropic | Claude Sonnet 5.5 | 35.71x | $0.1 | 20.00x | $2 | 35.71x | $10 | Standard Claude API global routing |
 | OpenAI | GPT-6.1 Sol (short context) | 35.71x | $0.1 | 20.00x | $2 | 35.71x | $10 | Standard API <=272K input tokens |
 | Google | Gemini 4 Argon | 35.71x | $0.1 | 20.00x | $2 | 35.71x | $10 | Standard paid tier introductory price through 2026-11-30 |
@@ -53,6 +54,7 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | OpenAI | GPT-5.4 Mini | 26.79x | $0.075 | 7.50x | $0.75 | 16.07x | $4.5 | Standard API short context |
 | Z.AI | GLM-5.3-FlashX | 26.79x | $0.075 | 3.70x | $0.37 | 4.46x | $1.25 | Standard API |
 | Z.AI | GLM-5.3-FlashX-Legal | 26.79x | $0.075 | 3.70x | $0.37 | 4.46x | $1.25 | Standard API |
+| Google | Gemini 4 Hydrogen | 26.79x | $0.075 | 15.00x | $1.5 | 26.79x | $7.5 | Standard paid tier |
 | Anthropic | Claude Haiku 5.5 (long context) | 17.86x | $0.05 | 5.00x | $0.5 | 8.93x | $2.5 | Standard Claude API global routing >100K input tokens |
 | OpenAI | GPT-6.1 Terra (short context) | 17.86x | $0.05 | 10.00x | $1 | 17.86x | $5 | Standard API <=272K input tokens |
 | OpenAI | GPT-5.6 Luna (long context) | 14.29x | $0.04 | 4.00x | $0.4 | 6.43x | $1.8 | Standard API >272K input tokens |
@@ -68,6 +70,8 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | $0.0028 | 1.40x | $0.14 | 1.00x | $0.28 | Overseas real-time API |
 
 ## Important Notes
+
+- Rechecked all eight providers on 2026-11-20. Added the stable Gemini 4 Neon and Gemini 4 Hydrogen models at Standard cache-hit/input/output prices of USD 0.15/3/15 and USD 0.075/1.50/7.50 per 1M tokens, respectively. Both support a unified 1,048,576-token window and implicit caching, with output up to 1,048,576 tokens through long decode. Google listed Neon in this update. Hydrogen was already priced in the previous snapshot, but the source inspector discarded the long Markdown body embedded in HTML. The inspector now preserves that body, with regression coverage. Genie 4 is excluded because it generates interactive video and has no cached-input price. Existing models' token prices and multiplier baselines are unchanged. Coverage is now 43 models and 60 price rows. USD/CNY remains 6.6710 (Federal Reserve H.10 released 2026-11-16, observation 2026-11-13). All official sources were fetched successfully on the first attempt.
 
 - Rechecked all eight providers on 2026-11-19: no qualifying new models or token-price changes; coverage remains 41 models and 58 price rows. Verified OpenAI Standard tables and catalog, Claude global prices and catalog, DeepSeek peak/off-peak token rates, Z.AI latest-series prices, Gemini Standard prices and catalog, Kimi embedded DocTable columns/rows, MiMo overseas prices and xAI global context tiers/catalog. DeepSeek now states that model-triggered server-side search/fetch is free from 2026-11-18 12:00 Beijing time; direct Search/Fetch APIs remain USD 0.75 per 1,000 successful requests, outside this token comparison. MiMo removed old retirement notices and updated its page date without changing token rates. Latest-series scope, exclusions and promotional periods remain unchanged. USD/CNY remains 6.6710 (Federal Reserve H.10 released 2026-11-16, observation 2026-11-13). All official fetches succeeded on the first attempt; Source verification completed without fetch errors. Found and corrected a stale permanent English FX note; scripts/validate_reports.py now checks bilingual permanent FX rates and source dates, with regression coverage. This report error prevents automatic settle. A local note-edit assertion also failed because a generic phrase appeared in historical notes; the edit was recovered and the dated-paragraph matching rule is recorded in the reliable update workflow.
 
@@ -239,6 +243,8 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 - USD/CNY reference: https://www.federalreserve.gov/releases/h10/current/
 
 - Gemini 4 Carbon: https://ai.google.dev/gemini-api/docs/models/gemini-4-carbon
+- Gemini 4 Neon: https://aistudio.google.com/docs/models/gemini-4-neon
+- Gemini 4 Hydrogen: https://aistudio.google.com/docs/models/gemini-4-hydrogen
 
 - GPT-6.2 Astra: https://developers.openai.com/api/docs/models/gpt-6.2-astra
 - GPT-6.2 Sol: https://developers.openai.com/api/docs/models/gpt-6.2-sol

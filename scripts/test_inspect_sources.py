@@ -40,6 +40,15 @@ class SourceInspectionTests(unittest.TestCase):
         source = '| 模型 | 价格 |\r\n| Fable | $8 |\n'
         self.assertEqual(readable(source), (source, set()))
 
+    def test_google_markdown_wrapper_preserves_long_pricing_content(self):
+        pricing = ('# Gemini API pricing\n\n' + 'Earlier pricing sections\n' * 100
+                   + '## Gemini 4 Hydrogen\n{% tab title=&quot;Standard&quot; %}\n'
+                   + '* Input price\n* $1.50\n* Context caching price\n* $0.075')
+        page = ('<!doctype html><html><div>' + 'hydration payload ' * 100
+                + '</div><pre>' + pricing + '</pre></html>')
+        text, _ = readable(page)
+        self.assertEqual(text, pricing.replace('&quot;', '"'))
+
 
 if __name__ == '__main__':
     unittest.main()
