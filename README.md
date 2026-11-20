@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | Interactive web page (sortable, provider filters): [tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-Generated: 2026-11-20
+Generated: 2026-11-21
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`: Xiaomi MiMo-V2.6-Flash sets the cache-hit and output baselines (USD 0.0028 and 0.28), while GPT-6 Luna (short context) and Claude Haiku 5.5 (short context) share the input baseline (USD 0.10).
 
@@ -70,6 +70,8 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | $0.0028 | 1.40x | $0.14 | 1.00x | $0.28 | Overseas real-time API |
 
 ## Important Notes
+
+- Rechecked all eight providers on 2026-11-21. Coverage remains 43 models and 60 price rows, with no qualifying new models or changes to cache-hit, input, or output token prices. OpenAI listed GPT-Live-1.1 with per-minute voice pricing and announced that it is winding down the Flex beta. xAI raised the listed Grok Build 0.1 context window from 256K to 500K. These items are outside the comparison scope. Gemini 4 Argon and Carbon retain their Standard introductory rates through 2026-11-30. USD/CNY remains 6.6710 (Federal Reserve H.10 released 2026-11-16, observation 2026-11-13). All official sources were fetched successfully on the first attempt.
 
 - Rechecked all eight providers on 2026-11-20. Added the stable Gemini 4 Neon and Gemini 4 Hydrogen models at Standard cache-hit/input/output prices of USD 0.15/3/15 and USD 0.075/1.50/7.50 per 1M tokens, respectively. Both support a unified 1,048,576-token window and implicit caching, with output up to 1,048,576 tokens through long decode. Google listed Neon in this update. Hydrogen was already priced in the previous snapshot, but the source inspector discarded the long Markdown body embedded in HTML. The inspector now preserves that body, with regression coverage. Genie 4 is excluded because it generates interactive video and has no cached-input price. Existing models' token prices and multiplier baselines are unchanged. Coverage is now 43 models and 60 price rows. USD/CNY remains 6.6710 (Federal Reserve H.10 released 2026-11-16, observation 2026-11-13). All official sources were fetched successfully on the first attempt.
 

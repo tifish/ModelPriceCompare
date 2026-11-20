@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | 交互式网页（可排序、按提供方筛选）：[tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-生成日期：2026-11-20
+生成日期：2026-11-21
 
 所有价格统一为人民币约价 / 1M tokens。主表统一采用海外 API 美元价格，按 `1 USD = 6.6710 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`：Xiaomi MiMo-V2.6-Flash 为缓存命中和输出基准（美元 0.0028 和 0.28），GPT-6 Luna（短上下文）与 Claude Haiku 5.5（短上下文）并列输入基准（美元 0.10）。
 
@@ -70,6 +70,8 @@
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | ¥0.02 | 1.40x | ¥0.93 | 1.00x | ¥1.87 | Overseas real-time API |
 
 ## 重要说明
+
+- 2026-11-21 复核了八家厂商。价格表仍覆盖 43 款模型、60 条计费记录，未发现符合收录条件的新模型，缓存命中、缓存未命中和输出 token 单价均无变化。OpenAI 新列出按分钟计费的语音模型 GPT-Live-1.1，并宣布逐步结束 Flex 测试。xAI 将 Grok Build 0.1 的标示上下文窗口从 256K 调高到 500K。这些项目均在比较范围之外。Gemini 4 Argon 和 Carbon 的 Standard 首发价格持续至 2026-11-30。美元兑人民币参考汇率仍为 6.6710（美联储 H.10 于 2026-11-16 发布，观测日期为 2026-11-13）。本次官方来源均一次抓取成功。
 
 - 2026-11-20 重新核验全部八家厂商。新增收录稳定版 Gemini 4 Neon 和 Gemini 4 Hydrogen，Standard 缓存命中／输入／输出每百万 tokens 分别为 USD 0.15/3/15 和 USD 0.075/1.50/7.50。两款均支持 1,048,576 tokens 的统一上下文窗口和隐式缓存，long decode 的输出上限为 1,048,576 tokens。Google 本次新增 Neon；Hydrogen 的价格已出现在上次快照中，但来源检查脚本过滤了封装在 HTML 中的长篇 Markdown 正文。现已修复正文提取并加入回归测试。Genie 4 用于交互式视频生成且无缓存命中价格，未纳入。既有模型的 token 单价和倍率基准均未变化，现覆盖 43 个模型、60 行价格。美元兑人民币维持 6.6710（美联储 H.10 于 2026-11-16 发布，观测日期为 2026-11-13）。所有官方来源均在首次抓取时成功。
 
