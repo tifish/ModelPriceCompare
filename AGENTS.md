@@ -2,7 +2,7 @@
 
 更新价格列表时，遵循 `skills/model-price-compare/SKILL.md`。
 
-首次读取技能文件前就必须将 PowerShell 工具调用设为 `login: false`，并使用 `Get-Content -Encoding utf8`；不能等读完技能才禁用 profile。调用可选工具 `py`、`gh` 前先用 `Get-Command py,gh -ErrorAction SilentlyContinue` 检测，缺失时走可靠更新流程中的解释器和 GitHub API 备用路径，不直接执行不存在的命令。
+首次读取技能文件前就必须将 PowerShell 工具调用设为 `login: false`，并使用 `Get-Content -Encoding utf8`；不能等读完技能才禁用 profile。调用可选工具 `py`、`gh` 前先用 `Get-Command py,gh -ErrorAction SilentlyContinue` 检测，缺失时走可靠更新流程中的解释器和 GitHub API 备用路径，不直接执行不存在的命令；查询公开仓库的 GitHub Pages 构建部署状态直接使用 `python -X utf8 scripts/check_pages.py --sha SHA`，不依赖本机 `gh` 登录状态。
 
 中文文本文件优先通过文件编辑工具直接写入 UTF-8，不通过默认编码的 PowerShell 管道传给 Python。必须使用管道时，先在同一次 shell 调用中设置 `$OutputEncoding = [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new()`；`python -X utf8` 本身不会改变 PowerShell 的管道编码。更新命令失败后必须停止依赖步骤，修复并重跑更新成功后才能构建和校验。
 
