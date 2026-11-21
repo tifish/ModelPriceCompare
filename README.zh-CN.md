@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | 交互式网页（可排序、按提供方筛选）：[tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-生成日期：2026-11-21
+生成日期：2026-11-22
 
 所有价格统一为人民币约价 / 1M tokens。主表统一采用海外 API 美元价格，按 `1 USD = 6.6710 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`：Xiaomi MiMo-V2.6-Flash 为缓存命中和输出基准（美元 0.0028 和 0.28），GPT-6 Luna（短上下文）与 Claude Haiku 5.5（短上下文）并列输入基准（美元 0.10）。
 
@@ -70,6 +70,8 @@
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | ¥0.02 | 1.40x | ¥0.93 | 1.00x | ¥1.87 | Overseas real-time API |
 
 ## 重要说明
+
+- 2026-11-22 复核了全部八家厂商。价格表仍覆盖 43 款模型、60 条计费记录，未发现符合收录条件的新模型，缓存命中、输入和输出 token 单价均无变化。已核对 OpenAI Standard 长短上下文表与模型目录、Claude 全球价格与目录、DeepSeek 峰谷价格、Z.AI 最新系列价格、Gemini 4 Standard 价格与目录、Kimi 内嵌 DocTable 各列与数据行、小米 MiMo 海外实时价格，以及 xAI 全球上下文分层与目录。最新系列范围、排除项及促销期限（含 GPT-5.6 Sol、Gemini 4 Argon 与 Carbon 截至 2026-11-30 的优惠）均无变化。美元兑人民币参考汇率仍为 6.6710（美联储 H.10 于 2026-11-16 发布，观测日期为 2026-11-13）。本次全部官方来源均一次抓取成功。
 
 - 2026-11-21 复核了八家厂商。价格表仍覆盖 43 款模型、60 条计费记录，未发现符合收录条件的新模型，缓存命中、缓存未命中和输出 token 单价均无变化。OpenAI 新列出按分钟计费的语音模型 GPT-Live-1.1，并宣布逐步结束 Flex 测试。xAI 将 Grok Build 0.1 的标示上下文窗口从 256K 调高到 500K。这些项目均在比较范围之外。Gemini 4 Argon 和 Carbon 的 Standard 首发价格持续至 2026-11-30。美元兑人民币参考汇率仍为 6.6710（美联储 H.10 于 2026-11-16 发布，观测日期为 2026-11-13）。本次官方来源均一次抓取成功。
 
