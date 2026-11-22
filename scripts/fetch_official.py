@@ -8,6 +8,7 @@ import argparse
 import json
 import sys
 import time
+from http.client import HTTPException
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
@@ -17,13 +18,13 @@ def fetch(url, attempts=3, opener=urlopen, sleep=time.sleep):
     errors = []
     for attempt in range(attempts):
         try:
-            request = Request(url, headers={"User-Agent": "ModelPriceCompare/1.0"})
+            request = Request(url, headers={"User-Agent": "ModelPriceCompare/1.0", "Connection": "close"})
             with opener(request, timeout=30) as response:
                 text = response.read().decode(response.headers.get_content_charset() or "utf-8")
                 if not text.strip():
                     raise ValueError("Empty response; source is not verified")
                 return text, {"url": response.url, "attempts": attempt + 1, "errors": errors}
-        except (HTTPError, URLError, TimeoutError) as error:
+        except (HTTPError, URLError, TimeoutError, ConnectionError, HTTPException) as error:
             errors.append(str(error))
             retryable = not isinstance(error, HTTPError) or error.code in (408, 429, 500, 502, 503, 504)
             if not retryable or attempt + 1 == attempts:

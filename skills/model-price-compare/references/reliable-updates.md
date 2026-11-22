@@ -19,8 +19,8 @@
 - Gemini 价格入口 `https://ai.google.dev/gemini-api/docs/pricing` 也可能返回 Markdown，并重定向到 `https://aistudio.google.com/docs/pricing`；优先用同一抓取脚本读取，核对最终官方域名及 Standard 表。Google AI Studio 也会在 HTML 的 `<pre>` 中封装完整 Markdown；`inspect_sources.py` 保留此块，避免因正文过长漏掉模型。核对 `.clean` 中的最新系列标题、Standard 表和目录中的模型 ID；如果正文仍未提取，从原始 HTML 核对。没有原生 HTML 表格并不表示 Markdown 定价没有变化。网页工具的 unsupported content-type 不是价格核验成功；直接抓取成功后仍需保留本次错误记录。
 - Kimi 价格概览 `https://platform.kimi.ai/docs/pricing/chat` 的正文提取可能漏掉价格表。用同一脚本获取 HTML，检查内嵌 `DocTable` 的 `columns`、`groups` 和 `rows`；逐列辨认 input、output、cached input、cache writes，不能将缓存写入列误当缓存命中列。只读取数据，不执行网页中的 JavaScript。结构变化时重新检查官方模型文档，不盲用旧解析结果。
 - DeepSeek 使用带结尾斜杠的 `https://api-docs.deepseek.com/quick_start/pricing/`；无斜杠页面曾返回入门内容。HTTP 成功不代表取得价格表，必须核对页面标题、模型和实际价格字段。
-- 读取脚本仅对超时、连接错误和指定临时 HTTP 错误进行最多三次 GET 请求，30 秒超时，间隔 1、2 秒。永久 HTTP 错误立即失败；成功后的元数据保留已发生的重试错误。
-- 输出文件在失败时可能仍是旧文件：只有本次命令成功且内容核验通过才可使用。所有请求失败后改用另一个官方入口；仍无法核验则记录 `unverified`，不得声称无变化或自动 settle。工具限制、页面结构变化、外部故障分别处理，不无限重试，不对提交或 push 等写操作盲目重试。
+- 读取脚本仅对超时、连接错误（含响应读取阶段的 `ConnectionError` / `HTTPException` 断连）和指定临时 HTTP 错误进行最多三次 GET 请求，30 秒超时，间隔 1、2 秒，并发送 `Connection: close` 避免复用异常连接。永久 HTTP 错误立即失败；成功后的元数据保留已发生的重试错误。
+- 输出文件在失败时可能仍是旧文件：只有本次命令成功且内容核验通过才可使用。批量抓取 `fetch_sources.py` 若仅个别来源因瞬时远端断连（如 WinError 10054）失败，可仅对该失败来源执行一次有界 `fetch_official.py` 复抓（或改用另一官方入口），确认新写入文件后再继续核验，且仍须如实记录首次抓取失败（不自动 settle）。若仍无法核验则记录 `unverified`，不得声称无变化或自动 settle。工具限制、页面结构变化、外部故障分别处理，不无限重试，不对提交或 push 等写操作盲目重试。
 - 此脚本支持网页和 Markdown 内容，但不自动判断厂商真实性、模型资格或价格是否完整；这些仍按技能的来源与收录规则逐项核验。
 
 ## 报告更新与验证

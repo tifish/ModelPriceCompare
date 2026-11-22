@@ -62,6 +62,21 @@ class ReliableUpdatesTests(unittest.TestCase):
         self.assertEqual(opener.call_count, 3)
         self.assertEqual(sleep.call_count, 2)
 
+    def test_connection_reset_during_read_retries_and_recovers(self):
+        broken = Mock()
+        broken.read.side_effect = ConnectionResetError(10054, 'Connection reset by peer')
+        broken.__enter__ = Mock(return_value=broken)
+        broken.__exit__ = Mock(return_value=False)
+        opener = Mock(side_effect=[broken, self.response('GLM-5.3 $1.4')])
+        sleep = Mock()
+        text, meta = fetch('https://example.org/pricing', opener=opener, sleep=sleep)
+        self.assertEqual(text, 'GLM-5.3 $1.4')
+        self.assertEqual(meta['attempts'], 2)
+        self.assertEqual(len(meta['errors']), 1)
+        self.assertIn('10054', meta['errors'][0])
+        self.assertEqual(opener.call_args_list[0][0][0].get_header('Connection'), 'close')
+        sleep.assert_called_once_with(1)
+
     def test_mixed_line_endings_and_idempotence(self):
         raw = b'Title\r\nGenerated: 2026-10-29\n\r\n## Important Notes\r\n\n- old\n'
         updated = update_report(raw, '2026-10-30', 'Checked')
