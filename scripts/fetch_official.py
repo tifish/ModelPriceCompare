@@ -5,21 +5,70 @@ Only read-only GET requests are retried. A failed fetch never overwrites output.
 """
 
 import argparse
+import http.client
 import json
+import socket
+import ssl
 import sys
 import time
 from http.client import HTTPException
 from pathlib import Path
 from urllib.error import HTTPError, URLError
-from urllib.request import Request, urlopen
+from urllib.request import HTTPSHandler, Request, build_opener
 
 
-def fetch(url, attempts=3, opener=urlopen, sleep=time.sleep):
+class FailoverHTTPSConnection(http.client.HTTPSConnection):
+    """Fail over across resolved DNS addresses on TCP connect or TLS handshake errors."""
+
+    def connect(self):
+        if self._tunnel_host:
+            return super().connect()
+        infos = socket.getaddrinfo(self.host, self.port, 0, socket.SOCK_STREAM)
+        if not infos:
+            raise OSError(f"getaddrinfo returned no addresses for {self.host}")
+        seen = set()
+        last_error = None
+        for af, socktype, proto, _, sa in infos:
+            key = (af, socktype, proto, sa)
+            if key in seen:
+                continue
+            seen.add(key)
+            sock = None
+            try:
+                sock = socket.socket(af, socktype, proto)
+                if self.timeout is not socket._GLOBAL_DEFAULT_TIMEOUT:
+                    sock.settimeout(self.timeout)
+                if self.source_address:
+                    sock.bind(self.source_address)
+                sock.connect(sa)
+                self.sock = self._context.wrap_socket(sock, server_hostname=self.host)
+                return
+            except ssl.SSLCertVerificationError:
+                if sock is not None:
+                    sock.close()
+                raise
+            except OSError as error:
+                last_error = error
+                if sock is not None:
+                    sock.close()
+        raise last_error
+
+
+class FailoverHTTPSHandler(HTTPSHandler):
+    def https_open(self, req):
+        return self.do_open(FailoverHTTPSConnection, req, context=self._context)
+
+
+_DEFAULT_OPENER = build_opener(FailoverHTTPSHandler())
+
+
+def fetch(url, attempts=3, opener=None, sleep=time.sleep):
+    open_url = _DEFAULT_OPENER.open if opener is None else opener
     errors = []
     for attempt in range(attempts):
         try:
             request = Request(url, headers={"User-Agent": "ModelPriceCompare/1.0", "Connection": "close"})
-            with opener(request, timeout=30) as response:
+            with open_url(request, timeout=30) as response:
                 text = response.read().decode(response.headers.get_content_charset() or "utf-8")
                 if not text.strip():
                     raise ValueError("Empty response; source is not verified")

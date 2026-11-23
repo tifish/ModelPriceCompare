@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | 交互式网页（可排序、按提供方筛选）：[tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-生成日期：2026-11-23
+生成日期：2026-11-24
 
 所有价格统一为人民币约价 / 1M tokens。主表统一采用海外 API 美元价格，按 `1 USD = 6.6710 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`：Xiaomi MiMo-V2.6-Flash 为缓存命中和输出基准（美元 0.0028 和 0.28），GPT-6 Luna（短上下文）与 Claude Haiku 5.5（短上下文）并列输入基准（美元 0.10）。
 
@@ -70,6 +70,8 @@
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | ¥0.02 | 1.40x | ¥0.93 | 1.00x | ¥1.87 | Overseas real-time API |
 
 ## 重要说明
+
+- 2026-11-24 复核了全部八家厂商。价格表仍覆盖 43 款模型、60 条计费记录，未发现符合收录条件的新模型，缓存命中、输入和输出 token 单价均无变化。已核对 OpenAI Standard 长短上下文表与模型目录、Claude 全球价格与目录、DeepSeek 峰谷价格、Z.AI 最新系列价格、Gemini 4 Standard 价格与目录（仅新增非定价脚注及视频模型路由排版调整）、Kimi 内嵌 DocTable 各列与数据行、小米 MiMo 海外实时价格，以及 xAI 全球上下文分层与目录。Z.AI 模型文档新列出 GLM-5.4，但目前仅面向 GLM Coding Plan 开放，Model API 需待安全评估完成后上线且未公布 API token 定价，故暂不纳入，GLM-5.3 仍为当前已定价最新系列。最新系列范围、排除项及促销期限（含 GPT-5.6 Sol、Gemini 4 Argon 与 Carbon 截至 2026-11-30 的优惠）均无变化。美元兑人民币参考汇率仍为 6.6710（美联储 H.10 于 2026-11-16 发布，观测日期为 2026-11-13）。13 个官方来源中有 12 个首次抓取成功；Z.AI 在首次批量抓取及单源重试时均因首个 DNS A 记录（76.76.21.93）在 TLS 握手阶段返回 WinError 10054 断连而失败，另一 A 记录（76.76.21.241）正常响应；此外本地一次 PowerShell 内联解析命令也因引号解析报错。已在 scripts/fetch_official.py 中通过 FailoverHTTPSConnection 固化多 DNS 地址的 TCP/TLS 传输层故障转移（严格保留主机名与证书校验），并补充回归测试与流程说明，修复后 Z.AI 首次抓取即成功。因发生过已恢复错误，本次不自动 settle。
 
 - 2026-11-23 复核了全部八家厂商。价格表仍覆盖 43 款模型、60 条计费记录，未发现符合收录条件的新模型，缓存命中、输入和输出 token 单价均无变化。已核对 OpenAI Standard 长短上下文表与模型目录、Claude 全球价格与目录、DeepSeek 峰谷价格、Z.AI 最新系列价格、Gemini 4 Standard 价格与目录、Kimi 内嵌 DocTable 各列与数据行、小米 MiMo 海外实时价格，以及 xAI 全球上下文分层与目录（xAI 移除了 Speech to Text 的 New 标记，不在比较范围内）。最新系列范围、排除项及促销期限（含 GPT-5.6 Sol、Gemini 4 Argon 与 Carbon 截至 2026-11-30 的优惠）均无变化。美元兑人民币参考汇率仍为 6.6710（美联储 H.10 于 2026-11-16 发布，观测日期为 2026-11-13）。13 个官方来源中有 12 个首次抓取成功；Z.AI 在首次批量抓取时连续三次遭遇远端断连（WinError 10054）失败，随后通过 `scripts/fetch_official.py` 单源有界复抓一次成功。已更新 `scripts/fetch_official.py` 发送 `Connection: close` 并覆盖响应读取阶段的 `ConnectionError`/`HTTPException` 断连重试，同时补充回归测试与流程说明。因发生过已恢复的抓取错误，本次不自动 settle。
 
@@ -255,3 +257,4 @@
 
 - GPT-6.2 Astra: https://developers.openai.com/api/docs/models/gpt-6.2-astra
 - GPT-6.2 Sol: https://developers.openai.com/api/docs/models/gpt-6.2-sol
+- Z.AI GLM-5.4: https://docs.z.ai/guides/llm/glm-5.4

@@ -1,6 +1,8 @@
 """Regression checks for recovered source and artifact failures (no live network)."""
 
 import shutil
+import socket
+import ssl
 import subprocess
 import tempfile
 import unittest
@@ -11,7 +13,7 @@ from unittest.mock import patch
 import fetch_sources
 from urllib.error import HTTPError, URLError
 
-from fetch_official import fetch
+from fetch_official import FailoverHTTPSConnection, fetch
 from update_verification import update_report
 from validate_reports import ROOT, table_rows, validate
 
@@ -76,6 +78,44 @@ class ReliableUpdatesTests(unittest.TestCase):
         self.assertIn('10054', meta['errors'][0])
         self.assertEqual(opener.call_args_list[0][0][0].get_header('Connection'), 'close')
         sleep.assert_called_once_with(1)
+
+    def test_https_connection_fails_over_after_tls_handshake_reset(self):
+        infos = [
+            (socket.AF_INET, socket.SOCK_STREAM, 6, '', ('76.76.21.93', 443)),
+            (socket.AF_INET, socket.SOCK_STREAM, 6, '', ('76.76.21.241', 443)),
+        ]
+        first_sock, second_sock, wrapped_sock = Mock(), Mock(), Mock()
+        context = Mock()
+        context.wrap_socket.side_effect = [
+            ConnectionResetError(10054, 'Connection reset by peer'),
+            wrapped_sock,
+        ]
+        conn = FailoverHTTPSConnection('docs.z.ai', 443, timeout=15, context=context)
+        with patch('fetch_official.socket.getaddrinfo', return_value=infos), \
+             patch('fetch_official.socket.socket', side_effect=[first_sock, second_sock]):
+            conn.connect()
+        first_sock.connect.assert_called_once_with(('76.76.21.93', 443))
+        first_sock.close.assert_called_once()
+        second_sock.connect.assert_called_once_with(('76.76.21.241', 443))
+        self.assertEqual(context.wrap_socket.call_count, 2)
+        self.assertEqual(context.wrap_socket.call_args_list[1].kwargs['server_hostname'], 'docs.z.ai')
+        self.assertIs(conn.sock, wrapped_sock)
+
+    def test_https_connection_does_not_bypass_cert_verification_error(self):
+        infos = [
+            (socket.AF_INET, socket.SOCK_STREAM, 6, '', ('76.76.21.93', 443)),
+            (socket.AF_INET, socket.SOCK_STREAM, 6, '', ('76.76.21.241', 443)),
+        ]
+        first_sock = Mock()
+        context = Mock()
+        context.wrap_socket.side_effect = ssl.SSLCertVerificationError(1, 'certificate verify failed')
+        conn = FailoverHTTPSConnection('docs.z.ai', 443, timeout=15, context=context)
+        with patch('fetch_official.socket.getaddrinfo', return_value=infos), \
+             patch('fetch_official.socket.socket', return_value=first_sock) as sock_ctor:
+            with self.assertRaises(ssl.SSLCertVerificationError):
+                conn.connect()
+        self.assertEqual(sock_ctor.call_count, 1)
+        first_sock.close.assert_called_once()
 
     def test_mixed_line_endings_and_idempotence(self):
         raw = b'Title\r\nGenerated: 2026-10-29\n\r\n## Important Notes\r\n\n- old\n'
