@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | Interactive web page (sortable, provider filters): [tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-Generated: 2026-11-25
+Generated: 2026-11-26
 
 All prices are normalized to USD per 1M tokens. Multipliers use the cheapest model in each price category as `1.00x`: Xiaomi MiMo-V2.6-Flash sets the cache-hit and output baselines (USD 0.0028 and 0.28), while GPT-6 Luna (short context) and Claude Haiku 5.5 (short context) share the input baseline (USD 0.10).
 
@@ -70,6 +70,8 @@ All prices are normalized to USD per 1M tokens. Multipliers use the cheapest mod
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | $0.0028 | 1.40x | $0.14 | 1.00x | $0.28 | Overseas real-time API |
 
 ## Important Notes
+
+- Rechecked all eight providers on 2026-11-26. Coverage remains 43 models and 60 price rows, with no qualifying new models or changes to cache-hit, input, or output token prices. Verified OpenAI Standard short/long-context tables and catalog (Healthcare and Legal model configurations remain without standalone catalog entries and are excluded), Claude global pricing and catalog, DeepSeek peak/off-peak rates, Z.AI latest-series pricing (GLM-5.4 remains Coding Plan only without published API token prices), Gemini 4 Standard pricing and catalog (Gemini Decision 1 has no output or cached-input token pricing and is excluded), Kimi embedded DocTable columns and rows, Xiaomi MiMo overseas real-time rates, and xAI global context tiers and catalog. Latest-series scope, exclusions, and promotional periods (including GPT-5.6 Sol and Gemini 4 Argon/Carbon through 2026-11-30) are unchanged. USD/CNY remains 6.6770 (Federal Reserve H.10 released 2026-11-23, observation 2026-11-20). All 14 official sources were fetched successfully on the first attempt.
 
 - Rechecked all eight providers on 2026-11-25. Coverage remains 43 models and 60 price rows, with no qualifying new models or changes to cache-hit, input, or output token prices. Verified OpenAI Standard short/long-context tables and catalog (newly added Healthcare model configurations have no standalone catalog entries and are excluded like Legal configurations), Claude global pricing and catalog, DeepSeek peak/off-peak rates, Z.AI latest-series pricing (GLM-5.4 remains Coding Plan only without published API token prices), Gemini 4 Standard pricing and catalog (minor non-pricing footnote/wording edits only), Kimi embedded DocTable columns and rows, Xiaomi MiMo overseas real-time rates, and xAI global context tiers and catalog (xAI removed already-excluded grok-build-0.1). Latest-series scope, exclusions, and promotional periods (including GPT-5.6 Sol and Gemini 4 Argon/Carbon through 2026-11-30) are unchanged. Updated USD/CNY to 6.6770 (Federal Reserve H.10 released 2026-11-23, observation 2026-11-20) and recalculated CNY amounts. All 14 official sources were fetched successfully on the first attempt.
 
