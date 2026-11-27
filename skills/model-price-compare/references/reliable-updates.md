@@ -4,7 +4,7 @@
 
 ## Windows 环境预检
 
-- PowerShell 工具调用使用 `login: false`（外部启动使用 `-NoProfile`），避免用户 profile 被执行策略拦截。读取中文时显式指定 `Get-Content -Encoding utf8`，输出前设置 `$OutputEncoding = [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new()`。不修改机器执行策略。
+- PowerShell 工具调用使用 `login: false`（外部启动使用 `-NoProfile`），避免用户 profile 被执行策略拦截。读取中文时显式指定 `Get-Content -Encoding utf8`，输出前设置 `$OutputEncoding = [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new()`。不修改机器执行策略。Windows PowerShell 5.1 不支持 `&&` 语句分隔符；串联依赖命令时不要使用 `&&`，改用逐行命令配合 `if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }`，或直接使用 Python 组合选项（如 `update_verification.py --build-and-validate`）。
 - 先检查解释器路径和版本。`WindowsApps/python.exe` 可能只是商店占位程序，不能当作可用 Python。优先检查 `py -3`；不可用时定位本机已有 Python，验证版本及标准库后用该解释器的绝对路径运行本文命令（PowerShell 使用 `&`）。不把机器专属路径写入共享脚本，不为此改全局 PATH 或自动安装环境。
 - 提交前先用 `git ls-remote origin refs/heads/main` 检查连接。若 SSH 明确报代理程序不存在，检查 `~/.ssh/config` 中 ProxyCommand 的目标路径。仅在确认直接连接可用后，可用仓库局部 `git config --local core.sshCommand 'ssh -o ProxyCommand=none -o BatchMode=yes -o ConnectTimeout=15'` 固化备用路径；不改全局 SSH 配置。保持主机密钥验证。直连仍失败时报告阻塞，不盲目重试 push。
 - 提交前检查 `git var GIT_AUTHOR_IDENT`。身份未配置时，核对仓库近期提交；在已有上下文明确支持且身份一致时，仅在仓库局部设置 `user.name` 和 `user.email`，不修改全局配置，不把用户邮箱写进共享脚本。身份有歧义则询问用户，不编造。
@@ -31,9 +31,9 @@
 
 1. 完成在线价格核验后，将中英文核验说明各写入一个 UTF-8 临时文本文件（单段），再运行：
 
-   `python -X utf8 scripts/update_verification.py --date YYYY-MM-DD --en-note EN_PATH --zh-note ZH_PATH`
+   `python -X utf8 scripts/update_verification.py --date YYYY-MM-DD --en-note EN_PATH --zh-note ZH_PATH --build-and-validate`
 
-   脚本保留原有文件的混合 LF/CRLF，避免仅改日期却重写整篇报告；同一段说明重复执行不会再次插入。它只记录核验结果，不负责核验价格。
+   脚本保留原有文件的混合 LF/CRLF，避免仅改日期却重写整篇报告；同一段说明重复执行不会再次插入。它只记录核验结果，不负责核验价格。附加 `--build-and-validate` 时，仅在双语报告成功更新后才继续执行 `build_html.py` 和 `validate_reports.py`，避免在 Windows PowerShell 5.1 中误用 `&&` 串联命令。
 2. 有实际价格变动时同步模型列表、CSV 和双语价格表。新增行后运行 `python -X utf8 scripts/sync_report_tables.py`，以 CSV 顺序同步双语表格及价格，避免手工插入行破坏同价条目的稳定排序；此脚本要求报告已有各模型行，缺失会失败，不会猜测翻译。随后运行 `python -X utf8 scripts/build_html.py`。
    更新汇率时，必须同时更新中文报告顶部和常设汇率说明中的数值、H.10 发布日期及观测日期；不能只更新本次核验段落而留下旧的来源日期。核对最新 H.10 的 CHINA, P.R. YUAN 行中最后一个非 ND 观测值，并检查常设说明与本次核验记录一致。历史核验段落保留当时数据。
 3. 运行 `python -X utf8 scripts/validate_reports.py` 和 `git diff --check`。固定校验覆盖模型清单、非负价格、分类倍率、排序、双语表格所有价格和人民币换算、日期及网页内嵌数据。表头和分隔行按结构剔除，预期数据行数来自 CSV，不硬编码 51、52 或 53。

@@ -1,6 +1,6 @@
 """Update report date and prepend supplied verification notes without changing old line endings.
 
-Usage: python -X utf8 scripts/update_verification.py --date YYYY-MM-DD --en-note PATH --zh-note PATH
+Usage: python -X utf8 scripts/update_verification.py --date YYYY-MM-DD --en-note PATH --zh-note PATH [--build-and-validate]
 Notes must describe completed verification; this script does not verify online prices.
 """
 
@@ -8,6 +8,9 @@ import argparse
 import datetime
 import re
 from pathlib import Path
+
+import build_html
+import validate_reports
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -39,6 +42,8 @@ def main():
     parser.add_argument("--date", required=True, type=datetime.date.fromisoformat)
     parser.add_argument("--en-note", required=True, type=Path)
     parser.add_argument("--zh-note", required=True, type=Path)
+    parser.add_argument("--build-and-validate", action="store_true",
+                        help="Rebuild index.html and run validate_reports after updating notes")
     args = parser.parse_args()
     edits = []
     for name, note, chinese in [("README.md", args.en_note, False), ("README.zh-CN.md", args.zh_note, True)]:
@@ -46,6 +51,10 @@ def main():
         edits.append((path, update_report(path.read_bytes(), args.date.isoformat(), note.read_text(encoding="utf-8-sig"), chinese)))
     for path, data in edits:
         path.write_bytes(data)
+    if args.build_and_validate:
+        build_html.main()
+        models, rows = validate_reports.validate()
+        print(f"Validated {models} models and {rows} price rows across CSV, bilingual reports and HTML.")
 
 
 if __name__ == "__main__":

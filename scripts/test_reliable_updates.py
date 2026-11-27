@@ -14,6 +14,7 @@ import fetch_sources
 from urllib.error import HTTPError, URLError
 
 from fetch_official import FailoverHTTPSConnection, fetch
+import update_verification
 from update_verification import update_report
 from validate_reports import ROOT, table_rows, validate
 
@@ -147,6 +148,54 @@ class ReliableUpdatesTests(unittest.TestCase):
                 update_report(raw, '2026-11-07', note, chinese=True)
         updated = update_report(raw, '2026-11-07', '已核验价格，无变化。', chinese=True)
         self.assertIn('已核验价格，无变化。'.encode('utf-8'), updated)
+
+    def test_update_verification_build_and_validate_chains_and_stops_on_failure(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'README.md').write_bytes(b'Generated: 2026-11-27\n## Important Notes\n\n- prev\n')
+            (root / 'README.zh-CN.md').write_bytes('生成日期：2026-11-27\n## 重要说明\n\n- 旧记录\n'.encode('utf-8'))
+            en_note = root / 'en.txt'
+            zh_note = root / 'zh.txt'
+            en_note.write_text('Checked 2026-11-28.', encoding='utf-8')
+            zh_note.write_text('2026-11-28 已核验。', encoding='utf-8')
+            events = []
+            argv = [
+                'update_verification.py',
+                '--date', '2026-11-28',
+                '--en-note', str(en_note),
+                '--zh-note', str(zh_note),
+                '--build-and-validate',
+            ]
+            with patch.object(update_verification, 'ROOT', root), \
+                 patch('sys.argv', argv), \
+                 patch('update_verification.build_html.main', side_effect=lambda: events.append('build')), \
+                 patch('update_verification.validate_reports.validate', side_effect=lambda: (events.append('validate') or (43, 60))), \
+                 patch('builtins.print'):
+                update_verification.main()
+            self.assertEqual(events, ['build', 'validate'])
+            self.assertIn('Generated: 2026-11-28', (root / 'README.md').read_text(encoding='utf-8'))
+            self.assertIn('2026-11-28 已核验。', (root / 'README.zh-CN.md').read_text(encoding='utf-8'))
+
+            bad_zh = root / 'bad-zh.txt'
+            bad_zh.write_text('ASCII only note', encoding='utf-8')
+            bad_argv = [
+                'update_verification.py',
+                '--date', '2026-11-29',
+                '--en-note', str(en_note),
+                '--zh-note', str(bad_zh),
+                '--build-and-validate',
+            ]
+            build_mock = Mock()
+            validate_mock = Mock()
+            with patch.object(update_verification, 'ROOT', root), \
+                 patch('sys.argv', bad_argv), \
+                 patch('update_verification.build_html.main', build_mock), \
+                 patch('update_verification.validate_reports.validate', validate_mock):
+                with self.assertRaises(ValueError):
+                    update_verification.main()
+            build_mock.assert_not_called()
+            validate_mock.assert_not_called()
+            self.assertIn('Generated: 2026-11-28', (root / 'README.md').read_text(encoding='utf-8'))
 
     def test_separator_is_not_a_price_row(self):
         self.assertEqual(table_rows('| A | B |\n|---|---:|\n| one | two |\n'), [['one', 'two']])
