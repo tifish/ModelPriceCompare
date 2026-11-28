@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | 交互式网页（可排序、按提供方筛选）：[tifish.github.io/ModelPriceCompare](https://tifish.github.io/ModelPriceCompare/)
 
-生成日期：2026-11-28
+生成日期：2026-11-29
 
 所有价格统一为人民币约价 / 1M tokens。主表统一采用海外 API 美元价格，按 `1 USD = 6.6770 CNY` 近似换算。倍率按每个价格类别分别计算，以该类别中最便宜的模型作为 `1.00x`：Xiaomi MiMo-V2.6-Flash 为缓存命中和输出基准（美元 0.0028 和 0.28），GPT-6 Luna（短上下文）与 Claude Haiku 5.5（短上下文）并列输入基准（美元 0.10）。
 
@@ -70,6 +70,8 @@
 | Xiaomi MiMo | Xiaomi MiMo-V2.6-Flash | 1.00x | ¥0.02 | 1.40x | ¥0.93 | 1.00x | ¥1.87 | Overseas real-time API |
 
 ## 重要说明
+
+- 2026-11-29 复核了全部八家厂商。价格表仍覆盖 43 款模型、60 条计费记录，未发现符合收录条件的新模型，缓存命中、输入和输出 token 单价均无变化。已核对 OpenAI Standard 长短上下文表与模型目录（Healthcare 与 Legal 模型配置在官方模型目录中仍无独立条目，继续排除）、Claude 全球价格与目录、DeepSeek 峰谷价格、Z.AI 最新系列价格（GLM-5.4 仍仅面向 GLM Coding Plan 开放且未公布 API token 定价）、Gemini 4 Standard 价格与目录（Gemini Decision 1 不适用输出及缓存命中 token 定价，继续排除）、Kimi 内嵌 DocTable 各列与数据行、小米 MiMo 海外实时价格，以及 xAI 全球上下文分层与目录。最新系列范围、排除项及促销期限（含 GPT-5.6 Sol、Gemini 4 Argon 与 Carbon 截至 2026-11-30 的优惠）均无变化。美元兑人民币参考汇率仍为 6.6770（美联储 H.10 于 2026-11-23 发布，观测日期为 2026-11-20）。全部 14 个官方来源均首次抓取成功。
 
 - 2026-11-28 复核了全部八家厂商。价格表仍覆盖 43 款模型、60 条计费记录，未发现符合收录条件的新模型，缓存命中、输入和输出 token 单价均无变化。已核对 OpenAI Standard 长短上下文表与模型目录（Healthcare 与 Legal 模型配置在官方模型目录中仍无独立条目，继续排除）、Claude 全球价格与目录、DeepSeek 峰谷价格、Z.AI 最新系列价格（GLM-5.4 仍仅面向 GLM Coding Plan 开放且未公布 API token 定价）、Gemini 4 Standard 价格与目录（Gemini Decision 1 不适用输出及缓存命中 token 定价，继续排除）、Kimi 内嵌 DocTable 各列与数据行、小米 MiMo 海外实时价格，以及 xAI 全球上下文分层与目录（仅调整已排除的 Grok 4.7 Fast 与美国区域说明中的 `< 200k` / `≥ 200k` 阈值措辞，以及图片输入规格文档）。最新系列范围、排除项及促销期限（含 GPT-5.6 Sol、Gemini 4 Argon 与 Carbon 截至 2026-11-30 的优惠）均无变化。美元兑人民币参考汇率仍为 6.6770（美联储 H.10 于 2026-11-23 发布，观测日期为 2026-11-20）。全部 14 个官方来源均首次抓取成功。本地使用 `&&` 串联更新、构建与校验命令时在 Windows PowerShell 5.1 下触发语法错误；已为 `scripts/update_verification.py` 固化 `--build-and-validate` 选项与回归测试，并在 `AGENTS.md` 和可靠更新流程中补充 PowerShell 5.1 命令串联规范。因发生过已恢复的本地错误，本次不自动 settle。
 
